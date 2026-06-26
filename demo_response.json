@@ -1,0 +1,31 @@
+{
+  "schema_version": "jarvi3.designguard.response.v0",
+  "request_id": "designguard-demo-001",
+  "response_id": "designguard-response-demo-001",
+  "artifact_type": "rtl",
+  "risk_level": "SAFETY_CRITICAL",
+  "status": "DESIGNGUARD_NEEDS_REVIEW",
+  "export_decision": "DESIGNGUARD_EXPORT_NEEDS_REVIEW",
+  "gates_run": [
+    "ChipGate",
+    "EvidencePack",
+    "ReplayGate",
+    "Design Passport"
+  ],
+  "gates_passed": [
+    "ChipGate"
+  ],
+  "gates_failed": [],
+  "unsafe_findings": [],
+  "manual_review_items": [
+    "Safety-critical rtl requires human review before export or trust"
+  ],
+  "evidence_pack_hashes": [],
+  "passport_id": "",
+  "passport_hash": "",
+  "replay_command": "",
+  "limitations": [
+    "JARVI3 Chip DesignGuard does not prove silicon correctness, ASIC fabrication readiness, timing closure, physical safety, medical safety, defence suitability, robotics safety, production readiness or regulatory compliance. It routes artifacts through configured public checks and records evidence, replay and passport status."
+  ],
+  "user_message": "DesignGuard requires review before this artifact should be exported or trusted."
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": "jarvi3.designguard.v0",
+  "request_id": "designguard-demo-001",
+  "source": "jarvi3",
+  "user_intent": "design a safety-gated actuator controller",
+  "artifact_type": "rtl",
+  "risk_level": "SAFETY_CRITICAL",
+  "artifact": {
+    "mode": "inline",
+    "filename": "generated_design.v",
+    "content": "module generated_design(input clk, input req, output reg ack); endmodule"
+  },
+  "requested_mode": "Safety-Critical Check",
+  "policy": {
+    "require_evidence_pack": true,
+    "require_replay": true,
+    "require_passport": true,
+    "require_human_review_for_safety_critical": true,
+    "block_export_on_failed_gate": true,
+    "block_export_on_missing_evidence": true,
+    "default_unknown_to_review": true
+  }
+}
