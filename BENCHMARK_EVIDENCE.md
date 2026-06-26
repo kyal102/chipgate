@@ -44,6 +44,6 @@ These claims remain blocked because:
 - The current timing evidence is nextpnr-ice40 FPGA-style timing evidence.
 - No real silicon fabrication or physical test evidence exists yet.
 
-Profile-safe wording:
+Best public wording:
 
-> Recent ChipGate evidence: Phase 31K now runs in Docker with real Yosys synthesis and nextpnr-ice40 timing. In this public toolchain run, DTL_FASTPATH preserved the configured safety gate while reporting 8 cells, 6 logic cells, 1.596 ns timing and 626.566 MHz. Compared with the classic safe FSM baseline, it used 66.7% fewer cells, 60% fewer logic cells and reported 172% higher Fmax under the same flow. ASIC/OpenSTA and real silicon claims remain blocked until further evidence exists.
+> ChipGate Phase 31K now includes Docker-reproducible Yosys synthesis and nextpnr-ice40 timing evidence. In this exact public toolchain run, DTL_FASTPATH preserved the configured safety gate while reporting 8 cells, 6 logic cells, 1.596 ns timing and 626.566 MHz. Compared with the classic safe FSM baseline, it used 66.7% fewer cells, 60% fewer logic cells and reported 172.18% higher Fmax. ASIC/OpenSTA, real silicon, production and global chip-superiority claims remain blocked until further evidence exists.
