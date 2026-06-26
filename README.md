@@ -1,3 +1,11 @@
+<p align="center">
+  <img src="assets/chipgate_bannor.png" alt="ChipGate banner" width="100%">
+</p>
+
+<p align="center">
+  <img src="assets/chipgate_logo.png" alt="ChipGate logo" width="150">
+</p>
+
 # JARVI3 Chip DesignGuard Lite
 
 Public-safe demonstration package for the JARVI3 ChipGate / DesignGuard request and response format.
@@ -46,6 +54,8 @@ python designguard_lite.py
 | `demo_request.json` | Sample request JSON |
 | `demo_response.json` | Sample response JSON |
 | `demo_passport.json` | Sample design passport JSON |
+| `assets/chipgate_bannor.png` | GitHub banner image |
+| `assets/chipgate_logo.png` | GitHub logo image |
 | `BENCHMARK_EVIDENCE.md` | Public-safe summary of the private Phase 31K evidence boundary |
 | `LIMITATIONS.md` | Detailed limitations statement |
 
