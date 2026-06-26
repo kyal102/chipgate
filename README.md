@@ -45,6 +45,7 @@ python designguard_lite.py
 | `demo_request.json` | Sample request JSON |
 | `demo_response.json` | Sample response JSON |
 | `demo_passport.json` | Sample design passport JSON |
+| `BENCHMARK_EVIDENCE.md` | Public-safe summary of the private Phase 31K evidence boundary |
 | `LIMITATIONS.md` | Detailed limitations statement |
 
 ## Test
