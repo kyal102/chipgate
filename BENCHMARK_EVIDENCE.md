@@ -25,3 +25,25 @@ Comparison notes:
 - DTL_FASTPATH was slightly slower than CLASSIC_REDUNDANT in this scoped nextpnr timing run.
 - No public claim should imply ASIC timing closure, silicon correctness, fabrication readiness, regulatory approval, or universal chip performance.
 
+## Claims Blocked
+
+Do not claim:
+
+- DTL beats all chips.
+- DTL beats NVIDIA.
+- DTL proves real silicon.
+- DTL proves ASIC timing.
+- DTL is production ready.
+- DTL is universally faster.
+- DTL is safety certified.
+
+These claims remain blocked because:
+
+- OpenSTA was unavailable in the Docker run.
+- ASIC/static timing evidence is still missing.
+- The current timing evidence is nextpnr-ice40 FPGA-style timing evidence.
+- No real silicon fabrication or physical test evidence exists yet.
+
+Profile-safe wording:
+
+> Recent ChipGate evidence: Phase 31K now runs in Docker with real Yosys synthesis and nextpnr-ice40 timing. In this public toolchain run, DTL_FASTPATH preserved the configured safety gate while reporting 8 cells, 6 logic cells, 1.596 ns timing and 626.566 MHz. Compared with the classic safe FSM baseline, it used 66.7% fewer cells, 60% fewer logic cells and reported 172% higher Fmax under the same flow. ASIC/OpenSTA and real silicon claims remain blocked until further evidence exists.

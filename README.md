@@ -14,7 +14,8 @@ This package demonstrates the JSON format used by JARVI3 Chip DesignGuard. It is
 - It does not import or contain private JARVI3 code.
 - It does not import or contain private DTL logic.
 - It does not run real gate checks.
-- It does not prove silicon correctness, ASIC fabrication readiness, timing closure, physical safety, defence suitability, robotics safety, production readiness, or regulatory compliance.
+- It does not prove real silicon, ASIC timing, fabrication readiness, production readiness, safety certification, or universal chip performance.
+- It does not claim DTL beats all chips, beats NVIDIA, is universally faster, or is safety certified.
 
 ## Install
 
@@ -58,4 +59,4 @@ python -m pytest tests -q
 
 The full private JARVI3 Labs version adds actual ChipGate execution, EvidencePack, ReplayGate, DesignGuard passport routing, Speed / PPA proof packs, real-toolchain CI awareness, and paid API access.
 
-See `LIMITATIONS.md` for the full limitations statement.
+See `BENCHMARK_EVIDENCE.md` for the current Phase 31K evidence boundary and `LIMITATIONS.md` for the full limitations statement.
