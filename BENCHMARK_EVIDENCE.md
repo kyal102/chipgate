@@ -8,7 +8,7 @@ The private JARVI3 ChipGate Phase 31K Docker run was used to validate the eviden
 | --- | --- |
 | Yosys | Available |
 | nextpnr-ice40 | Available |
-| OpenSTA | Not available in the Ubuntu 24.04 apt image |
+| OpenSTA | Available after source build (`sta` 3.1.0) |
 
 Latest private Phase 31K summary:
 
@@ -39,11 +39,11 @@ Do not claim:
 
 These claims remain blocked because:
 
-- OpenSTA was unavailable in the Docker run.
-- ASIC/static timing evidence is still missing.
+- OpenSTA is now installed and detected, but the current benchmark metrics are still nextpnr-ice40 timing evidence.
+- ASIC/static timing evidence using an ASIC Liberty/SDC target is still missing.
 - The current timing evidence is nextpnr-ice40 FPGA-style timing evidence.
 - No real silicon fabrication or physical test evidence exists yet.
 
 Best public wording:
 
-> ChipGate Phase 31K now includes Docker-reproducible Yosys synthesis and nextpnr-ice40 timing evidence. In this exact public toolchain run, DTL_FASTPATH preserved the configured safety gate while reporting 8 cells, 6 logic cells, 1.596 ns timing and 626.566 MHz. Compared with the classic safe FSM baseline, it used 66.7% fewer cells, 60% fewer logic cells and reported 172.18% higher Fmax. ASIC/OpenSTA, real silicon, production and global chip-superiority claims remain blocked until further evidence exists.
+> ChipGate Phase 31K now includes Docker-reproducible Yosys synthesis, OpenSTA availability, and nextpnr-ice40 timing evidence. In this exact public toolchain run, DTL_FASTPATH preserved the configured safety gate while reporting 8 cells, 6 logic cells, 1.596 ns timing and 626.566 MHz. Compared with the classic safe FSM baseline, it used 66.7% fewer cells, 60% fewer logic cells and reported 172.18% higher Fmax. ASIC/OpenSTA timing metrics, real silicon, production and global chip-superiority claims remain blocked until further evidence exists.
