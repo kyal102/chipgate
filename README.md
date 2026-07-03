@@ -19,10 +19,10 @@ python -m chipgate design.v
 ```bash
 git clone https://github.com/kyal102/chipgate
 cd chipgate
-python -m chipgate --demo
+python -m chipgate examples/bad_alu.v
 ```
 
-Real output (from the bundled [`examples/bad_alu.v`](examples/bad_alu.v)):
+Real output:
 
 ```text
 examples/bad_alu.v  (modules: bad_alu)
