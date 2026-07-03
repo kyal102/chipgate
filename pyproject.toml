@@ -3,9 +3,9 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "jarvi3-chip-designguard-lite"
-version = "0.1.0"
-description = "Public-safe JARVI3 Chip DesignGuard Lite schema and demo package."
+name = "chipgate-lite"
+version = "0.2.0"
+description = "Deterministic structural sanity checker for Verilog RTL: catches undriven outputs, multi-driven signals, latch-inference risks, and blocking/nonblocking misuse. Pure stdlib."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
@@ -28,11 +28,12 @@ Repository = "https://github.com/kyal102/chipgate"
 Issues = "https://github.com/kyal102/chipgate/issues"
 
 [project.scripts]
+chipgate = "chipgate.__main__:main"
 jarvi3-designguard-lite = "jarvi3_designguard_lite.__main__:main"
 
 [tool.setuptools]
 py-modules = ["designguard_lite", "public_adapter"]
-packages = ["jarvi3_designguard_lite"]
+packages = ["chipgate", "jarvi3_designguard_lite"]
 include-package-data = true
 
 [tool.pytest.ini_options]
