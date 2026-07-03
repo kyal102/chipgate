@@ -1,0 +1,14 @@
+{
+  "actuator_enable": "uo_out[0]",
+  "ai_output": "ui_in[0]",
+  "approved": "uo_out[3]",
+  "blocked": "uo_out[1]",
+  "evidence_pulse": "uo_out[4]",
+  "failsafe": "uo_out[2]",
+  "kill_switch": "ui_in[5]",
+  "policy_ok": "ui_in[2]",
+  "reset": "ui_in[6]",
+  "sensor_ok": "ui_in[3]",
+  "timeout": "ui_in[4]",
+  "verifier_ok": "ui_in[1]"
+}

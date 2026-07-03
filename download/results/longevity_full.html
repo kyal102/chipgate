@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>LongevityBench Report</title>
+<style>
+body { font-family: sans-serif; margin: 2rem; color: #1f2937; }
+h1 { font-size: 1.5rem; } h2 { font-size: 1.1rem; margin-top: 1.5rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.5rem; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px,1fr)); gap: 1rem; margin: 1rem 0; }
+.card { background: #f9fafb; border-radius: 8px; padding: 1rem; }
+.card .label { font-size: 0.75rem; color: #6b7280; text-transform: uppercase; }
+.card .value { font-size: 1.75rem; font-weight: 700; }
+.green { color: #16a34a; } .red { color: #dc2626; } .blue { color: #2563eb; }
+.disclaimer { background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 1rem; margin: 1rem 0; font-size: 0.875rem; color: #92400e; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.8rem; }
+th, td { padding: 0.4rem; text-align: left; border-bottom: 1px solid #e5e7eb; }
+th { background: #f3f4f6; font-weight: 600; }
+</style></head><body>
+<h1>LongevityBench Report</h1>
+<p style="color:#6b7280;">Version 0.3.0 | 2026-06-21T12:47:39.483125+00:00</p>
+<div class="disclaimer">These results are RTL-level combinatorial simulations, not physical or Verilog simulation. They do not account for clock-domain crossings, metastability, setup/hold violations, power supply noise, electromigration, BTI/HCI/TDDB aging, or thermal stress. Physical signoff requires formal verification, timing analysis, and device qualification testing beyond the scope of this tool.</div>
+<div class="cards">
+<div class="card"><div class="label">Total Cycles</div><div class="value blue">9,109,000</div></div>
+<div class="card"><div class="label">Unsafe Enables</div><div class="value green">0</div></div>
+<div class="card"><div class="label">Kill-Switch Bypasses</div><div class="value green">0</div></div>
+<div class="card"><div class="label">Faults Detected</div><div class="value green">0/30</div></div>
+<div class="card"><div class="label">Reset Recovery</div><div class="value blue">93.5%</div></div>
+<div class="card"><div class="label">Replay Match</div><div class="value green">100%</div></div>
+</div>
+<h2>Category Results</h2>
+<table><tr><th>Category</th><th>Cycles</th><th>Unsafe</th><th>KS Bypass</th><th>Timeout</th><th>Resets</th><th>Faults</th><th>Detected</th><th>Status</th></tr><tr><td>long_run_soak</td><td>1,000</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='green'>PASS</td></tr>
+<tr><td>kill_switch_priority</td><td>10,000</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='green'>PASS</td></tr>
+<tr><td>timeout_failsafe</td><td>10,000</td><td>0</td><td>0</td><td>134</td><td>0</td><td>0</td><td>0</td><td class='red'>FAIL</td></tr>
+<tr><td>sensor_disagreement</td><td>10,000</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='green'>PASS</td></tr>
+<tr><td>reset_storm</td><td>10,000</td><td>0</td><td>0</td><td>0</td><td>456</td><td>0</td><td>0</td><td class='red'>FAIL</td></tr>
+<tr><td>clock_stall</td><td>10,000</td><td>0</td><td>0</td><td>0</td><td>0</td><td>3</td><td>0</td><td class='red'>FAIL</td></tr>
+<tr><td>bit_flip_fault</td><td>10,000</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='green'>PASS</td></tr>
+<tr><td>stuck_at_faults</td><td>10,000</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='red'>FAIL</td></tr>
+<tr><td>fsm_escape_traps</td><td>10,000</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='green'>PASS</td></tr>
+<tr><td>high_toggle_activity</td><td>10,000</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='green'>PASS</td></tr>
+<tr><td>vulnerable_no_reset</td><td>10,000</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='red'>FAIL</td></tr>
+<tr><td>vulnerable_no_sensor</td><td>10,000</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='red'>FAIL</td></tr>
+<tr><td>vulnerable_timeout_bypass</td><td>10,000</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='red'>FAIL</td></tr>
+<tr><td>vulnerable_no_policy</td><td>10,000</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='red'>FAIL</td></tr>
+<tr><td>vulnerable_no_verifier</td><td>10,000</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='red'>FAIL</td></tr>
+<tr><td>vulnerable_no_kill</td><td>10,000</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='red'>FAIL</td></tr>
+<tr><td>vulnerable_direct_ai</td><td>10,000</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td class='red'>FAIL</td></tr>
+</table></body></html>

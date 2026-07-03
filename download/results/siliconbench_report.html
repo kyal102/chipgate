@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SiliconReadinessBench Report</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 2rem; color: #1f2937; background: #fff; line-height: 1.6; }
+h1 { font-size: 1.6rem; color: #111827; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem; }
+h2 { font-size: 1.2rem; color: #374151; margin-top: 2rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem; }
+.meta { color: #6b7280; font-size: 0.875rem; margin-bottom: 1.5rem; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; margin: 1rem 0; }
+.card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; text-align: center; }
+.card .label { font-size: 0.7rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; }
+.card .value { font-size: 1.5rem; font-weight: 700; color: #111827; }
+.pass { color: #16a34a; } .fail { color: #dc2626; } .skip { color: #9ca3af; } .neutral { color: #6366f1; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.8rem; }
+th, td { padding: 0.4rem 0.6rem; text-align: left; border-bottom: 1px solid #e5e7eb; }
+th { background: #f3f4f6; font-weight: 600; position: sticky; top: 0; }
+tr:hover { background: #f9fafb; }
+.badge { display: inline-block; padding: 0.1rem 0.5rem; border-radius: 9999px; font-size: 0.7rem; font-weight: 600; }
+.badge.pass { background: #dcfce7; color: #166534; }
+.badge.fail { background: #fee2e2; color: #991b1b; }
+.badge.skip { background: #f3f4f6; color: #6b7280; }
+.badge.neutral { background: #e0e7ff; color: #3730a3; }
+.hash { font-family: monospace; font-size: 0.7rem; color: #6b7280; }
+code { background: #f3f4f6; padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.75rem; font-family: monospace; }
+.disclaimer { background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 1rem; margin: 1.5rem 0; font-size: 0.85rem; color: #92400e; }
+.disclaimer strong { color: #92400e; }
+.limitation { background: #fef2f2; border: 1px solid #fca5a5; border-radius: 8px; padding: 1rem; margin: 1rem 0; font-size: 0.8rem; color: #991b1b; }
+.section { margin: 1.5rem 0; }
+</style>
+</head>
+<body>
+
+<h1>SiliconReadinessBench Report</h1>
+<p class="meta">ChipGate v0.3.0 | 2026-06-21T13:54:04.649321+00:00 | siliconbench_v0</p>
+
+<div class="disclaimer">
+<strong>Public Disclaimer:</strong> SiliconReadinessBench checks whether safe RTL candidates survive synthesis, formal checks, FPGA flow and ASIC-flow readiness. It does not prove silicon correctness, physical safety, real power, real timing closure, physical durability, regulatory compliance or fabrication readiness. It checks whether RTL passes reproducible open-source tool-flow readiness stages.
+</div>
+
+<div class="limitation">
+<strong>Limitation:</strong> These results are tool-flow readiness checks, not silicon results. They do not prove silicon correctness, physical safety, real power, real timing closure, physical durability, regulatory compliance, or fabrication readiness. Passing a tool-flow stage means the RTL was accepted by that tool in this specific configuration and version. Actual silicon results require foundry signoff, tapeout, and physical measurement.
+</div>
+
+<div class="cards">
+<div class="card"><div class="label">Designs Tested</div><div class="value">4</div></div>
+<div class="card"><div class="label">Safety Precheck Passed</div><div class="value pass">2</div></div>
+<div class="card"><div class="label">Lint Pass Rate</div><div class="value">0%</div></div>
+<div class="card"><div class="label">Synthesis Pass Rate</div><div class="value">0%</div></div>
+<div class="card"><div class="label">Formal Pass Rate</div><div class="value">0%</div></div>
+<div class="card"><div class="label">FPGA Flow Pass Rate</div><div class="value">0%</div></div>
+<div class="card"><div class="label">ASIC Flow Ready Rate</div><div class="value">0%</div></div>
+<div class="card"><div class="label">Toolchain Coverage</div><div class="value">0%</div></div>
+<div class="card"><div class="label">Evidence Packs</div><div class="value">4</div></div>
+<div class="card"><div class="label">Overall</div><div class="value pass">SILICON_READINESS_PASS</div></div>
+</div>
+
+<div class="section">
+<h2>Toolchain Status</h2>
+<table>
+<tr><th>Tool</th><th>Status</th><th>Details</th></tr>
+<tr><td>verilator</td><td class="skip">skipped</td><td>skipped (not found on PATH)</td></tr>
+<tr><td>yosys</td><td class="skip">skipped</td><td>skipped (not found on PATH)</td></tr>
+<tr><td>symbiyosys</td><td class="skip">skipped</td><td>skipped (not found on PATH)</td></tr>
+<tr><td>nextpnr</td><td class="skip">skipped</td><td>skipped (not found on PATH)</td></tr>
+<tr><td>openlane</td><td class="skip">skipped</td><td>skipped (not found on PATH)</td></tr>
+<tr><td>openroad</td><td class="skip">skipped</td><td>skipped (not found on PATH)</td></tr>
+
+</table>
+</div>
+
+<div class="section">
+<h2>Design Results</h2>
+<table>
+<tr>
+<th>Design</th><th>Safety</th><th>Lint</th><th>Synthesis</th><th>Formal</th><th>FPGA</th><th>ASIC</th><th>Overall</th><th>Cells</th><th>Wires</th>
+</tr>
+<tr>
+<td><strong>safe_dtl_gate</strong></td>
+<td><span class="badge pass">RTL_SCAN_PASS</span></td>
+<td><span class="badge skip">LINT_SKIPPED</span></td>
+<td><span class="badge skip">SYNTHESIS_SKIPPED</span></td>
+<td><span class="badge skip">FORMAL_SKIPPED</span></td>
+<td><span class="badge skip">FPGA_FLOW_SKIPPED</span></td>
+<td><span class="badge skip">ASIC_FLOW_SKIPPED</span></td>
+<td><span class="badge pass">SILICON_READINESS_PASS</span></td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>unsafe_direct_actuator</strong></td>
+<td><span class="badge fail">RTL_SCAN_FAIL</span></td>
+<td><span class="badge skip">BLOCKED_UNSAFE</span></td>
+<td><span class="badge skip">BLOCKED_UNSAFE</span></td>
+<td><span class="badge skip">BLOCKED_UNSAFE</span></td>
+<td><span class="badge skip">BLOCKED_UNSAFE</span></td>
+<td><span class="badge skip">BLOCKED_UNSAFE</span></td>
+<td><span class="badge fail">SILICON_READINESS_FAIL</span></td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><strong>safe_fsm_gate</strong></td>
+<td><span class="badge pass">RTL_SCAN_PASS</span></td>
+<td><span class="badge skip">LINT_SKIPPED</span></td>
+<td><span class="badge skip">SYNTHESIS_SKIPPED</span></td>
+<td><span class="badge skip">FORMAL_SKIPPED</span></td>
+<td><span class="badge skip">FPGA_FLOW_SKIPPED</span></td>
+<td><span class="badge skip">ASIC_FLOW_SKIPPED</span></td>
+<td><span class="badge pass">SILICON_READINESS_PASS</span></td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>bad_syntax</strong></td>
+<td><span class="badge fail">RTL_SCAN_FAIL</span></td>
+<td><span class="badge skip">BLOCKED_UNSAFE</span></td>
+<td><span class="badge skip">BLOCKED_UNSAFE</span></td>
+<td><span class="badge skip">BLOCKED_UNSAFE</span></td>
+<td><span class="badge skip">BLOCKED_UNSAFE</span></td>
+<td><span class="badge skip">BLOCKED_UNSAFE</span></td>
+<td><span class="badge fail">SILICON_READINESS_FAIL</span></td>
+<td>-</td>
+<td>-</td>
+</tr>
+
+</table>
+</div>
+
+<div class="section">
+<h2>Artifact Hashes</h2>
+<table>
+<tr><th>Design</th><th>Label</th><th>SHA-256</th></tr>
+<tr><td>safe_dtl_gate</td><td>rtl_input</td><td class="hash">e299c87d0c582355374b8870...</td></tr>
+<tr><td>safe_dtl_gate</td><td>report</td><td class="hash">b0804948a921d0799de488f8...</td></tr>
+<tr><td>unsafe_direct_actuator</td><td>rtl_input</td><td class="hash">2c3797397d486870c270783a...</td></tr>
+<tr><td>unsafe_direct_actuator</td><td>report</td><td class="hash">171d65bb728e961916e0d386...</td></tr>
+<tr><td>safe_fsm_gate</td><td>rtl_input</td><td class="hash">8952e274931be7cc735941e9...</td></tr>
+<tr><td>safe_fsm_gate</td><td>report</td><td class="hash">b0804948a921d0799de488f8...</td></tr>
+<tr><td>bad_syntax</td><td>rtl_input</td><td class="hash">39fcb66a9367df5720a1fcfd...</td></tr>
+<tr><td>bad_syntax</td><td>report</td><td class="hash">171d65bb728e961916e0d386...</td></tr>
+
+</table>
+</div>
+
+<div class="section">
+<h2>Replay Commands</h2>
+<table>
+<tr><th>Design</th><th>Command</th></tr>
+<tr><td>safe_dtl_gate</td><td><code>python -m chipgate silicon --demo</code></td></tr>
+<tr><td>unsafe_direct_actuator</td><td><code>python -m chipgate silicon --demo</code></td></tr>
+<tr><td>safe_fsm_gate</td><td><code>python -m chipgate silicon --demo</code></td></tr>
+<tr><td>bad_syntax</td><td><code>python -m chipgate silicon --demo</code></td></tr>
+
+</table>
+</div>
+
+<div class="disclaimer">
+<strong>Reminder:</strong> SiliconReadinessBench does not prove silicon correctness, physical safety, real power, real timing closure, physical durability, regulatory compliance or fabrication readiness. It checks whether RTL passes reproducible open-source tool-flow readiness stages.
+</div>
+
+</body>
+</html>

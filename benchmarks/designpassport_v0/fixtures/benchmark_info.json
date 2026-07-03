@@ -1,0 +1,8 @@
+{
+  "benchmark_name": "designpassport_v0",
+  "benchmark_version": "0.1.0",
+  "description": "DTL Verified Design Passport benchmark fixtures",
+  "artifact_count": 5,
+  "artifact_types": ["rtl", "rtl", "document", "physics_equation", "chemistry_formula"],
+  "limitation": "DTL Verified Design Passport does not prove that a design is correct, safe, certified, fabrication-ready, commercially validated or ready for real-world use."
+}

@@ -1,0 +1,34 @@
+project_name: tt_um_chipgate_dtl_gate
+author: ChipGate Contributors
+description: A minimal DTL safety gate demonstrating verification-gated actuator control. Public demonstration design for TinyTapeout.
+repo: https://github.com/user/chipgate
+version: 0.4.0
+top_module: tt_um_chipgate_dtl_gate
+
+# ChipGate TinyTapeoutPrep — auto-generated metadata
+# This does not guarantee Tiny Tapeout acceptance or fabrication.
+# Official submission requires CI on tinytapeout.com.
+
+# Communication protocol: none (combinational)
+# Inputs: ui_in[0:7] mapped to DTL gate signals
+# Outputs: uo_out[0:7] mapped to gate status signals
+
+# Pin mapping:
+#   ui_in[0] = ai_output
+#   ui_in[1] = verifier_ok
+#   ui_in[2] = policy_ok
+#   ui_in[3] = sensor_ok
+#   ui_in[4] = timeout
+#   ui_in[5] = kill_switch
+#   ui_in[6] = reset
+#   uo_out[0] = actuator_enable
+#   uo_out[1] = blocked
+#   uo_out[2] = failsafe
+#   uo_out[3] = approved
+#   uo_out[4] = evidence_pulse
+
+# Limitations:
+# - Combinational design, no sequential state
+# - Does not prove silicon correctness or physical safety
+# - Requires official Tiny Tapeout CI for actual submission
+# - Not certified for safety-critical, medical, or defence use

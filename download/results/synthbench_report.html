@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChipSynthBench Report</title>
+<style>
+  :root { --green: #16a34a; --red: #dc2626; --blue: #2563eb; --gray: #6b7280; --bg: #f9fafb; --card-bg: #ffffff; --amber: #d97706; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: #1f2937; line-height: 1.6; padding: 2rem; }
+  h1 { font-size: 1.75rem; margin-bottom: 0.25rem; }
+  h2 { font-size: 1.25rem; margin: 2rem 0 1rem; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem; }
+  .subtitle { color: var(--gray); margin-bottom: 2rem; }
+  .disclaimer { background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 1rem; margin: 1rem 0 2rem; font-size: 0.875rem; color: #92400e; }
+  .public-wording { background: #f3f4f6; border-radius: 8px; padding: 1rem; margin: 1rem 0 1rem; font-size: 0.875rem; color: #374151; font-style: italic; }
+  .banner { background: #1e40af; color: white; border-radius: 8px; padding: 1rem; margin: 1rem 0 2rem; font-size: 0.875rem; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; margin: 1rem 0 2rem; }
+  .card { background: var(--card-bg); border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  .card .label { font-size: 0.75rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.05em; }
+  .card .value { font-size: 2rem; font-weight: 700; margin-top: 0.25rem; }
+  .card .value.green { color: var(--green); }
+  .card .value.red { color: var(--red); }
+  .card .value.blue { color: var(--blue); }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.8rem; }
+  th, td { padding: 0.5rem 0.75rem; text-align: left; border-bottom: 1px solid #e5e7eb; }
+  th { background: #f3f4f6; font-weight: 600; position: sticky; top: 0; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .center { text-align: center; color: var(--gray); }
+  .green { color: var(--green); font-weight: 600; }
+  .red { color: var(--red); font-weight: 600; }
+  .blue { color: var(--blue); }
+  .hash { font-family: 'Courier New', monospace; font-size: 0.75rem; }
+  .fail-row { background: #fef2f2; }
+  .best-row { background: #f0fdf4; font-weight: 600; }
+  .rank-row { background: #ffffff; }
+  .disqualified-row { background: #fef2f2; opacity: 0.7; }
+  .badge-best { background: var(--green); color: white; padding: 0.1rem 0.4rem; border-radius: 4px; font-size: 0.65rem; font-weight: 700; margin-left: 0.5rem; }
+  code { background: #f3f4f6; padding: 0.1rem 0.3rem; border-radius: 4px; font-size: 0.75rem; }
+  .meta { font-size: 0.75rem; color: var(--gray); margin-top: 2rem; }
+  .ppa-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin: 1rem 0; }
+  .ppa-panel { background: var(--card-bg); border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; }
+  .ppa-panel h3 { font-size: 0.9rem; margin-bottom: 0.5rem; }
+  @media (max-width: 768px) { body { padding: 1rem; } .cards { grid-template-columns: repeat(2, 1fr); } .ppa-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<h1>ChipSynthBench Report</h1>
+<p class="subtitle">Version 1.0.0 &mdash; Generated 2026-06-21T13:21:33.462034+00:00</p>
+
+<div class="banner">
+  <strong>ChipSynthBench</strong> measures whether RTL candidates become safer,
+  smaller and faster without regression. Results use RTL-level proxy metrics only.
+</div>
+
+<div class="disclaimer">
+  <strong>Limitation:</strong> ChipSynthBench uses RTL-level proxy metrics. It does not prove real silicon performance, real power consumption, timing closure, area after synthesis, fabrication readiness or physical safety.
+</div>
+
+<div class="public-wording">
+  ChipSynthBench uses RTL-level proxy metrics. It does not prove real silicon performance, real power consumption, timing closure, area after synthesis, fabrication readiness or physical safety.
+</div>
+
+<h2>Summary</h2>
+<div class="cards">
+  <div class="card"><div class="label">Overall Status</div><div class="value green">SYNTHBENCH_PASS</div></div>
+  <div class="card"><div class="label">Total Candidates</div><div class="value blue">10</div></div>
+  <div class="card"><div class="label">Safe Improved</div><div class="value green">3</div></div>
+  <div class="card"><div class="label">Unsafe Rejected</div><div class="value red">6</div></div>
+  <div class="card"><div class="label">Regressions Detected</div><div class="value red">6</div></div>
+  <div class="card"><div class="label">Eligible for Ranking</div><div class="value blue">4</div></div>
+  <div class="card"><div class="label">Best Tradeoff</div><div class="value green">candidate_safe_smaller</div></div>
+  <div class="card"><div class="label">Area Proxy Improvement</div><div class="value green">35.3%</div></div>
+  <div class="card"><div class="label">Timing Proxy Improvement</div><div class="value green">0.0%</div></div>
+  <div class="card"><div class="label">Power Proxy Improvement</div><div class="value green">26.8%</div></div>
+  <div class="card"><div class="label">Replay Match</div><div class="value green">100%</div></div>
+  <div class="card"><div class="label">Evidence Packs</div><div class="value blue">10</div></div>
+</div>
+
+<h2>Candidate Rankings</h2>
+<p style="font-size:0.8rem;color:var(--gray);margin-bottom:0.5rem;">
+  Only candidates that pass safety, longevity, and no-regression are eligible for ranking.
+  Unsafe designs cannot rank above safe designs even if they look smaller or faster.
+</p>
+<table>
+  <tr>
+    <th>Rank</th><th>Candidate</th><th>Safety</th><th>Longevity</th><th>No-Regr.</th>
+    <th>Area Imp.</th><th>Timing Imp.</th><th>Power Imp.</th><th>Score</th><th>Reason</th>
+  </tr>
+  <tr class="best-row"><td class="num">#1</td><td>candidate_safe_smaller <span class="badge-best">BEST</span></td><td class="num green">PASS</td><td class="num green">PASS</td><td class="num green">PASS</td><td class="num">35.3%</td><td class="num">0.0%</td><td class="num">26.8%</td><td class="num">20.0140</td><td>Improvements: area 35.3%, power 26.8%</td></tr>
+<tr class="rank-row"><td class="num">#2</td><td>candidate_safe_low_toggle</td><td class="num green">PASS</td><td class="num green">PASS</td><td class="num green">PASS</td><td class="num">40.6%</td><td class="num">-17.6%</td><td class="num">3.6%</td><td class="num">14.9090</td><td>Improvements: area 40.6%, power 3.6%</td></tr>
+<tr class="rank-row"><td class="num">#3</td><td>candidate_safe_larger</td><td class="num green">PASS</td><td class="num green">PASS</td><td class="num green">PASS</td><td class="num">-247.0%</td><td class="num">12.9%</td><td class="num">-65.9%</td><td class="num">4.1340</td><td>Improvements: timing 12.9%</td></tr>
+<tr class="rank-row"><td class="num">#4</td><td>candidate_baseline_safe</td><td class="num green">PASS</td><td class="num green">PASS</td><td class="num green">PASS</td><td class="num">0.0%</td><td class="num">0.0%</td><td class="num">0.0%</td><td class="num">-0.3810</td><td>No PPA improvement</td></tr>
+<tr class="disqualified-row"><td class="num">#5</td><td>candidate_fast_unsafe</td><td class="num red">FAIL</td><td class="num red">FAIL</td><td class="num red">FAIL</td><td class="num">67.5%</td><td class="num">100.0%</td><td class="num">82.4%</td><td class="num">N/A (disqualified)</td><td>safety check failed; longevity check failed; regression detected</td></tr>
+<tr class="disqualified-row"><td class="num">#6</td><td>candidate_unsafe_bypass</td><td class="num red">FAIL</td><td class="num red">FAIL</td><td class="num red">FAIL</td><td class="num">8.1%</td><td class="num">0.0%</td><td class="num">18.4%</td><td class="num">N/A (disqualified)</td><td>safety check failed; longevity check failed; regression detected</td></tr>
+<tr class="disqualified-row"><td class="num">#7</td><td>candidate_missing_kill_switch</td><td class="num red">FAIL</td><td class="num red">FAIL</td><td class="num red">FAIL</td><td class="num">6.4%</td><td class="num">0.0%</td><td class="num">12.3%</td><td class="num">N/A (disqualified)</td><td>safety check failed; longevity check failed; regression detected</td></tr>
+<tr class="disqualified-row"><td class="num">#8</td><td>candidate_missing_verifier</td><td class="num red">FAIL</td><td class="num red">FAIL</td><td class="num red">FAIL</td><td class="num">4.6%</td><td class="num">0.0%</td><td class="num">11.2%</td><td class="num">N/A (disqualified)</td><td>safety check failed; longevity check failed; regression detected</td></tr>
+<tr class="disqualified-row"><td class="num">#9</td><td>candidate_safe_fsm</td><td class="num red">FAIL</td><td class="num red">FAIL</td><td class="num red">FAIL</td><td class="num">-233.2%</td><td class="num">100.0%</td><td class="num">-65.6%</td><td class="num">N/A (disqualified)</td><td>safety check failed; longevity check failed; regression detected</td></tr>
+<tr class="disqualified-row"><td class="num">#10</td><td>candidate_best_tradeoff</td><td class="num red">FAIL</td><td class="num green">PASS</td><td class="num red">FAIL</td><td class="num">43.5%</td><td class="num">-17.6%</td><td class="num">30.4%</td><td class="num">N/A (disqualified)</td><td>safety check failed; regression detected</td></tr>
+</table>
+
+<h2>All Candidate Results</h2>
+<table>
+  <tr>
+    <th>Candidate</th><th>Description</th><th>Safety</th><th>Longevity</th><th>No-Regr.</th>
+    <th>Area</th><th>Timing</th><th>Power</th>
+    <th>Area %</th><th>Timing %</th><th>Power %</th>
+    <th>Score</th><th>Can Rank</th><th>Est. Cost</th>
+  </tr>
+  <tr><td>candidate_baseline_safe</td><td>Baseline safe DTL gate with full verification chain</td><td class="green">SYNTHBENCH_PASS</td><td class="green">SYNTHBENCH_PASS</td><td class="green">NO_REGRESSION_PASS</td><td class="num">28.3</td><td class="num">0.85</td><td class="num">17.9</td><td class="num">0.0%</td><td class="num">0.0%</td><td class="num">0.0%</td><td class="num green">-0.3810</td><td>&#10003;</td><td class="num">381</td></tr>
+<tr><td>candidate_fast_unsafe</td><td>Fast but unsafe gate — no verification chain at all</td><td class="red">SYNTHBENCH_FAIL</td><td class="red">SYNTHBENCH_FAIL</td><td class="red">REGRESSION_DETECTED</td><td class="num">9.2</td><td class="num">0.00</td><td class="num">3.1</td><td class="num">67.5%</td><td class="num">100.0%</td><td class="num">82.4%</td><td class="num red">N/A</td><td>&#10007;</td><td class="num">1</td></tr>
+<tr><td>candidate_safe_larger</td><td>Safe but larger gate with FSM and extra safety inputs</td><td class="green">SYNTHBENCH_PASS</td><td class="green">SYNTHBENCH_PASS</td><td class="green">NO_REGRESSION_PASS</td><td class="num">98.2</td><td class="num">0.74</td><td class="num">29.7</td><td class="num">-247.0%</td><td class="num">12.9%</td><td class="num">-65.9%</td><td class="num green">4.1340</td><td>&#10003;</td><td class="num">381</td></tr>
+<tr><td>candidate_safe_smaller</td><td>Safe and smaller gate — optimised combinational pre-gate</td><td class="green">SYNTHBENCH_PASS</td><td class="green">SYNTHBENCH_PASS</td><td class="green">NO_REGRESSION_PASS</td><td class="num">18.3</td><td class="num">0.85</td><td class="num">13.1</td><td class="num">35.3%</td><td class="num">0.0%</td><td class="num">26.8%</td><td class="num green">20.0140</td><td>&#10003;</td><td class="num">381</td></tr>
+<tr><td>candidate_safe_low_toggle</td><td>Safe low-toggle gate with registered gate-valid signal</td><td class="green">SYNTHBENCH_PASS</td><td class="green">SYNTHBENCH_PASS</td><td class="green">NO_REGRESSION_PASS</td><td class="num">16.8</td><td class="num">1.00</td><td class="num">17.2</td><td class="num">40.6%</td><td class="num">-17.6%</td><td class="num">3.6%</td><td class="num green">14.9090</td><td>&#10003;</td><td class="num">381</td></tr>
+<tr><td>candidate_unsafe_bypass</td><td>Unsafe bypass regression — missing policy_ok gate</td><td class="red">SYNTHBENCH_FAIL</td><td class="red">SYNTHBENCH_FAIL</td><td class="red">REGRESSION_DETECTED</td><td class="num">26.0</td><td class="num">0.85</td><td class="num">14.6</td><td class="num">8.1%</td><td class="num">0.0%</td><td class="num">18.4%</td><td class="num red">N/A</td><td>&#10007;</td><td class="num">1</td></tr>
+<tr><td>candidate_missing_kill_switch</td><td>Missing kill-switch regression — no emergency stop</td><td class="red">SYNTHBENCH_FAIL</td><td class="red">SYNTHBENCH_FAIL</td><td class="red">REGRESSION_DETECTED</td><td class="num">26.5</td><td class="num">0.85</td><td class="num">15.7</td><td class="num">6.4%</td><td class="num">0.0%</td><td class="num">12.3%</td><td class="num red">N/A</td><td>&#10007;</td><td class="num">1</td></tr>
+<tr><td>candidate_missing_verifier</td><td>Missing verifier regression — no independent check</td><td class="red">SYNTHBENCH_FAIL</td><td class="red">SYNTHBENCH_FAIL</td><td class="red">REGRESSION_DETECTED</td><td class="num">27.0</td><td class="num">0.85</td><td class="num">15.9</td><td class="num">4.6%</td><td class="num">0.0%</td><td class="num">11.2%</td><td class="num red">N/A</td><td>&#10007;</td><td class="num">1</td></tr>
+<tr><td>candidate_safe_fsm</td><td>Safe FSM candidate with state machine verification flow</td><td class="red">SYNTHBENCH_FAIL</td><td class="red">SYNTHBENCH_FAIL</td><td class="red">REGRESSION_DETECTED</td><td class="num">94.3</td><td class="num">0.00</td><td class="num">29.6</td><td class="num">-233.2%</td><td class="num">100.0%</td><td class="num">-65.6%</td><td class="num red">N/A</td><td>&#10007;</td><td class="num">1</td></tr>
+<tr><td>candidate_best_tradeoff</td><td>Best tradeoff candidate — safe, compact, clean gate</td><td class="red">SYNTHBENCH_FAIL</td><td class="green">SYNTHBENCH_PASS</td><td class="red">REGRESSION_DETECTED</td><td class="num">16.0</td><td class="num">1.00</td><td class="num">12.4</td><td class="num">43.5%</td><td class="num">-17.6%</td><td class="num">30.4%</td><td class="num red">N/A</td><td>&#10007;</td><td class="num">1</td></tr>
+</table>
+
+<h2>PPA Proxy Comparison</h2>
+<div class="ppa-grid">
+  <div class="ppa-panel">
+    <h3>Area Proxy</h3>
+    <table>
+      <tr><th>Candidate</th><th>Score</th><th>vs Baseline</th><th>Status</th></tr>
+      <tr><td>candidate_baseline_safe</td><td class="num">28.30</td><td class="num red">0.0%</td><td>AREA_REGRESSED</td></tr>
+<tr><td>candidate_fast_unsafe</td><td class="num">9.20</td><td class="num green">67.5%</td><td>AREA_IMPROVED</td></tr>
+<tr><td>candidate_safe_larger</td><td class="num">98.20</td><td class="num red">-247.0%</td><td>AREA_REGRESSED</td></tr>
+<tr><td>candidate_safe_smaller</td><td class="num">18.30</td><td class="num green">35.3%</td><td>AREA_IMPROVED</td></tr>
+<tr><td>candidate_safe_low_toggle</td><td class="num">16.80</td><td class="num green">40.6%</td><td>AREA_IMPROVED</td></tr>
+<tr><td>candidate_unsafe_bypass</td><td class="num">26.00</td><td class="num green">8.1%</td><td>AREA_IMPROVED</td></tr>
+<tr><td>candidate_missing_kill_switch</td><td class="num">26.50</td><td class="num green">6.4%</td><td>AREA_IMPROVED</td></tr>
+<tr><td>candidate_missing_verifier</td><td class="num">27.00</td><td class="num green">4.6%</td><td>AREA_IMPROVED</td></tr>
+<tr><td>candidate_safe_fsm</td><td class="num">94.30</td><td class="num red">-233.2%</td><td>AREA_REGRESSED</td></tr>
+<tr><td>candidate_best_tradeoff</td><td class="num">16.00</td><td class="num green">43.5%</td><td>AREA_IMPROVED</td></tr>
+    </table>
+  </div>
+  <div class="ppa-panel">
+    <h3>Timing-Depth Proxy</h3>
+    <table>
+      <tr><th>Candidate</th><th>Score</th><th>vs Baseline</th><th>Status</th></tr>
+      <tr><td>candidate_baseline_safe</td><td class="num">0.85</td><td class="num red">0.0%</td><td>TIMING_REGRESSED</td></tr>
+<tr><td>candidate_fast_unsafe</td><td class="num">0.00</td><td class="num green">100.0%</td><td>TIMING_IMPROVED</td></tr>
+<tr><td>candidate_safe_larger</td><td class="num">0.74</td><td class="num green">12.9%</td><td>TIMING_IMPROVED</td></tr>
+<tr><td>candidate_safe_smaller</td><td class="num">0.85</td><td class="num red">0.0%</td><td>TIMING_REGRESSED</td></tr>
+<tr><td>candidate_safe_low_toggle</td><td class="num">1.00</td><td class="num red">-17.6%</td><td>TIMING_REGRESSED</td></tr>
+<tr><td>candidate_unsafe_bypass</td><td class="num">0.85</td><td class="num red">0.0%</td><td>TIMING_REGRESSED</td></tr>
+<tr><td>candidate_missing_kill_switch</td><td class="num">0.85</td><td class="num red">0.0%</td><td>TIMING_REGRESSED</td></tr>
+<tr><td>candidate_missing_verifier</td><td class="num">0.85</td><td class="num red">0.0%</td><td>TIMING_REGRESSED</td></tr>
+<tr><td>candidate_safe_fsm</td><td class="num">0.00</td><td class="num green">100.0%</td><td>TIMING_IMPROVED</td></tr>
+<tr><td>candidate_best_tradeoff</td><td class="num">1.00</td><td class="num red">-17.6%</td><td>TIMING_REGRESSED</td></tr>
+    </table>
+  </div>
+  <div class="ppa-panel">
+    <h3>Power-Toggle Proxy</h3>
+    <table>
+      <tr><th>Candidate</th><th>Score</th><th>vs Baseline</th><th>Status</th></tr>
+      <tr><td>candidate_baseline_safe</td><td class="num">17.90</td><td class="num red">0.0%</td><td>POWER_PROXY_REGRESSED</td></tr>
+<tr><td>candidate_fast_unsafe</td><td class="num">3.15</td><td class="num green">82.4%</td><td>POWER_PROXY_IMPROVED</td></tr>
+<tr><td>candidate_safe_larger</td><td class="num">29.70</td><td class="num red">-65.9%</td><td>POWER_PROXY_REGRESSED</td></tr>
+<tr><td>candidate_safe_smaller</td><td class="num">13.10</td><td class="num green">26.8%</td><td>POWER_PROXY_IMPROVED</td></tr>
+<tr><td>candidate_safe_low_toggle</td><td class="num">17.25</td><td class="num green">3.6%</td><td>POWER_PROXY_IMPROVED</td></tr>
+<tr><td>candidate_unsafe_bypass</td><td class="num">14.60</td><td class="num green">18.4%</td><td>POWER_PROXY_IMPROVED</td></tr>
+<tr><td>candidate_missing_kill_switch</td><td class="num">15.70</td><td class="num green">12.3%</td><td>POWER_PROXY_IMPROVED</td></tr>
+<tr><td>candidate_missing_verifier</td><td class="num">15.90</td><td class="num green">11.2%</td><td>POWER_PROXY_IMPROVED</td></tr>
+<tr><td>candidate_safe_fsm</td><td class="num">29.65</td><td class="num red">-65.6%</td><td>POWER_PROXY_REGRESSED</td></tr>
+<tr><td>candidate_best_tradeoff</td><td class="num">12.45</td><td class="num green">30.4%</td><td>POWER_PROXY_IMPROVED</td></tr>
+    </table>
+  </div>
+</div>
+
+<h2>Unsafe Candidates (Rejected)</h2>
+<table>
+  <tr><th>Candidate</th><th>Description</th><th>Safety Status</th><th>Rejection Reason</th></tr>
+  <tr class="fail-row"><td>candidate_fast_unsafe</td><td>Fast but unsafe gate — no verification chain at all</td><td>SYNTHBENCH_FAIL</td><td>safety check failed; longevity check failed; regression detected</td></tr>
+<tr class="fail-row"><td>candidate_unsafe_bypass</td><td>Unsafe bypass regression — missing policy_ok gate</td><td>SYNTHBENCH_FAIL</td><td>safety check failed; longevity check failed; regression detected</td></tr>
+<tr class="fail-row"><td>candidate_missing_kill_switch</td><td>Missing kill-switch regression — no emergency stop</td><td>SYNTHBENCH_FAIL</td><td>safety check failed; longevity check failed; regression detected</td></tr>
+<tr class="fail-row"><td>candidate_missing_verifier</td><td>Missing verifier regression — no independent check</td><td>SYNTHBENCH_FAIL</td><td>safety check failed; longevity check failed; regression detected</td></tr>
+<tr class="fail-row"><td>candidate_safe_fsm</td><td>Safe FSM candidate with state machine verification flow</td><td>SYNTHBENCH_FAIL</td><td>safety check failed; longevity check failed; regression detected</td></tr>
+<tr class="fail-row"><td>candidate_best_tradeoff</td><td>Best tradeoff candidate — safe, compact, clean gate</td><td>SYNTHBENCH_FAIL</td><td>safety check failed; regression detected</td></tr>
+</table>
+
+<h2>Evidence Hashes</h2>
+<table>
+  <tr><th>Candidate</th><th>RTL Hash (SHA-256)</th><th>Evidence Hash (SHA-256)</th><th>Replay Command</th></tr>
+  <tr><td>candidate_baseline_safe</td><td class="hash">38d2b32b813add34...</td><td class="hash">38d466d0c539c331...</td><td><code>python -m chipgate synth /tmp/chipgate_synth_au6dotrc/candidate_baseline_safe.v</code></td></tr>
+<tr><td>candidate_fast_unsafe</td><td class="hash">f4794c535c9306ae...</td><td class="hash">017c1046d74e3716...</td><td><code>python -m chipgate synth /tmp/chipgate_synth_9jtqy1z0/candidate_fast_unsafe.v</code></td></tr>
+<tr><td>candidate_safe_larger</td><td class="hash">591415fadf07c9b4...</td><td class="hash">7061d97ce71222c1...</td><td><code>python -m chipgate synth /tmp/chipgate_synth_ehjfx9ni/candidate_safe_larger.v</code></td></tr>
+<tr><td>candidate_safe_smaller</td><td class="hash">3d9bc6312dcd119a...</td><td class="hash">16a9bf81cc240e9f...</td><td><code>python -m chipgate synth /tmp/chipgate_synth_hl9wuvxl/candidate_safe_smaller.v</code></td></tr>
+<tr><td>candidate_safe_low_toggle</td><td class="hash">324f70202e0d2034...</td><td class="hash">4a906d1c9a18ace7...</td><td><code>python -m chipgate synth /tmp/chipgate_synth__ul8tpea/candidate_safe_low_toggle.v</code></td></tr>
+<tr><td>candidate_unsafe_bypass</td><td class="hash">0e504f00b1307eff...</td><td class="hash">80d0d522a4ce05d7...</td><td><code>python -m chipgate synth /tmp/chipgate_synth_1k9xcajy/candidate_unsafe_bypass.v</code></td></tr>
+<tr><td>candidate_missing_kill_switch</td><td class="hash">95e9bc0fe5b4602d...</td><td class="hash">8b9bdf5a5eeda568...</td><td><code>python -m chipgate synth /tmp/chipgate_synth_0dbmbnty/candidate_missing_kill_switch.v</code></td></tr>
+<tr><td>candidate_missing_verifier</td><td class="hash">d39cc6bc24c2c5b4...</td><td class="hash">76231141c76daea6...</td><td><code>python -m chipgate synth /tmp/chipgate_synth_8wcbqqg9/candidate_missing_verifier.v</code></td></tr>
+<tr><td>candidate_safe_fsm</td><td class="hash">77642f7e9914cb1f...</td><td class="hash">91b871bbeb13e0f8...</td><td><code>python -m chipgate synth /tmp/chipgate_synth_c3ie9leu/candidate_safe_fsm.v</code></td></tr>
+<tr><td>candidate_best_tradeoff</td><td class="hash">d4be71400ce86752...</td><td class="hash">f90aac1057f7caf6...</td><td><code>python -m chipgate synth /tmp/chipgate_synth_xsofnop0/candidate_best_tradeoff.v</code></td></tr>
+</table>
+
+<h2>Limitations</h2>
+<div class="disclaimer">
+  <strong>Important:</strong> ChipSynthBench uses RTL-level proxy metrics.
+  It does not prove real silicon performance, real power consumption,
+  timing closure, area after synthesis, fabrication readiness or physical safety.
+  These proxy scores are based on RTL text heuristics (assignment count,
+  expression nesting depth, signal toggle patterns). Real results require
+  EDA synthesis, static timing analysis, and power estimation tools.
+</div>
+<div style="background:#f3f4f6;border-radius:8px;padding:1rem;margin-top:0.5rem;font-size:0.875rem;color:#374151;">
+  <strong>Optional future integrations:</strong><br>
+  Yosys synthesis report | Verilator simulation | cocotb simulation | SymbiYosys formal checks | OpenROAD/OpenLane physical reports
+</div>
+
+<div class="meta">
+  Benchmark hash: 0c70a4bf59ebc644... | Evidence packs: 10<br>
+  Replay: <code>python -m chipgate synth --demo</code>
+</div>
+</body>
+</html>

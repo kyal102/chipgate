@@ -1,0 +1,463 @@
+{
+  "artifact_hash_count": 8,
+  "asic_flow_ready_rate": 0.0,
+  "benchmark_name": "siliconbench_v0",
+  "benchmark_version": "0.3.0",
+  "design_results": [
+    {
+      "asic_flow_details": {
+        "command": "",
+        "note": "Install OpenLane or OpenROAD to enable ASIC flow readiness checks",
+        "openlane_available": false,
+        "openroad_available": false,
+        "output": "ASIC flow skipped: neither OpenLane nor OpenROAD found on PATH",
+        "status": "ASIC_FLOW_SKIPPED_TOOL_MISSING",
+        "tool_version": null
+      },
+      "asic_flow_status": "ASIC_FLOW_SKIPPED_TOOL_MISSING",
+      "design_id": "safe_dtl_gate",
+      "evidence_record": {
+        "artifact_hashes": [
+          {
+            "label": "rtl_input",
+            "sha256": "e299c87d0c582355374b88704172e83ce45007b87ae04a3f540874a000575197"
+          },
+          {
+            "label": "report",
+            "sha256": "b0804948a921d0799de488f8408f41efd287cea36bb96fdcb0a2632a94cb2d04"
+          }
+        ],
+        "asic_flow_result": "ASIC_FLOW_SKIPPED_TOOL_MISSING",
+        "benchmark_name": "siliconbench_v0",
+        "benchmark_version": "0.3.0",
+        "certificate_hash": "92d96f1f3e4ecb2b20843c4f306f2c458dbfa3f6bf2b109e0538986dfe78a32e",
+        "chipgate_safety_result": "RTL_SCAN_PASS",
+        "design_id": "safe_dtl_gate",
+        "formal_result": "FORMAL_SKIPPED_TOOL_MISSING",
+        "fpga_flow_result": "FPGA_FLOW_SKIPPED_TOOL_MISSING",
+        "lint_result": "LINT_SKIPPED_TOOL_MISSING",
+        "public_wording": "SiliconReadinessBench checks whether safe RTL candidates survive synthesis, formal checks, FPGA flow and ASIC-flow readiness. It does not prove silicon correctness, physical safety, real power, real timing closure, physical durability, regulatory compliance or fabrication readiness. It checks whether RTL passes reproducible open-source tool-flow readiness stages.",
+        "replay_command": "python -m chipgate silicon --demo",
+        "rtl_hash": "e299c87d0c582355374b88704172e83ce45007b87ae04a3f540874a000575197",
+        "synthesis_result": "SYNTHESIS_SKIPPED_TOOL_MISSING",
+        "timestamp_utc": "2026-06-21T13:54:04.520254+00:00",
+        "tool_versions": {
+          "nextpnr": null,
+          "openlane": null,
+          "openroad": null,
+          "symbiyosys": null,
+          "verilator": null,
+          "yosys": null
+        }
+      },
+      "formal_details": {
+        "command": "",
+        "output": "SymbiYosys (sby) not found on PATH",
+        "properties_checked": 0,
+        "properties_failed": 0,
+        "properties_passed": 0,
+        "property_details": [],
+        "status": "FORMAL_SKIPPED_TOOL_MISSING",
+        "tool_version": null
+      },
+      "formal_status": "FORMAL_SKIPPED_TOOL_MISSING",
+      "fpga_flow_details": {
+        "command": "",
+        "nextpnr_available": false,
+        "output": "FPGA flow skipped: Yosys, nextpnr not found",
+        "status": "FPGA_FLOW_SKIPPED_TOOL_MISSING",
+        "tool_version": null,
+        "yosys_available": false
+      },
+      "fpga_flow_status": "FPGA_FLOW_SKIPPED_TOOL_MISSING",
+      "lint_details": {
+        "command": "",
+        "error_count": 0,
+        "output": "Verilator not found on PATH",
+        "status": "LINT_SKIPPED_TOOL_MISSING",
+        "tool_version": null,
+        "warning_count": 0
+      },
+      "lint_status": "LINT_SKIPPED_TOOL_MISSING",
+      "overall_status": "SILICON_READINESS_PASS",
+      "rtl_hash": "e299c87d0c582355374b88704172e83ce45007b87ae04a3f540874a000575197",
+      "safety_findings": [
+        {
+          "description": "No assertions found in the design",
+          "line_number": 0,
+          "rule_id": "CG010",
+          "severity": "medium",
+          "signal_name": ""
+        },
+        {
+          "description": "Safety gate present \u2014 'actuator_enable' gated by [verifier_ok, policy_ok, kill_switch]",
+          "line_number": 16,
+          "rule_id": "CG014",
+          "severity": "info",
+          "signal_name": "actuator_enable"
+        },
+        {
+          "description": "No testbench companion file detected for 'safe_dtl_gate'",
+          "line_number": 0,
+          "rule_id": "CG011",
+          "severity": "medium",
+          "signal_name": ""
+        }
+      ],
+      "safety_precheck_status": "RTL_SCAN_PASS",
+      "synthesis_details": {
+        "cell_count": 0,
+        "command": "",
+        "memory_count": 0,
+        "netlist_text": "",
+        "output": "Yosys not found on PATH",
+        "process_count": 0,
+        "status": "SYNTHESIS_SKIPPED_TOOL_MISSING",
+        "tool_version": null,
+        "wire_count": 0
+      },
+      "synthesis_status": "SYNTHESIS_SKIPPED_TOOL_MISSING"
+    },
+    {
+      "asic_flow_details": {},
+      "asic_flow_status": "BLOCKED_UNSAFE",
+      "design_id": "unsafe_direct_actuator",
+      "evidence_record": {
+        "artifact_hashes": [
+          {
+            "label": "rtl_input",
+            "sha256": "2c3797397d486870c270783aaec9f4b175fd77f295b3878b3a9347ce6db257af"
+          },
+          {
+            "label": "report",
+            "sha256": "171d65bb728e961916e0d386bd91a34f893c1d60e6b98cc9ff37a8c7f7831f5b"
+          }
+        ],
+        "asic_flow_result": "BLOCKED_UNSAFE",
+        "benchmark_name": "siliconbench_v0",
+        "benchmark_version": "0.3.0",
+        "certificate_hash": "e389b2f9010e8e21441b675e84259aeb5e9b10a6cc4a1ee39350a78b1553151e",
+        "chipgate_safety_result": "RTL_SCAN_FAIL",
+        "design_id": "unsafe_direct_actuator",
+        "formal_result": "BLOCKED_UNSAFE",
+        "fpga_flow_result": "BLOCKED_UNSAFE",
+        "lint_result": "BLOCKED_UNSAFE",
+        "public_wording": "SiliconReadinessBench checks whether safe RTL candidates survive synthesis, formal checks, FPGA flow and ASIC-flow readiness. It does not prove silicon correctness, physical safety, real power, real timing closure, physical durability, regulatory compliance or fabrication readiness. It checks whether RTL passes reproducible open-source tool-flow readiness stages.",
+        "replay_command": "python -m chipgate silicon --demo",
+        "rtl_hash": "2c3797397d486870c270783aaec9f4b175fd77f295b3878b3a9347ce6db257af",
+        "synthesis_result": "BLOCKED_UNSAFE",
+        "timestamp_utc": "2026-06-21T13:54:04.520888+00:00",
+        "tool_versions": {
+          "nextpnr": null,
+          "openlane": null,
+          "openroad": null,
+          "symbiyosys": null,
+          "verilator": null,
+          "yosys": null
+        }
+      },
+      "formal_details": {},
+      "formal_status": "BLOCKED_UNSAFE",
+      "fpga_flow_details": {},
+      "fpga_flow_status": "BLOCKED_UNSAFE",
+      "lint_details": {},
+      "lint_status": "BLOCKED_UNSAFE",
+      "overall_status": "SILICON_READINESS_FAIL",
+      "rtl_hash": "2c3797397d486870c270783aaec9f4b175fd77f295b3878b3a9347ce6db257af",
+      "safety_findings": [
+        {
+          "description": "Missing reset signal \u2014 no 'rst' or 'reset' found in sensitivity list or always block",
+          "line_number": 0,
+          "rule_id": "CG001",
+          "severity": "critical",
+          "signal_name": ""
+        },
+        {
+          "description": "Hardcoded bypass \u2014 'actuator_enable' directly assigned from 'ai_output'",
+          "line_number": 9,
+          "rule_id": "CG006",
+          "severity": "critical",
+          "signal_name": "actuator_enable"
+        },
+        {
+          "description": "Actuator 'actuator_enable' not gated by verifier_ok",
+          "line_number": 9,
+          "rule_id": "CG007",
+          "severity": "critical",
+          "signal_name": "actuator_enable"
+        },
+        {
+          "description": "Actuator 'actuator_enable' not gated by policy_ok",
+          "line_number": 9,
+          "rule_id": "CG008",
+          "severity": "critical",
+          "signal_name": "actuator_enable"
+        },
+        {
+          "description": "Kill switch / emergency stop path missing for actuator output(s)",
+          "line_number": 0,
+          "rule_id": "CG009",
+          "severity": "critical",
+          "signal_name": ""
+        },
+        {
+          "description": "No assertions found in the design",
+          "line_number": 0,
+          "rule_id": "CG010",
+          "severity": "medium",
+          "signal_name": ""
+        },
+        {
+          "description": "No testbench companion file detected for 'unsafe_direct_actuator'",
+          "line_number": 0,
+          "rule_id": "CG011",
+          "severity": "medium",
+          "signal_name": ""
+        }
+      ],
+      "safety_precheck_status": "RTL_SCAN_FAIL",
+      "synthesis_details": {},
+      "synthesis_status": "BLOCKED_UNSAFE"
+    },
+    {
+      "asic_flow_details": {
+        "command": "",
+        "note": "Install OpenLane or OpenROAD to enable ASIC flow readiness checks",
+        "openlane_available": false,
+        "openroad_available": false,
+        "output": "ASIC flow skipped: neither OpenLane nor OpenROAD found on PATH",
+        "status": "ASIC_FLOW_SKIPPED_TOOL_MISSING",
+        "tool_version": null
+      },
+      "asic_flow_status": "ASIC_FLOW_SKIPPED_TOOL_MISSING",
+      "design_id": "safe_fsm_gate",
+      "evidence_record": {
+        "artifact_hashes": [
+          {
+            "label": "rtl_input",
+            "sha256": "8952e274931be7cc735941e94e887e1fc177245dfff02440fa35ab4c585eb92a"
+          },
+          {
+            "label": "report",
+            "sha256": "b0804948a921d0799de488f8408f41efd287cea36bb96fdcb0a2632a94cb2d04"
+          }
+        ],
+        "asic_flow_result": "ASIC_FLOW_SKIPPED_TOOL_MISSING",
+        "benchmark_name": "siliconbench_v0",
+        "benchmark_version": "0.3.0",
+        "certificate_hash": "73c01a417b2e5ca9b72d5edc66c83b9894307406e7f767e969b32d11d676632d",
+        "chipgate_safety_result": "RTL_SCAN_PASS",
+        "design_id": "safe_fsm_gate",
+        "formal_result": "FORMAL_SKIPPED_TOOL_MISSING",
+        "fpga_flow_result": "FPGA_FLOW_SKIPPED_TOOL_MISSING",
+        "lint_result": "LINT_SKIPPED_TOOL_MISSING",
+        "public_wording": "SiliconReadinessBench checks whether safe RTL candidates survive synthesis, formal checks, FPGA flow and ASIC-flow readiness. It does not prove silicon correctness, physical safety, real power, real timing closure, physical durability, regulatory compliance or fabrication readiness. It checks whether RTL passes reproducible open-source tool-flow readiness stages.",
+        "replay_command": "python -m chipgate silicon --demo",
+        "rtl_hash": "8952e274931be7cc735941e94e887e1fc177245dfff02440fa35ab4c585eb92a",
+        "synthesis_result": "SYNTHESIS_SKIPPED_TOOL_MISSING",
+        "timestamp_utc": "2026-06-21T13:54:04.522241+00:00",
+        "tool_versions": {
+          "nextpnr": null,
+          "openlane": null,
+          "openroad": null,
+          "symbiyosys": null,
+          "verilator": null,
+          "yosys": null
+        }
+      },
+      "formal_details": {
+        "command": "",
+        "output": "SymbiYosys (sby) not found on PATH",
+        "properties_checked": 0,
+        "properties_failed": 0,
+        "properties_passed": 0,
+        "property_details": [],
+        "status": "FORMAL_SKIPPED_TOOL_MISSING",
+        "tool_version": null
+      },
+      "formal_status": "FORMAL_SKIPPED_TOOL_MISSING",
+      "fpga_flow_details": {
+        "command": "",
+        "nextpnr_available": false,
+        "output": "FPGA flow skipped: Yosys, nextpnr not found",
+        "status": "FPGA_FLOW_SKIPPED_TOOL_MISSING",
+        "tool_version": null,
+        "yosys_available": false
+      },
+      "fpga_flow_status": "FPGA_FLOW_SKIPPED_TOOL_MISSING",
+      "lint_details": {
+        "command": "",
+        "error_count": 0,
+        "output": "Verilator not found on PATH",
+        "status": "LINT_SKIPPED_TOOL_MISSING",
+        "tool_version": null,
+        "warning_count": 0
+      },
+      "lint_status": "LINT_SKIPPED_TOOL_MISSING",
+      "overall_status": "SILICON_READINESS_PASS",
+      "rtl_hash": "8952e274931be7cc735941e94e887e1fc177245dfff02440fa35ab4c585eb92a",
+      "safety_findings": [
+        {
+          "description": "No assertions found in the design",
+          "line_number": 0,
+          "rule_id": "CG010",
+          "severity": "medium",
+          "signal_name": ""
+        },
+        {
+          "description": "No testbench companion file detected for 'safe_fsm_gate'",
+          "line_number": 0,
+          "rule_id": "CG011",
+          "severity": "medium",
+          "signal_name": ""
+        }
+      ],
+      "safety_precheck_status": "RTL_SCAN_PASS",
+      "synthesis_details": {
+        "cell_count": 0,
+        "command": "",
+        "memory_count": 0,
+        "netlist_text": "",
+        "output": "Yosys not found on PATH",
+        "process_count": 0,
+        "status": "SYNTHESIS_SKIPPED_TOOL_MISSING",
+        "tool_version": null,
+        "wire_count": 0
+      },
+      "synthesis_status": "SYNTHESIS_SKIPPED_TOOL_MISSING"
+    },
+    {
+      "asic_flow_details": {},
+      "asic_flow_status": "BLOCKED_UNSAFE",
+      "design_id": "bad_syntax",
+      "evidence_record": {
+        "artifact_hashes": [
+          {
+            "label": "rtl_input",
+            "sha256": "39fcb66a9367df5720a1fcfd96816176f2f04ce211d87e7b7b2331bbd3c42f8c"
+          },
+          {
+            "label": "report",
+            "sha256": "171d65bb728e961916e0d386bd91a34f893c1d60e6b98cc9ff37a8c7f7831f5b"
+          }
+        ],
+        "asic_flow_result": "BLOCKED_UNSAFE",
+        "benchmark_name": "siliconbench_v0",
+        "benchmark_version": "0.3.0",
+        "certificate_hash": "883c0877642fc02991d14a041a342ccdd67c860dbb22c068e6ae448e3fb99f09",
+        "chipgate_safety_result": "RTL_SCAN_FAIL",
+        "design_id": "bad_syntax",
+        "formal_result": "BLOCKED_UNSAFE",
+        "fpga_flow_result": "BLOCKED_UNSAFE",
+        "lint_result": "BLOCKED_UNSAFE",
+        "public_wording": "SiliconReadinessBench checks whether safe RTL candidates survive synthesis, formal checks, FPGA flow and ASIC-flow readiness. It does not prove silicon correctness, physical safety, real power, real timing closure, physical durability, regulatory compliance or fabrication readiness. It checks whether RTL passes reproducible open-source tool-flow readiness stages.",
+        "replay_command": "python -m chipgate silicon --demo",
+        "rtl_hash": "39fcb66a9367df5720a1fcfd96816176f2f04ce211d87e7b7b2331bbd3c42f8c",
+        "synthesis_result": "BLOCKED_UNSAFE",
+        "timestamp_utc": "2026-06-21T13:54:04.522712+00:00",
+        "tool_versions": {
+          "nextpnr": null,
+          "openlane": null,
+          "openroad": null,
+          "symbiyosys": null,
+          "verilator": null,
+          "yosys": null
+        }
+      },
+      "formal_details": {},
+      "formal_status": "BLOCKED_UNSAFE",
+      "fpga_flow_details": {},
+      "fpga_flow_status": "BLOCKED_UNSAFE",
+      "lint_details": {},
+      "lint_status": "BLOCKED_UNSAFE",
+      "overall_status": "SILICON_READINESS_FAIL",
+      "rtl_hash": "39fcb66a9367df5720a1fcfd96816176f2f04ce211d87e7b7b2331bbd3c42f8c",
+      "safety_findings": [
+        {
+          "description": "Missing reset signal \u2014 no 'rst' or 'reset' found in sensitivity list or always block",
+          "line_number": 0,
+          "rule_id": "CG001",
+          "severity": "critical",
+          "signal_name": ""
+        },
+        {
+          "description": "Undriven output(s): out",
+          "line_number": 0,
+          "rule_id": "CG004",
+          "severity": "critical",
+          "signal_name": "out"
+        },
+        {
+          "description": "No assertions found in the design",
+          "line_number": 0,
+          "rule_id": "CG010",
+          "severity": "medium",
+          "signal_name": ""
+        },
+        {
+          "description": "No testbench companion file detected for 'bad_syntax'",
+          "line_number": 0,
+          "rule_id": "CG011",
+          "severity": "medium",
+          "signal_name": ""
+        }
+      ],
+      "safety_precheck_status": "RTL_SCAN_FAIL",
+      "synthesis_details": {},
+      "synthesis_status": "BLOCKED_UNSAFE"
+    }
+  ],
+  "designs_tested": 4,
+  "evidence_packs_created": 4,
+  "formal_pass_rate": 0.0,
+  "fpga_flow_pass_rate": 0.0,
+  "limitation": "These results are tool-flow readiness checks, not silicon results. They do not prove silicon correctness, physical safety, real power, real timing closure, physical durability, regulatory compliance, or fabrication readiness. Passing a tool-flow stage means the RTL was accepted by that tool in this specific configuration and version. Actual silicon results require foundry signoff, tapeout, and physical measurement.",
+  "lint_pass_rate": 0.0,
+  "overall_status": "SILICON_READINESS_PASS",
+  "public_wording": "SiliconReadinessBench checks whether safe RTL candidates survive synthesis, formal checks, FPGA flow and ASIC-flow readiness. It does not prove silicon correctness, physical safety, real power, real timing closure, physical durability, regulatory compliance or fabrication readiness. It checks whether RTL passes reproducible open-source tool-flow readiness stages.",
+  "replay_match_rate": 100.0,
+  "safety_precheck_passed": 2,
+  "synthesis_pass_rate": 0.0,
+  "timestamp_utc": "2026-06-21T13:54:04.517344+00:00",
+  "toolchain_coverage": 0.0,
+  "toolchain_report": {
+    "nextpnr": {
+      "found": false,
+      "note": "skipped (not found on PATH)",
+      "path": null,
+      "version": null
+    },
+    "openlane": {
+      "found": false,
+      "note": "skipped (not found on PATH)",
+      "path": null,
+      "version": null
+    },
+    "openroad": {
+      "found": false,
+      "note": "skipped (not found on PATH)",
+      "path": null,
+      "version": null
+    },
+    "symbiyosys": {
+      "found": false,
+      "note": "skipped (not found on PATH)",
+      "path": null,
+      "version": null
+    },
+    "verilator": {
+      "found": false,
+      "note": "skipped (not found on PATH)",
+      "path": null,
+      "version": null
+    },
+    "yosys": {
+      "found": false,
+      "note": "skipped (not found on PATH)",
+      "path": null,
+      "version": null
+    }
+  },
+  "total_cell_count": 0,
+  "total_wire_count": 0
+}

@@ -1,0 +1,4 @@
+# ChipGate Runtime Dependencies
+# Core package — no external tools required for basic scanning
+pyyaml>=6.0
+jsonschema>=4.0.0

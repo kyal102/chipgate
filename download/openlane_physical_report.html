@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenLanePhysicalBench Report</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 2rem; color: #1f2937; background: #fff; line-height: 1.6; }
+h1 { font-size: 1.6rem; color: #111827; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem; }
+h2 { font-size: 1.2rem; color: #374151; margin-top: 2rem; border-bottom: 1px solid #e5e7eb; padding-bottom: 0.3rem; }
+.meta { color: #6b7280; font-size: 0.875rem; margin-bottom: 1.5rem; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; margin: 1rem 0; }
+.card { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; text-align: center; }
+.card .label { font-size: 0.7rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; }
+.card .value { font-size: 1.5rem; font-weight: 700; color: #111827; }
+.pass { color: #16a34a; } .fail { color: #dc2626; } .skip { color: #9ca3af; } .neutral { color: #6366f1; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.8rem; }
+th, td { padding: 0.4rem 0.6rem; text-align: left; border-bottom: 1px solid #e5e7eb; }
+th { background: #f3f4f6; font-weight: 600; position: sticky; top: 0; }
+tr:hover { background: #f9fafb; }
+.badge { display: inline-block; padding: 0.1rem 0.5rem; border-radius: 9999px; font-size: 0.65rem; font-weight: 600; }
+.badge.pass { background: #dcfce7; color: #166534; }
+.badge.fail { background: #fee2e2; color: #991b1b; }
+.badge.skip { background: #f3f4f6; color: #6b7280; }
+.badge.neutral { background: #e0e7ff; color: #3730a3; }
+.hash { font-family: monospace; font-size: 0.7rem; color: #6b7280; }
+.disclaimer { background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 1rem; margin: 1.5rem 0; font-size: 0.85rem; color: #92400e; }
+.disclaimer strong { color: #92400e; }
+.limitation { background: #fef2f2; border: 1px solid #fca5a5; border-radius: 8px; padding: 1rem; margin: 1rem 0; font-size: 0.8rem; color: #991b1b; }
+.section { margin: 1.5rem 0; }
+ul { padding-left: 1.5rem; }
+li { margin: 0.25rem 0; }
+</style>
+</head>
+<body>
+
+<h1>OpenLanePhysicalBench Report</h1>
+<p class="meta">ChipGate v0.4.0 | 2026-06-21T22:34:03Z</p>
+
+<div class="disclaimer">
+<strong>Public Disclaimer:</strong> OpenLanePhysicalBench checks whether a tiny DTL gate design can move from open-silicon preparation toward a reproducible ASIC physical-flow readiness review. It does not prove silicon correctness, fabrication readiness, timing closure, real power, real area, physical durability, regulatory compliance or safety-critical deployment.
+</div>
+
+<div class="limitation">
+<strong>Limitation:</strong> Passing OpenLanePhysicalBench does not mean the design has been fabricated, accepted by Tiny Tapeout, timing-closed, power-characterised, physically tested, certified, or proven safe for real-world actuation. It means the generated artifacts passed structural and fixture-based report-parsing checks. Actual physical results require official OpenLane flow, foundry PDK, DRC/LVS signoff, and physical measurement.
+</div>
+
+<div class="cards">
+<div class="card"><div class="label">Designs Tested</div><div class="value">2</div></div>
+<div class="card"><div class="label">Config Pass Rate</div><div class="value pass">50%</div></div>
+<div class="card"><div class="label">OpenROAD Pass Rate</div><div class="value">0%</div></div>
+<div class="card"><div class="label">DRC Violations</div><div class="value pass">0</div></div>
+<div class="card"><div class="label">LVS Mismatches</div><div class="value pass">0</div></div>
+<div class="card"><div class="label">Worst Neg. Slack</div><div class="value">-0.45</div></div>
+<div class="card"><div class="label">GDS Artifacts</div><div class="value">0</div></div>
+<div class="card"><div class="label">Artifact Hashes</div><div class="value">6</div></div>
+<div class="card"><div class="label">Toolchain</div><div class="value">0%</div></div>
+<div class="card"><div class="label">Evidence Packs</div><div class="value">2</div></div>
+<div class="card"><div class="label">Manual Review</div><div class="value">6</div></div>
+<div class="card"><div class="label">Overall</div><div class="value fail">PHYSICAL_BENCH_FAIL</div></div>
+</div>
+
+<div class="section">
+<h2>Toolchain Status</h2>
+<table>
+<tr><th>Tool</th><th>Status</th><th>Details</th></tr>
+<tr><td>OpenLane</td><td class="skip">skipped</td><td>not found in PATH</td></tr>
+<tr><td>OpenROAD</td><td class="skip">skipped</td><td>not found in PATH</td></tr>
+<tr><td>Yosys</td><td class="skip">skipped</td><td>not found in PATH</td></tr>
+<tr><td>Magic</td><td class="skip">skipped</td><td>not found in PATH</td></tr>
+<tr><td>Netgen</td><td class="skip">skipped</td><td>not found in PATH</td></tr>
+<tr><td>KLayout</td><td class="skip">skipped</td><td>not found in PATH</td></tr>
+<tr><td>STA</td><td class="skip">skipped</td><td>not found in PATH</td></tr>
+
+</table>
+</div>
+
+<div class="section">
+<h2>Design Results</h2>
+<table>
+<tr>
+<th>Design</th><th>Safety</th><th>OL Config</th><th>OR Run</th>
+<th>DRC</th><th>LVS</th><th>Timing</th><th>GDS</th><th>Overall</th>
+</tr>
+<tr>
+<td><strong>tiny_dtl_gate_physical</strong></td>
+<td><span class="badge neutral">SAFETY_GATE_PRESENT</span></td>
+<td><span class="badge pass">OPENLANE_CONFIG_PASS</span></td>
+<td><span class="badge fail">OPENROAD_SKIPPED</span></td>
+<td><span class="badge neutral">DRC_CLEAN</span></td>
+<td><span class="badge neutral">LVS_CLEAN</span></td>
+<td><span class="badge fail">TIMING_REPORT_FAIL</span></td>
+<td><span class="badge fail">GDS_MISSING</span></td>
+<td><span class="badge pass">PHY_BENCH_PASS</span></td>
+</tr>
+<tr>
+<td><strong>unsafe_direct_output_physical</strong></td>
+<td><span class="badge fail">TT_SAFETY_PROPERTY_MISSING</span></td>
+<td><span class="badge neutral">UNSAFE_BLOCKED</span></td>
+<td><span class="badge neutral"></span></td>
+<td><span class="badge neutral">UNSAFE_BLOCKED</span></td>
+<td><span class="badge neutral">UNSAFE_BLOCKED</span></td>
+<td><span class="badge neutral">UNSAFE_BLOCKED</span></td>
+<td><span class="badge neutral">UNSAFE_BLOCKED</span></td>
+<td><span class="badge fail">PHY_BENCH_FAIL</span></td>
+</tr>
+
+</table>
+</div>
+
+<div class='section'><h2>Artifact Hashes</h2><table><tr><th>Design</th><th>Label</th><th>SHA-256</th><th>Size</th></tr><tr><td>tiny_dtl_gate_physical</td><td>rtl</td><td class="hash">144dd333ce31607fa1db9df3e8ed2540...</td><td>960</td></tr>
+<tr><td>tiny_dtl_gate_physical</td><td>config</td><td class="hash">c3a5ed123dcd3c6f57a477752531b1b5...</td><td>285</td></tr>
+<tr><td>tiny_dtl_gate_physical</td><td>report_drc</td><td class="hash">e57fd895f4c740b859235595f6440301...</td><td>187</td></tr>
+<tr><td>tiny_dtl_gate_physical</td><td>report_lvs</td><td class="hash">ae9224869ab8c92dd06250c32839a234...</td><td>185</td></tr>
+<tr><td>tiny_dtl_gate_physical</td><td>report_timing</td><td class="hash">68d22592c02f721599d35ea404b3a740...</td><td>252</td></tr>
+<tr><td>tiny_dtl_gate_physical</td><td>replay_command</td><td class="hash">9401d5dbee393cec6f1128a3841b2d39...</td><td>102</td></tr>
+</table></div>
+
+<div class='section'><h2>Manual Review Items</h2><ul><li>NEEDS_OFFICIAL_OPENLANE_RUN</li>
+<li>OpenROAD run skipped: tool not installed</li>
+<li>GDS file not available: run official OpenLane flow for GDS output</li>
+<li>NEEDS_MANUAL_REVIEW</li>
+<li>Design blocked: failed safety preflight</li>
+</ul></div>
+
+<div class="disclaimer">
+<strong>Reminder:</strong> OpenLanePhysicalBench does not prove silicon correctness,
+fabrication readiness, timing closure, real power, real area, physical durability,
+regulatory compliance or safety-critical deployment. It checks whether RTL and wrapper
+artifacts can pass or be prepared for reproducible physical-design flow stages and
+records the resulting reports, hashes and limitations.
+</div>
+
+</body>
+</html>

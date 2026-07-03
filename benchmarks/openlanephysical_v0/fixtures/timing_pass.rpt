@@ -1,0 +1,9 @@
+OpenROAD STA Timing Report
+=================================================
+Clock: clk
+slack (MET) 2.35 ns
+Startpoint: ai_output
+Endpoint: actuator_enable
+Path delay: 0.85 ns
+WNS: 2.35 ns
+All paths met timing.

@@ -1,19 +1,13 @@
-"""ChipGate Lite: deterministic structural sanity checks for Verilog RTL."""
+"""
+ChipGate — catches unsafe RTL before it becomes silicon.
 
-from chipgate.rtl_check import (
-    VERDICT_FAIL,
-    VERDICT_PASS,
-    VERDICT_REVIEW,
-    check_file,
-    check_source,
-    format_report,
-)
+A public hardware/RTL verification tool that checks Verilog/SystemVerilog
+designs for basic safety, lint readiness, and verification-gated output patterns.
 
-__all__ = [
-    "VERDICT_FAIL",
-    "VERDICT_PASS",
-    "VERDICT_REVIEW",
-    "check_file",
-    "check_source",
-    "format_report",
-]
+ChipGate checks RTL structure and verification-gated safety patterns.
+It does not guarantee hardware correctness, silicon readiness, physical safety,
+regulatory conformance or experimental validity.
+"""
+
+__version__ = "0.8.0"
+__author__ = "ChipGate Contributors"

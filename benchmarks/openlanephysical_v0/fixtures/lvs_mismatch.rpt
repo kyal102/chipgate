@@ -1,0 +1,6 @@
+Netgen LVS Report
+=================================================
+Netlists do not match.
+LVS: FAIL
+mismatch: Device count mismatch: expected 12, found 10
+error: Subcircuit pin connection mismatch on cell X1

@@ -1,0 +1,117 @@
+{
+  "artifacts": {
+    "docs/info.md": {
+      "sha256": "ee63cf26485786691a4bf293d28567729ee279ee36fc4b43509e88185cbb7521",
+      "size_bytes": 2476
+    },
+    "info.yaml": {
+      "sha256": "476c35dc70cdd4bc3156e75b64059c4e9f2792acc42726f9c46822a89654be69",
+      "size_bytes": 1186
+    },
+    "pinout.json": {
+      "sha256": "40e5fa3ebd4cf9188f83b423fd4087826a343f7c23b710e947318862ed22331b",
+      "size_bytes": 310
+    },
+    "tb_tiny_dtl_gate.v": {
+      "sha256": "83973438b81aee355e298b173b9b01e25b56f8614cc22f3d032a3605d6bccf61",
+      "size_bytes": 4329
+    },
+    "tiny_dtl_gate.v": {
+      "sha256": "93a3d24c84adff1ed1c9e149967ec79fa726e457bf9a369a16973aef0925afb5",
+      "size_bytes": 945
+    },
+    "tiny_dtl_gate_fsm.v": {
+      "sha256": "ed3f79fb61f1411e2b44b986aa28a0d452d66b0b332db6005ce3cdbba51f5dc0",
+      "size_bytes": 3557
+    },
+    "tt_um_chipgate_dtl_gate.v": {
+      "sha256": "9960a0aec9255fc04b71779e46a3748b20dfd3753cf63ef23ec6d34692744d9b",
+      "size_bytes": 1833
+    }
+  },
+  "submission_checks": [
+    {
+      "id": "1",
+      "name": "Top module file exists",
+      "status": "PASS"
+    },
+    {
+      "detail": "Expected: tt_um_chipgate_dtl_gate, Found: tt_um_chipgate_dtl_gate",
+      "id": "2",
+      "name": "Top module name matches info.yaml",
+      "status": "PASS"
+    },
+    {
+      "id": "3",
+      "name": "No private imports or names",
+      "status": "PASS"
+    },
+    {
+      "id": "4",
+      "name": "No unsupported SystemVerilog constructs",
+      "status": "PASS"
+    },
+    {
+      "id": "5",
+      "name": "No inferred latches",
+      "status": "PASS"
+    },
+    {
+      "id": "6",
+      "name": "Clock signal documented",
+      "status": "PASS"
+    },
+    {
+      "id": "7",
+      "name": "Reset signal documented",
+      "status": "PASS"
+    },
+    {
+      "id": "8",
+      "name": "Pinout documented in info.yaml",
+      "status": "PASS"
+    },
+    {
+      "id": "9",
+      "name": "docs/info.md exists",
+      "status": "PASS"
+    },
+    {
+      "id": "10",
+      "name": "Testbench exists",
+      "status": "PASS"
+    },
+    {
+      "detail": "Found 6/6 safety signals",
+      "id": "11",
+      "name": "Safety properties listed",
+      "status": "PASS"
+    },
+    {
+      "id": "12",
+      "name": "ChipGate scan passes",
+      "status": "PASS"
+    },
+    {
+      "detail": "LongevityBench gracefully skipped (no external tools required)",
+      "id": "13",
+      "name": "LongevityBench: pass or skip safely",
+      "status": "SKIP"
+    },
+    {
+      "detail": "SiliconReadinessBench gracefully skipped (no external tools required)",
+      "id": "14",
+      "name": "SiliconReadinessBench: pass or skip safely",
+      "status": "SKIP"
+    },
+    {
+      "detail": "FPGABoardBench gracefully skipped (no external tools required)",
+      "id": "15",
+      "name": "FPGABoardBench: pass or skip safely",
+      "status": "SKIP"
+    }
+  ],
+  "timestamp": "2026-06-21T21:45:04Z",
+  "tool": "ChipGate TinyTapeoutPrep",
+  "version": "0.4.0"
+}

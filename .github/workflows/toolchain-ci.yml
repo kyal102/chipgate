@@ -1,0 +1,153 @@
+# ChipGate Toolchain CI
+#
+# Manual-dispatch and main-branch toolchain CI. Installs Verilator and Yosys
+# (best-effort) and runs the full CI pipeline with real tool stages.
+# Missing tools cause stages to be SKIPPED, not FAIL.
+#
+# Passing this workflow does not guarantee silicon correctness, fabrication
+# readiness, physical safety, timing signoff, real power or real area.
+
+name: toolchain-ci
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "CI mode"
+        required: false
+        default: "full"
+        type: choice
+        options:
+          - quick
+          - full
+  push:
+    branches: [main]
+    paths:
+      - "chipgate/**"
+      - "tests/**"
+
+jobs:
+  toolchain-checks:
+    name: Full CI with toolchain
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install ChipGate dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Install Verilator (best-effort)
+        continue-on-error: true
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq verilator 2>/dev/null || echo "Verilator not available"
+          which verilator && verilator --version || echo "Verilator not found after install attempt"
+      - name: Install Yosys (best-effort)
+        continue-on-error: true
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq yosys 2>/dev/null || echo "Yosys not available"
+          which yosys && yosys --version || echo "Yosys not found after install attempt"
+      - name: Install SymbiYosys (best-effort)
+        continue-on-error: true
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq symbiyosys 2>/dev/null || echo "SymbiYosys not available"
+          which sby && sby --version || echo "sby not found after install attempt"
+      - name: Show toolchain status
+        run: python -m chipgate ci --toolchain-status
+      - name: Run CI full pipeline
+        run: |
+          MODE="${{ github.event.inputs.mode || 'full' }}"
+          python -m chipgate ci --${MODE} --json > ci_result.json
+          python -m chipgate ci --${MODE} --html ci_report.html
+      - name: Upload CI JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-result-json
+          path: ci_result.json
+          retention-days: 30
+      - name: Upload CI HTML
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ci-report-html
+          path: ci_report.html
+          retention-days: 30
+
+  verilator-stage:
+    name: Verilator lint on designs
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    needs: []
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Install Verilator
+        continue-on-error: true
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq verilator 2>/dev/null || echo "Verilator not available"
+      - name: Verilator lint on safe design
+        continue-on-error: true
+        run: |
+          if command -v verilator &> /dev/null; then
+            verilator --lint-only -Wall benchmarks/siliconbench_v0/designs/safe_dtl_gate.v
+          else
+            echo "Verilator not installed; skipping"
+          fi
+      - name: Verilator lint on bad-syntax design (expect failure)
+        continue-on-error: true
+        run: |
+          if command -v verilator &> /dev/null; then
+            if verilator --lint-only -Wall benchmarks/siliconbench_v0/designs/bad_syntax.v 2>&1; then
+              echo "UNEXPECTED: bad_syntax.v should fail Verilator lint"
+              exit 1
+            else
+              echo "EXPECTED: bad_syntax.v failed Verilator lint"
+            fi
+          else
+            echo "Verilator not installed; skipping"
+          fi
+
+  yosys-stage:
+    name: Yosys synthesis on designs
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    needs: []
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Install Yosys
+        continue-on-error: true
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq yosys 2>/dev/null || echo "Yosys not available"
+      - name: Yosys synthesis on safe design
+        continue-on-error: true
+        run: |
+          if command -v yosys &> /dev/null; then
+            yosys -p "read_verilog benchmarks/siliconbench_v0/designs/safe_dtl_gate.v; hierarchy -check; stat"
+          else
+            echo "Yosys not installed; skipping"
+          fi

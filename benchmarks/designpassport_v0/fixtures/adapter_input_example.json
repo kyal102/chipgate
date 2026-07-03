@@ -1,0 +1,9 @@
+{
+  "source": "jarvi3_public_adapter",
+  "artifact_id": "jarvi3_design_001",
+  "artifact_type": "rtl",
+  "user_intent": "design a safety-gated actuator controller",
+  "risk_level": "safety_critical",
+  "artifact_path": "",
+  "requested_gates": ["chipgate", "evidencepack", "replaygate"]
+}

@@ -1,0 +1,7 @@
+# Chemistry Formulas
+
+Reaction rate: r = k * [A]^m * [B]^n
+
+Molarity: M = mol / L
+
+Ideal gas: PV = nRT

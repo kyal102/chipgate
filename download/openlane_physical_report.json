@@ -1,0 +1,226 @@
+{
+  "artifacts_dir": "/tmp/chipgate_physical_f_bn7xmz",
+  "benchmark_name": "OpenLanePhysicalBench",
+  "benchmark_version": "0.4.0",
+  "design_results": [
+    {
+      "area_stats": {
+        "cell_count": 24,
+        "core_area_um2": 6400.0,
+        "die_area_um2": 10000.0,
+        "parser_note": "cell_count_found",
+        "source_file": "/home/z/my-project/chipgate/benchmarks/openlanephysical_v0/fixtures/area_stats.rpt",
+        "utilization_pct": 12.5
+      },
+      "design_id": "tiny_dtl_gate_physical",
+      "drc_result": {
+        "clean": true,
+        "parser_note": "keyword_clean",
+        "source_file": "/home/z/my-project/chipgate/benchmarks/openlanephysical_v0/fixtures/drc_clean.rpt",
+        "violation_count": 0,
+        "violations": []
+      },
+      "drc_status": "DRC_CLEAN",
+      "evidence_record": {
+        "artifact_hash_count": 6,
+        "artifact_hashes": [
+          {
+            "label": "rtl",
+            "path": "",
+            "sha256": "144dd333ce31607fa1db9df3e8ed254016548277f048d3d5d4d17d56f5519660",
+            "size_bytes": 960
+          },
+          {
+            "label": "config",
+            "path": "",
+            "sha256": "c3a5ed123dcd3c6f57a477752531b1b59c83c37cddecc29344f5694dd9c480f2",
+            "size_bytes": 285
+          },
+          {
+            "label": "report_drc",
+            "path": "",
+            "sha256": "e57fd895f4c740b859235595f6440301c13e258e94b0d8362be436fd84029d2c",
+            "size_bytes": 187
+          },
+          {
+            "label": "report_lvs",
+            "path": "",
+            "sha256": "ae9224869ab8c92dd06250c32839a2347e76d8a369a691c7bf89c7ba5b7d3060",
+            "size_bytes": 185
+          },
+          {
+            "label": "report_timing",
+            "path": "",
+            "sha256": "68d22592c02f721599d35ea404b3a740b37c4e5ee4f4cae0e25f6c271d3b7875",
+            "size_bytes": 252
+          },
+          {
+            "label": "replay_command",
+            "path": "",
+            "sha256": "9401d5dbee393cec6f1128a3841b2d39442d181d983d8473e80d3047ce763bba",
+            "size_bytes": 102
+          }
+        ],
+        "benchmark_name": "OpenLanePhysicalBench",
+        "benchmark_version": "0.4.0",
+        "certificate_hash": "a089aaa16d3474b8801d1cc2939aa678",
+        "chipgate_safety_result": "SAFETY_GATE_PRESENT",
+        "config_hash": "c3a5ed123dcd3c6f57a477752531b1b5",
+        "created": true,
+        "design_id": "tiny_dtl_gate_physical",
+        "drc_result": "DRC_CLEAN",
+        "gds_result": "GDS_MISSING",
+        "lvs_result": "LVS_CLEAN",
+        "manual_review_items": [
+          "NEEDS_OFFICIAL_OPENLANE_RUN",
+          "OpenROAD run skipped: tool not installed",
+          "GDS file not available: run official OpenLane flow for GDS output",
+          "NEEDS_MANUAL_REVIEW"
+        ],
+        "openlane_config_result": "OPENLANE_CONFIG_PASS",
+        "openroad_result": "OPENROAD_SKIPPED_TOOL_MISSING",
+        "public_wording": "OpenLanePhysicalBench checks whether a tiny DTL gate design can move from open-silicon preparation toward a reproducible ASIC physical-flow readiness review. It does not prove silicon correctness, fabrication readiness, timing closure, real power, real area, physical durability, regulatory compliance or safety-critical deployment.",
+        "replay_command": "python -m chipgate physical /home/z/my-project/chipgate/benchmarks/openlanephysical_v0/fixtures --json",
+        "rtl_hash": "144dd333ce31607fa1db9df3e8ed2540",
+        "timing_result": "TIMING_REPORT_FAIL",
+        "top_module_name": "tiny_dtl_gate_physical"
+      },
+      "gds_status": "GDS_MISSING",
+      "lvs_result": {
+        "clean": true,
+        "mismatch_count": 0,
+        "mismatches": [],
+        "parser_note": "netgen_clean",
+        "source_file": "/home/z/my-project/chipgate/benchmarks/openlanephysical_v0/fixtures/lvs_clean.rpt"
+      },
+      "lvs_status": "LVS_CLEAN",
+      "openlane_config_status": "OPENLANE_CONFIG_PASS",
+      "openroad_run_status": "OPENROAD_SKIPPED_TOOL_MISSING",
+      "overall_status": "PHYSICAL_BENCH_PASS",
+      "safety_status": "SAFETY_GATE_PRESENT",
+      "timing_result": {
+        "clock_name": "",
+        "parser_note": "openroad_style",
+        "pass_status": false,
+        "paths": [],
+        "source_file": "/home/z/my-project/chipgate/benchmarks/openlanephysical_v0/fixtures/timing_fail.rpt",
+        "total_negative_slack_paths": 1,
+        "worst_negative_slack": -0.45
+      },
+      "timing_status": "TIMING_REPORT_FAIL",
+      "top_module": "tiny_dtl_gate_physical"
+    },
+    {
+      "area_stats": {},
+      "design_id": "unsafe_direct_output_physical",
+      "drc_result": {},
+      "drc_status": "UNSAFE_BLOCKED",
+      "evidence_record": {
+        "artifact_hash_count": 0,
+        "artifact_hashes": [],
+        "benchmark_name": "OpenLanePhysicalBench",
+        "benchmark_version": "0.4.0",
+        "certificate_hash": "601d2c14a8369d662b328b03122c640f",
+        "chipgate_safety_result": "TT_SAFETY_PROPERTY_MISSING",
+        "config_hash": "",
+        "created": true,
+        "design_id": "unsafe_direct_output_physical",
+        "drc_result": "UNSAFE_BLOCKED",
+        "gds_result": "UNSAFE_BLOCKED",
+        "lvs_result": "UNSAFE_BLOCKED",
+        "manual_review_items": [
+          "Design blocked: failed safety preflight",
+          "NEEDS_MANUAL_REVIEW"
+        ],
+        "openlane_config_result": "UNSAFE_BLOCKED",
+        "openroad_result": "",
+        "public_wording": "OpenLanePhysicalBench checks whether a tiny DTL gate design can move from open-silicon preparation toward a reproducible ASIC physical-flow readiness review. It does not prove silicon correctness, fabrication readiness, timing closure, real power, real area, physical durability, regulatory compliance or safety-critical deployment.",
+        "replay_command": "python -m chipgate physical /home/z/my-project/chipgate/benchmarks/openlanephysical_v0/fixtures --json",
+        "rtl_hash": "ec51f0d92d50d224cc529476fa6db2c6",
+        "timing_result": "UNSAFE_BLOCKED",
+        "top_module_name": "unsafe_direct_output_physical"
+      },
+      "gds_status": "UNSAFE_BLOCKED",
+      "lvs_result": {},
+      "lvs_status": "UNSAFE_BLOCKED",
+      "openlane_config_status": "UNSAFE_BLOCKED",
+      "openroad_run_status": "",
+      "overall_status": "PHYSICAL_BENCH_FAIL",
+      "safety_status": "TT_SAFETY_PROPERTY_MISSING",
+      "timing_result": {},
+      "timing_status": "UNSAFE_BLOCKED",
+      "top_module": "unsafe_direct_output_physical"
+    }
+  ],
+  "limitation": "Passing OpenLanePhysicalBench does not mean the design has been fabricated, accepted by Tiny Tapeout, timing-closed, power-characterised, physically tested, certified, or proven safe for real-world actuation. It means the generated artifacts passed structural and fixture-based report-parsing checks. Actual physical results require official OpenLane flow, foundry PDK, DRC/LVS signoff, and physical measurement.",
+  "manual_review_items": [
+    "NEEDS_OFFICIAL_OPENLANE_RUN",
+    "OpenROAD run skipped: tool not installed",
+    "GDS file not available: run official OpenLane flow for GDS output",
+    "NEEDS_MANUAL_REVIEW",
+    "Design blocked: failed safety preflight"
+  ],
+  "metrics": {
+    "artifact_hash_count": 6,
+    "designs_tested": 2,
+    "drc_violation_count": 0,
+    "evidence_packs_created": 2,
+    "gds_artifact_count": 0,
+    "lvs_mismatch_count": 0,
+    "manual_review_items": 6,
+    "openlane_config_pass_rate": 0.5,
+    "openroad_run_pass_rate": 0.0,
+    "physical_configs_checked": 2,
+    "replay_match_rate": 0.0,
+    "toolchain_coverage": 0.0,
+    "worst_negative_slack": -0.45
+  },
+  "overall_status": "PHYSICAL_BENCH_FAIL",
+  "public_wording": "OpenLanePhysicalBench checks whether a tiny DTL gate design can move from open-silicon preparation toward a reproducible ASIC physical-flow readiness review. It does not prove silicon correctness, fabrication readiness, timing closure, real power, real area, physical durability, regulatory compliance or safety-critical deployment.",
+  "timestamp_utc": "2026-06-21T22:34:03Z",
+  "toolchain_report": {
+    "KLayout": {
+      "found": false,
+      "note": "not found in PATH",
+      "path": "",
+      "version": ""
+    },
+    "Magic": {
+      "found": false,
+      "note": "not found in PATH",
+      "path": "",
+      "version": ""
+    },
+    "Netgen": {
+      "found": false,
+      "note": "not found in PATH",
+      "path": "",
+      "version": ""
+    },
+    "OpenLane": {
+      "found": false,
+      "note": "not found in PATH",
+      "path": "",
+      "version": ""
+    },
+    "OpenROAD": {
+      "found": false,
+      "note": "not found in PATH",
+      "path": "",
+      "version": ""
+    },
+    "STA": {
+      "found": false,
+      "note": "not found in PATH",
+      "path": "",
+      "version": ""
+    },
+    "Yosys": {
+      "found": false,
+      "note": "not found in PATH",
+      "path": "",
+      "version": ""
+    }
+  }
+}
+HTML report saved: /home/z/my-project/chipgate/download/openlane_physical_report.html

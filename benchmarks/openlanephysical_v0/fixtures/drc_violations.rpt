@@ -1,0 +1,7 @@
+Magic DRC Report
+=================================================
+Total DRC violations: 3
+-------------------------------------------------
+violation: metal1 spacing violation at (10.5, 20.3)
+violation: via1 enclosure violation at (15.0, 30.0)
+error: metal2 minimum width violation at (5.0, 10.0)

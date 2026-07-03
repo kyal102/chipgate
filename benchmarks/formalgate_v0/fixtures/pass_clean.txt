@@ -1,0 +1,20 @@
+[info] SBY version 0.43 — FormalGate-Lite benchmark fixture
+[info] Running SBY on design: safe_dtl_gate_formal
+[info] Engine: smtbmc  depth: 20
+[info] Reading design files...
+[info] Preparing top module: safe_dtl_gate_formal
+[info] Proving properties...
+[info]
+[info] Property results:
+[info]
+PASS: kill_switch_blocks_output
+PASS: timeout_blocks_output
+PASS: reset_blocks_output
+PASS: actuator_requires_verifier
+PASS: actuator_requires_policy
+PASS: actuator_requires_sensor
+PASS: failsafe_no_direct_approve
+PASS: blocked_state_holds_output_low
+[info]
+[info] Summary: 8 passed, 0 failed
+[info] Formal verification PASSED — all safety properties hold.

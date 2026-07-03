@@ -1,0 +1,68 @@
+{
+  "certificate_hash": "99099f1b19d409803467d8072c736107b9795dfdebdd97f6704b5b92766bc67a",
+  "chipgate_version": "0.8.0",
+  "evidence_pack_hash": "9d62984bee15bfa0e41c8b652cb371a224b5f1ec088dc29345f57454f945a652",
+  "file": "S:\\AI\\Temp\\UserTemp\\claude\\c--Users-kyal1-llama-cpp-build-bin-Release-JARVIS\\dcc9183e-15ff-4ff5-990c-6462fa6e0c40\\scratchpad\\repos\\chipgate\\examples\\safe_dtl_gate.v",
+  "findings": [
+    {
+      "description": "No assertions found in the design",
+      "detail": "Assertions are essential for verification; their absence makes formal checks impossible.",
+      "line_number": 0,
+      "rule_id": "CG010",
+      "severity": "medium",
+      "signal_name": ""
+    },
+    {
+      "description": "Safety gate present \u2014 'actuator_enable' gated by [verifier_ok, kill_switch, policy_ok]",
+      "detail": "The output is gated by verification signals.",
+      "line_number": 26,
+      "rule_id": "CG014",
+      "severity": "info",
+      "signal_name": "actuator_enable"
+    },
+    {
+      "description": "No testbench companion file detected for 'safe_dtl_gate'",
+      "detail": "Without a testbench the design cannot be simulated or regression-tested.",
+      "line_number": 0,
+      "rule_id": "CG011",
+      "severity": "medium",
+      "signal_name": ""
+    }
+  ],
+  "module_name": "safe_dtl_gate",
+  "public_wording": "ChipGate is a model-free benchmark that checks RTL structure and verification-gated safety patterns. It does not guarantee hardware correctness, silicon readiness, physical safety, regulatory conformance or experimental validity.",
+  "replay_command": "python -m chipgate scan S:\\AI\\Temp\\UserTemp\\claude\\c--Users-kyal1-llama-cpp-build-bin-Release-JARVIS\\dcc9183e-15ff-4ff5-990c-6462fa6e0c40\\scratchpad\\repos\\chipgate\\examples\\safe_dtl_gate.v --json",
+  "required_gates": [
+    "verifier_ok",
+    "kill_switch",
+    "policy_ok",
+    "sensor_ok",
+    "timeout"
+  ],
+  "risky_signals": [
+    "actuator_enable"
+  ],
+  "rules_checked": [
+    "CG001",
+    "CG002",
+    "CG003",
+    "CG004",
+    "CG005",
+    "CG006",
+    "CG007",
+    "CG008",
+    "CG009",
+    "CG010",
+    "CG013",
+    "CG014",
+    "CG011"
+  ],
+  "statuses": [
+    "RTL_SCAN_PASS",
+    "SAFETY_GATE_PRESENT",
+    "ASSERTION_MISSING",
+    "FORMAL_NOT_READY",
+    "NEEDS_HUMAN_REVIEW"
+  ],
+  "timestamp_utc": "2026-07-03T10:07:37.766241+00:00"
+}

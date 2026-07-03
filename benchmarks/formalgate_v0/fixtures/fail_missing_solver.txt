@@ -1,0 +1,20 @@
+[info] SBY version 0.43 — FormalGate-Lite benchmark fixture
+[info] Running SBY on design: safe_dtl_gate_formal
+[error] ERROR: [SBE] no solver available
+[info] Engine smtbmc not found in PATH.
+[info] Attempting fallback to generic bmc engine...
+[error] ERROR: [SBE] no solver available
+[info]
+[info] Property results (partial — solver unavailable):
+[info]
+PASS: kill_switch_blocks_output
+PASS: timeout_blocks_output
+PASS: reset_blocks_output
+FAIL: actuator_requires_verifier
+FAIL: actuator_requires_policy
+FAIL: actuator_requires_sensor
+FAIL: failsafe_no_direct_approve
+FAIL: blocked_state_holds_output_low
+[info]
+[info] Summary: 3 passed, 5 failed
+[error] Formal verification FAILED — solver not available for full proof.

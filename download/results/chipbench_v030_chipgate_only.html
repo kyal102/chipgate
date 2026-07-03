@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DTL-ChipBench Report</title>
+<style>
+  :root { --green: #16a34a; --red: #dc2626; --blue: #2563eb; --gray: #6b7280; --bg: #f9fafb; --card-bg: #ffffff; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: #1f2937; line-height: 1.6; padding: 2rem; }
+  h1 { font-size: 1.75rem; margin-bottom: 0.25rem; }
+  h2 { font-size: 1.25rem; margin: 2rem 0 1rem; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem; }
+  .subtitle { color: var(--gray); margin-bottom: 2rem; }
+  .disclaimer { background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 1rem; margin: 1rem 0 2rem; font-size: 0.875rem; color: #92400e; }
+  .public-wording { background: #f3f4f6; border-radius: 8px; padding: 1rem; margin: 1rem 0 1rem; font-size: 0.875rem; color: #374151; font-style: italic; }
+  .limitation-box { background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 1rem; margin: 0 0 2rem; font-size: 0.875rem; color: #92400e; }
+  .banner { background: #1e40af; color: white; border-radius: 8px; padding: 1rem; margin: 1rem 0 2rem; font-size: 0.875rem; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0 2rem; }
+  .card { background: var(--card-bg); border-radius: 12px; padding: 1.25rem; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  .card .label { font-size: 0.75rem; color: var(--gray); text-transform: uppercase; letter-spacing: 0.05em; }
+  .card .value { font-size: 2rem; font-weight: 700; margin-top: 0.25rem; }
+  .card .value.green { color: var(--green); }
+  .card .value.red { color: var(--red); }
+  .card .value.blue { color: var(--blue); }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.875rem; }
+  th, td { padding: 0.5rem 0.75rem; text-align: left; border-bottom: 1px solid #e5e7eb; }
+  th { background: #f3f4f6; font-weight: 600; position: sticky; top: 0; }
+  .fail-row { background: #fef2f2; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .center { text-align: center; color: var(--gray); }
+  .example-block { background: var(--card-bg); border: 1px solid #e5e7eb; border-radius: 8px; padding: 1rem; margin: 0.5rem 0; }
+  .example-block .reason { color: var(--gray); font-size: 0.8rem; }
+  .example-block .detail { font-size: 0.75rem; color: var(--gray); }
+  .meta { font-size: 0.75rem; color: var(--gray); margin-top: 2rem; }
+  @media (max-width: 768px) { body { padding: 1rem; } .cards { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</head>
+<body>
+<h1>DTL-ChipBench Report &mdash; ChipGate-Only (deterministic public gates)</h1>
+<p class="subtitle">Version 0.3.0 &mdash; Mode: chipgate_only | Generated 2026-06-21T12:30:00.471292+00:00</p>
+
+<div class="banner">
+  <strong>Adapter-aware benchmark:</strong> This report reflects mode <strong>chipgate_only</strong>
+  using proposal source <strong>built-in synthetic</strong> (adapter: ).
+  Model-connected testing requires an external adapter. This public repo does not include private DTL internals.
+</div>
+
+<div class="disclaimer">
+  <strong>Limitation:</strong> These are estimated verification-cost units under the synthetic benchmark cost model. They do not represent real-world EDA cost, GPU time, or monetary cost.
+</div>
+
+<div class="public-wording">
+  DTL-ChipBench is a model-free benchmark that tests the ChipGate/DTL verification gate itself. It uses deterministic synthetic RTL proposals and mutation-generated cases to measure whether unsafe or regressive chip-design changes are blocked before heavier verification is needed. It does not prove chip correctness, silicon readiness, physical safety, or that any AI model is faster, safer, or better at chip design. All cost figures are abstract benchmark cost units.
+</div>
+
+<div class="limitation-box">
+  <strong>Model-Free Benchmark:</strong> These results are not model-connected yet. They measure ChipGate&#x27;s deterministic gate behaviour on synthetic RTL and mutation-generated benchmark cases. They do not prove that any AI model is faster, safer or better at chip design.
+</div>
+
+<h2>Summary</h2>
+<div class="cards">
+  <div class="card"><div class="label">Total Cases</div><div class="value blue">121</div></div>
+  <div class="card"><div class="label">Unsafe Blocked</div><div class="value green">81</div></div>
+  <div class="card"><div class="label">Unsafe Accepted</div><div class="value green">0</div></div>
+  <div class="card"><div class="label">Safe Accepted</div><div class="value green">40</div></div>
+  <div class="card"><div class="label">Safe Rejected</div><div class="value green">0</div></div>
+  <div class="card"><div class="label">Regressions Detected</div><div class="value blue">4</div></div>
+  <div class="card"><div class="label">Regressions Accepted</div><div class="value green">0</div></div>
+  <div class="card"><div class="label">False Accept Rate</div><div class="value green">0.0%</div></div>
+  <div class="card"><div class="label">False Reject Rate</div><div class="value green">0.0%</div></div>
+  <div class="card"><div class="label">No-Regression Pass</div><div class="value green">50.0%</div></div>
+  <div class="card"><div class="label">Replay Match</div><div class="value green">100.0%</div></div>
+  <div class="card"><div class="label">Est. Verification-Cost Reduction</div><div class="value blue">3.00x</div></div>
+  <div class="card"><div class="label">Synthetic Proposals Blocked</div><div class="value green">81/121</div></div>
+  <div class="card"><div class="label">Cost Reduction</div><div class="value green">66.7%</div></div>
+  <div class="card"><div class="label">Cost per Accepted Change</div><div class="value blue">383</div></div>
+</div>
+
+<h2>Cost Model (estimated verification-cost units)</h2>
+<table>
+  <tr><th>Verification Step</th><th>Cost Units</th></tr>
+  <tr><td>DTL Scan / Adapter Pass (cheap gate)</td><td class="num">1</td></tr><tr><td>Lint</td><td class="num">5</td></tr><tr><td>Simulation</td><td class="num">25</td></tr><tr><td>Formal Verification</td><td class="num">100</td></tr><tr><td>Synthesis</td><td class="num">250</td></tr>
+</table>
+<p style="font-size:0.8rem;color:var(--gray);margin-top:0.5rem;">
+  Baseline cost: 45980 units (all 121 cases x full pipeline)<br>
+  Gated cost: 15321 units (40 cases x full pipeline + 121 x gate scan)<br>
+  Est. verification-cost reduction: 3.00x under the synthetic benchmark cost model<br>
+  Estimated cost per verified accepted change: 383 units
+</p>
+
+<h2>Workflow Comparison</h2>
+<table>
+  <tr><th>Metric</th><th>Ungated Baseline</th><th>Current Mode</th><th>Improvement</th></tr>
+  <tr><td>Heavy verification calls</td><td class="num">121</td><td class="num">40</td><td class="num">81 avoided (66.7% reduction)</td></tr>
+  <tr><td>Estimated cost units</td><td class="num">45980</td><td class="num">15321</td><td class="num">30659 saved</td></tr>
+  <tr><td>Unsafe proposals sent unchecked</td><td class="num">121 (all sent unchecked)</td><td class="num">0</td><td class="num">81 blocked before heavier verification</td></tr>
+</table>
+
+<h2>Category Breakdown</h2>
+<table>
+  <tr><th>Category</th><th>Cases</th><th>Blocked</th><th>Passed</th><th>Accuracy</th></tr>
+  <tr><td>false_negative_trap</td><td>5</td><td>5</td><td>0</td><td>100%</td></tr>
+<tr><td>false_positive_trap</td><td>5</td><td>0</td><td>5</td><td>100%</td></tr>
+<tr><td>missing_default_case</td><td>8</td><td>0</td><td>8</td><td>100%</td></tr>
+<tr><td>missing_kill_switch</td><td>10</td><td>10</td><td>0</td><td>100%</td></tr>
+<tr><td>missing_policy_ok</td><td>12</td><td>12</td><td>0</td><td>100%</td></tr>
+<tr><td>missing_reset</td><td>10</td><td>10</td><td>0</td><td>100%</td></tr>
+<tr><td>missing_sensor_ok</td><td>8</td><td>0</td><td>8</td><td>100%</td></tr>
+<tr><td>missing_verifier_ok</td><td>12</td><td>12</td><td>0</td><td>100%</td></tr>
+<tr><td>regression_safe_baseline</td><td>8</td><td>4</td><td>4</td><td>100%</td></tr>
+<tr><td>safe_dtl_gate</td><td>10</td><td>0</td><td>10</td><td>100%</td></tr>
+<tr><td>safe_fsm_dtl_gate</td><td>5</td><td>0</td><td>5</td><td>100%</td></tr>
+<tr><td>timeout_bypass</td><td>8</td><td>8</td><td>0</td><td>100%</td></tr>
+<tr><td>ungated_actuator</td><td>15</td><td>15</td><td>0</td><td>100%</td></tr>
+<tr><td>unsafe_direct_ai</td><td>5</td><td>5</td><td>0</td><td>100%</td></tr>
+</table>
+
+<h2>Gate Decision Errors (0)</h2>
+<p style="font-size:0.8rem;color:var(--gray);margin-bottom:0.5rem;">Errors indicate deterministic gate logic issues, not model quality. This benchmark tests the gate, not a model.</p>
+<table>
+  <tr><th>Case ID</th><th>Category</th><th>Actual</th><th>Expected</th><th>Reason</th></tr>
+  <tr><td colspan="5" class="center">No incorrect gate decisions</td></tr>
+</table>
+
+<h2>Example Blocked Unsafe Cases</h2>
+<div class="example-block"><strong>UA-001</strong> &mdash; ungated_actuator<br><span class="reason">Actuator output directly driven by AI/proposed signal without any verification gating</span><br><span class="detail">Findings: 7 | Status: RTL_SCAN_FAIL, UNGATED_OUTPUT, ASSERTION_MISSING</span></div>
+<div class="example-block"><strong>UA-002</strong> &mdash; ungated_actuator<br><span class="reason">Actuator output directly driven by AI/proposed signal without any verification gating</span><br><span class="detail">Findings: 7 | Status: RTL_SCAN_FAIL, UNGATED_OUTPUT, ASSERTION_MISSING</span></div>
+<div class="example-block"><strong>UA-003</strong> &mdash; ungated_actuator<br><span class="reason">Actuator output directly driven by AI/proposed signal without any verification gating</span><br><span class="detail">Findings: 7 | Status: RTL_SCAN_FAIL, UNGATED_OUTPUT, ASSERTION_MISSING</span></div>
+
+<h2>All Case Results</h2>
+<table style="font-size:0.75rem;">
+  <tr><th>Case</th><th>Category</th><th>Risk</th><th>Gate</th><th>Expected</th><th>OK</th><th>Heavy</th><th>Regression</th><th>Time</th></tr>
+  <tr><td>UA-001</td><td>ungated_actuator</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">1.1ms</td></tr>
+<tr><td>UA-002</td><td>ungated_actuator</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.4ms</td></tr>
+<tr><td>UA-003</td><td>ungated_actuator</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>UA-004</td><td>ungated_actuator</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>UA-005</td><td>ungated_actuator</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>UA-006</td><td>ungated_actuator</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>UA-007</td><td>ungated_actuator</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>UA-008</td><td>ungated_actuator</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>UA-009</td><td>ungated_actuator</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.2ms</td></tr>
+<tr><td>UA-010</td><td>ungated_actuator</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>UA-011</td><td>ungated_actuator</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>UA-012</td><td>ungated_actuator</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>UA-013</td><td>ungated_actuator</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.2ms</td></tr>
+<tr><td>UA-014</td><td>ungated_actuator</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>UA-015</td><td>ungated_actuator</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MV-001</td><td>missing_verifier_ok</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.4ms</td></tr>
+<tr><td>MV-002</td><td>missing_verifier_ok</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MV-003</td><td>missing_verifier_ok</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MV-004</td><td>missing_verifier_ok</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MV-005</td><td>missing_verifier_ok</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MV-006</td><td>missing_verifier_ok</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MV-007</td><td>missing_verifier_ok</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MV-008</td><td>missing_verifier_ok</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MV-009</td><td>missing_verifier_ok</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MV-010</td><td>missing_verifier_ok</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MV-011</td><td>missing_verifier_ok</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MV-012</td><td>missing_verifier_ok</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MP-001</td><td>missing_policy_ok</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MP-002</td><td>missing_policy_ok</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MP-003</td><td>missing_policy_ok</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MP-004</td><td>missing_policy_ok</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MP-005</td><td>missing_policy_ok</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MP-006</td><td>missing_policy_ok</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MP-007</td><td>missing_policy_ok</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MP-008</td><td>missing_policy_ok</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MP-009</td><td>missing_policy_ok</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MP-010</td><td>missing_policy_ok</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MP-011</td><td>missing_policy_ok</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MP-012</td><td>missing_policy_ok</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MK-001</td><td>missing_kill_switch</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.4ms</td></tr>
+<tr><td>MK-002</td><td>missing_kill_switch</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MK-003</td><td>missing_kill_switch</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MK-004</td><td>missing_kill_switch</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MK-005</td><td>missing_kill_switch</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MK-006</td><td>missing_kill_switch</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MK-007</td><td>missing_kill_switch</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MK-008</td><td>missing_kill_switch</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MK-009</td><td>missing_kill_switch</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MK-010</td><td>missing_kill_switch</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MS-001</td><td>missing_sensor_ok</td><td>high</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MS-002</td><td>missing_sensor_ok</td><td>high</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MS-003</td><td>missing_sensor_ok</td><td>high</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MS-004</td><td>missing_sensor_ok</td><td>high</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MS-005</td><td>missing_sensor_ok</td><td>high</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MS-006</td><td>missing_sensor_ok</td><td>high</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MS-007</td><td>missing_sensor_ok</td><td>high</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MS-008</td><td>missing_sensor_ok</td><td>high</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>TB-001</td><td>timeout_bypass</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>TB-002</td><td>timeout_bypass</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>TB-003</td><td>timeout_bypass</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.4ms</td></tr>
+<tr><td>TB-004</td><td>timeout_bypass</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>TB-005</td><td>timeout_bypass</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>TB-006</td><td>timeout_bypass</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>TB-007</td><td>timeout_bypass</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.4ms</td></tr>
+<tr><td>TB-008</td><td>timeout_bypass</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>UD-001</td><td>unsafe_direct_ai</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.4ms</td></tr>
+<tr><td>UD-002</td><td>unsafe_direct_ai</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.4ms</td></tr>
+<tr><td>UD-003</td><td>unsafe_direct_ai</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>UD-004</td><td>unsafe_direct_ai</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>UD-005</td><td>unsafe_direct_ai</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MR-001</td><td>missing_reset</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MR-002</td><td>missing_reset</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MR-003</td><td>missing_reset</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MR-004</td><td>missing_reset</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MR-005</td><td>missing_reset</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MR-006</td><td>missing_reset</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MR-007</td><td>missing_reset</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MR-008</td><td>missing_reset</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MR-009</td><td>missing_reset</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MR-010</td><td>missing_reset</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>MD-001</td><td>missing_default_case</td><td>high</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.5ms</td></tr>
+<tr><td>MD-002</td><td>missing_default_case</td><td>high</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.5ms</td></tr>
+<tr><td>MD-003</td><td>missing_default_case</td><td>high</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.4ms</td></tr>
+<tr><td>MD-004</td><td>missing_default_case</td><td>high</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.4ms</td></tr>
+<tr><td>MD-005</td><td>missing_default_case</td><td>high</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.4ms</td></tr>
+<tr><td>MD-006</td><td>missing_default_case</td><td>high</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.4ms</td></tr>
+<tr><td>MD-007</td><td>missing_default_case</td><td>high</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.4ms</td></tr>
+<tr><td>MD-008</td><td>missing_default_case</td><td>high</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.4ms</td></tr>
+<tr><td>RG-001</td><td>regression_safe_baseline</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>REGRESSION_DETECTED</td><td class="num">0.2ms</td></tr>
+<tr><td>RG-002</td><td>regression_safe_baseline</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>REGRESSION_DETECTED</td><td class="num">0.4ms</td></tr>
+<tr><td>RG-003</td><td>regression_safe_baseline</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>REGRESSION_DETECTED</td><td class="num">0.3ms</td></tr>
+<tr><td>RG-004</td><td>regression_safe_baseline</td><td>low</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>NO_REGRESSION_PASS</td><td class="num">0.4ms</td></tr>
+<tr><td>RG-005</td><td>regression_safe_baseline</td><td>low</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>NO_REGRESSION_PASS</td><td class="num">0.3ms</td></tr>
+<tr><td>RG-006</td><td>regression_safe_baseline</td><td>low</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>NO_REGRESSION_PASS</td><td class="num">0.3ms</td></tr>
+<tr><td>RG-007</td><td>regression_safe_baseline</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>REGRESSION_DETECTED</td><td class="num">0.3ms</td></tr>
+<tr><td>RG-008</td><td>regression_safe_baseline</td><td>low</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>NO_REGRESSION_PASS</td><td class="num">0.3ms</td></tr>
+<tr><td>SD-001</td><td>safe_dtl_gate</td><td>low</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>SD-002</td><td>safe_dtl_gate</td><td>low</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>SD-003</td><td>safe_dtl_gate</td><td>low</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>SD-004</td><td>safe_dtl_gate</td><td>low</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.4ms</td></tr>
+<tr><td>SD-005</td><td>safe_dtl_gate</td><td>low</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>SD-006</td><td>safe_dtl_gate</td><td>low</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>SD-007</td><td>safe_dtl_gate</td><td>low</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>SD-008</td><td>safe_dtl_gate</td><td>low</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>SD-009</td><td>safe_dtl_gate</td><td>low</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>SD-010</td><td>safe_dtl_gate</td><td>low</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>SF-001</td><td>safe_fsm_dtl_gate</td><td>low</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.6ms</td></tr>
+<tr><td>SF-002</td><td>safe_fsm_dtl_gate</td><td>low</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.6ms</td></tr>
+<tr><td>SF-003</td><td>safe_fsm_dtl_gate</td><td>low</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.5ms</td></tr>
+<tr><td>SF-004</td><td>safe_fsm_dtl_gate</td><td>low</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.5ms</td></tr>
+<tr><td>SF-005</td><td>safe_fsm_dtl_gate</td><td>low</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.5ms</td></tr>
+<tr><td>FP-001</td><td>false_positive_trap</td><td>low</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>FP-002</td><td>false_positive_trap</td><td>low</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>FP-003</td><td>false_positive_trap</td><td>low</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>FP-004</td><td>false_positive_trap</td><td>low</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>FP-005</td><td>false_positive_trap</td><td>low</td><td>pass</td><td>pass</td><td>&#10003;</td><td>required</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>FN-001</td><td>false_negative_trap</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>FN-002</td><td>false_negative_trap</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.4ms</td></tr>
+<tr><td>FN-003</td><td>false_negative_trap</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>FN-004</td><td>false_negative_trap</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.3ms</td></tr>
+<tr><td>FN-005</td><td>false_negative_trap</td><td>critical</td><td>block</td><td>block</td><td>&#10003;</td><td>avoided</td><td>&mdash;</td><td class="num">0.4ms</td></tr>
+</table>
+
+<h2>Benchmark Scope</h2>
+<div class="limitation-box">
+  <strong>What this benchmark tests (current phase):</strong><br>
+  Synthetic RTL proposals | Mutation-generated unsafe/safe variants | ChipGate deterministic rules | No-regression checks | Evidence packs | Replay matching | Transparent cost-model estimate | Multi-mode comparison
+</div>
+<div style="background:#f3f4f6;border-radius:8px;padding:1rem;margin-top:0.5rem;font-size:0.875rem;color:#374151;">
+  <strong>Future phase (not yet implemented):</strong><br>
+  Connect a real model as the proposal generator | Freeze a public test set and private holdout | Compare model-only vs model+DTL | Publish results only after fresh holdout testing
+</div>
+
+<h2>Categories</h2>
+<p>false_negative_trap, false_positive_trap, missing_default_case, missing_kill_switch, missing_policy_ok, missing_reset, missing_sensor_ok, missing_verifier_ok, regression_safe_baseline, safe_dtl_gate, safe_fsm_dtl_gate, timeout_bypass, ungated_actuator, unsafe_direct_ai</p>
+
+<div class="meta">
+  Benchmark hash: f6232417873ba508... | Evidence packs: 0<br>
+  Replay: python -m chipgate bench --mode chipgate_only --demo
+</div>
+</body>
+</html>

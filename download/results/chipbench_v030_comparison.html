@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DTL-ChipBench Mode Comparison</title>
+<style>
+  :root { --green: #16a34a; --red: #dc2626; --blue: #2563eb; --gray: #6b7280; --bg: #f9fafb; --card-bg: #ffffff; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: #1f2937; line-height: 1.6; padding: 2rem; }
+  h1 { font-size: 1.75rem; margin-bottom: 0.25rem; }
+  h2 { font-size: 1.25rem; margin: 2rem 0 1rem; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem; }
+  .subtitle { color: var(--gray); margin-bottom: 2rem; }
+  .banner { background: #1e40af; color: white; border-radius: 8px; padding: 1rem; margin: 1rem 0 2rem; font-size: 0.875rem; }
+  .disclaimer { background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 1rem; margin: 1rem 0 2rem; font-size: 0.875rem; color: #92400e; }
+  .public-wording { background: #f3f4f6; border-radius: 8px; padding: 1rem; margin: 1rem 0 1rem; font-size: 0.875rem; color: #374151; font-style: italic; }
+  .limitation-box { background: #fef3c7; border: 1px solid #f59e0b; border-radius: 8px; padding: 1rem; margin: 0 0 2rem; font-size: 0.875rem; color: #92400e; }
+  .key-metric { background: #eff6ff; border: 2px solid var(--blue); border-radius: 12px; padding: 1.5rem; margin: 1rem 0 2rem; text-align: center; }
+  .key-metric .title { font-size: 0.875rem; color: var(--gray); text-transform: uppercase; }
+  .key-metric .values { display: flex; justify-content: center; gap: 2rem; margin-top: 0.5rem; flex-wrap: wrap; }
+  .key-metric .mv { text-align: center; }
+  .key-metric .mv .label { font-size: 0.75rem; color: var(--gray); }
+  .key-metric .mv .val { font-size: 1.5rem; font-weight: 700; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.875rem; }
+  th, td { padding: 0.5rem 0.75rem; text-align: left; border-bottom: 1px solid #e5e7eb; }
+  th { background: #f3f4f6; font-weight: 600; position: sticky; top: 0; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .red { color: var(--red); font-weight: 600; }
+  .green { color: var(--green); font-weight: 600; }
+  .meta { font-size: 0.75rem; color: var(--gray); margin-top: 2rem; }
+  @media (max-width: 768px) { body { padding: 1rem; } table { font-size: 0.75rem; } }
+</style>
+</head>
+<body>
+<h1>DTL-ChipBench &mdash; Mode Comparison</h1>
+<p class="subtitle">Generated 2026-06-21T12:30:08.051774+00:00</p>
+
+<div class="banner">
+  <strong>Model-connected testing requires an external adapter.</strong>
+  This public repo does not include private DTL internals.
+  The benchmark harness, adapters, and scoring are provided.
+  Private DTL internals are not included.
+</div>
+
+<div class="disclaimer">
+  <strong>Limitation:</strong> These are estimated verification-cost units under the synthetic benchmark cost model. They do not represent real-world EDA cost, GPU time, or monetary cost.
+</div>
+
+<div class="public-wording">
+  DTL-ChipBench is a model-free benchmark that tests the ChipGate/DTL verification gate itself. It uses deterministic synthetic RTL proposals and mutation-generated cases to measure whether unsafe or regressive chip-design changes are blocked before heavier verification is needed. It does not prove chip correctness, silicon readiness, physical safety, or that any AI model is faster, safer, or better at chip design. All cost figures are abstract benchmark cost units.
+</div>
+
+<div class="limitation-box">
+  <strong>Model-Free Benchmark:</strong> These results are not model-connected yet. They measure ChipGate&#x27;s deterministic gate behaviour on synthetic RTL and mutation-generated benchmark cases. They do not prove that any AI model is faster, safer or better at chip design.
+</div>
+
+<h2>Key Metric: Estimated Cost per Verified Accepted Change</h2>
+<div class="key-metric">
+  <div class="title">Under the synthetic benchmark cost model</div>
+  <div class="values">
+    <tr><td>Ungated Baseline (no gate)</td><td class="num">1150</td></tr>
+<tr><td>ChipGate-Only (deterministic public gates)</td><td class="num">383</td></tr>
+
+  </div>
+</div>
+
+<h2>Mode Comparison Table</h2>
+<div style="overflow-x:auto;">
+<table>
+  <tr>
+    <th>Mode</th>
+    <th>Source</th>
+    <th>Total</th>
+    <th>Blocked</th>
+    <th>Unsafe Acc.</th>
+    <th>Safe Acc.</th>
+    <th>Safe Rej.</th>
+    <th>Regr. Det.</th>
+    <th>Regr. Acc.</th>
+    <th>FA Rate</th>
+    <th>Heavy Avoided</th>
+    <th>Cost Red.</th>
+    <th>Cost/Accepted</th>
+    <th>Replay</th>
+    <th>Evidence</th>
+  </tr>
+  <tr>
+  <td><strong>Ungated Baseline (no gate)</strong></td>
+  <td>built-in synthetic</td>
+  <td class="num">121</td>
+  <td class="num">0</td>
+  <td class="num red">81</td>
+  <td class="num">40</td>
+  <td class="num ">0</td>
+  <td class="num">0</td>
+  <td class="num ">0</td>
+  <td class="num">100.0%</td>
+  <td class="num">0</td>
+  <td class="num">0.0%</td>
+  <td class="num">1150</td>
+  <td class="num">0%</td>
+  <td class="num">0</td>
+</tr><tr>
+  <td><strong>ChipGate-Only (deterministic public gates)</strong></td>
+  <td>built-in synthetic</td>
+  <td class="num">121</td>
+  <td class="num">81</td>
+  <td class="num ">0</td>
+  <td class="num">40</td>
+  <td class="num ">0</td>
+  <td class="num">4</td>
+  <td class="num ">0</td>
+  <td class="num">0.0%</td>
+  <td class="num">81</td>
+  <td class="num">66.7%</td>
+  <td class="num class="green"">383</td>
+  <td class="num">100%</td>
+  <td class="num">0</td>
+</tr>
+</table>
+</div>
+
+<h2>Cost Model (estimated verification-cost units)</h2>
+<table>
+  <tr><th>Verification Step</th><th>Cost Units</th></tr>
+  <tr><td>DTL Scan / Adapter Pass (cheap gate)</td><td class="num">1</td></tr><tr><td>Lint</td><td class="num">5</td></tr><tr><td>Simulation</td><td class="num">25</td></tr><tr><td>Formal Verification</td><td class="num">100</td></tr><tr><td>Synthesis</td><td class="num">250</td></tr>
+</table>
+
+<h2>Benchmark Scope</h2>
+<div class="limitation-box">
+  <strong>What this benchmark tests (current phase):</strong><br>
+  Multi-mode comparison | Synthetic RTL proposals | Mutation-generated unsafe/safe variants | ChipGate deterministic rules | No-regression checks | Evidence packs | Transparent cost-model estimate
+</div>
+<div style="background:#f3f4f6;border-radius:8px;padding:1rem;margin-top:0.5rem;font-size:0.875rem;color:#374151;">
+  <strong>Future phase (not yet implemented):</strong><br>
+  Connect a real model as the proposal generator | Freeze a public test set and private holdout | Compare model-only vs model+DTL | Publish results only after fresh holdout testing
+</div>
+
+<div class="meta">
+  DTL-ChipBench mode comparison | 2026-06-21T12:30:08.051774+00:00
+</div>
+</body>
+</html>

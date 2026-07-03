@@ -1,0 +1,9 @@
+OpenROAD STA Timing Report
+=================================================
+Clock: clk
+slack (VIOLATED) -0.45 ns
+Startpoint: ai_output
+Endpoint: actuator_enable
+Path delay: 10.45 ns
+WNS: -0.45 ns
+Timing VIOLATED on 1 path.

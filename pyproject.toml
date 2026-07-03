@@ -4,23 +4,24 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "chipgate-lite"
-version = "0.2.0"
-description = "Deterministic structural sanity checker for Verilog RTL: catches undriven outputs, multi-driven signals, latch-inference risks, and blocking/nonblocking misuse. Pure stdlib."
+version = "0.8.0"
+description = "ChipGate catches unsafe RTL before it becomes silicon: safety scanning, lint/formal readiness, mutation stress-testing, and verified design passports for Verilog/SystemVerilog."
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.9"
 license = { file = "LICENSE" }
-authors = [{ name = "JARVI3 / kyal102" }]
-keywords = ["chipgate", "rtl", "verilog", "designguard", "jarvi3", "hardware-verification"]
+authors = [{ name = "Kyal McAuliffe / EcoKure" }]
+keywords = ["verilog", "rtl", "lint", "eda", "hardware-verification", "safety", "formal", "mutation-testing"]
 classifiers = [
-  "Development Status :: 3 - Alpha",
+  "Development Status :: 4 - Beta",
   "Intended Audience :: Developers",
   "License :: OSI Approved :: MIT License",
   "Programming Language :: Python :: 3",
-  "Programming Language :: Python :: 3.10",
-  "Programming Language :: Python :: 3.11",
   "Topic :: Scientific/Engineering :: Electronic Design Automation (EDA)",
 ]
-dependencies = []
+dependencies = [
+  "pyyaml>=6.0",
+  "jsonschema>=4.0.0",
+]
 
 [project.urls]
 Homepage = "https://github.com/kyal102/chipgate"
@@ -29,13 +30,9 @@ Issues = "https://github.com/kyal102/chipgate/issues"
 
 [project.scripts]
 chipgate = "chipgate.__main__:main"
-jarvi3-designguard-lite = "jarvi3_designguard_lite.__main__:main"
 
 [tool.setuptools]
-py-modules = ["designguard_lite", "public_adapter"]
-packages = ["chipgate", "jarvi3_designguard_lite"]
-include-package-data = true
+packages = { find = { include = ["chipgate*"] } }
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = ["."]

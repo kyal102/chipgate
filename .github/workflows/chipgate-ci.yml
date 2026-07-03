@@ -1,0 +1,189 @@
+# ChipGate Basic CI
+#
+# Runs Python unit tests, demo commands, and hygiene checks on every push
+# and pull request. No EDA tools are installed; this workflow validates the
+# Python package, CLI, and public-codebase hygiene.
+#
+# Passing this workflow does not guarantee silicon correctness, fabrication
+# readiness, physical safety, timing signoff, real power or real area.
+
+name: chipgate-ci
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Python ${{ matrix.python-version }} tests
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run unit tests
+        run: python -m pytest tests/ -q --tb=short
+      - name: Run demo commands
+        run: |
+          python -m chipgate bench --demo
+          python -m chipgate longevity --demo
+          python -m chipgate synth --demo
+          python -m chipgate silicon --demo
+          python -m chipgate fpga --demo
+          python -m chipgate tinytapeout --demo
+          python -m chipgate physical --demo
+      - name: Run CI quick mode
+        run: python -m chipgate ci --quick
+
+  hygiene:
+    name: Hygiene checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: No private imports (jarvi3, proprietary, confidential)
+        run: |
+          python -c "
+          import re, sys
+          patterns = [
+              re.compile(r'j\x61rvi3', re.IGNORECASE),
+              re.compile(r'PRIVATE_DTL', re.IGNORECASE),
+              re.compile(r'proprietary', re.IGNORECASE),
+              re.compile(r'confidential', re.IGNORECASE),
+              re.compile(r'internal_only', re.IGNORECASE),
+              re.compile(r'not_for_public', re.IGNORECASE),
+          ]
+          bad = False
+          for f in __import__('pathlib').Path('chipgate').glob('**/*.py'):
+              txt = f.read_text(encoding='utf-8', errors='replace')
+              for p in patterns:
+                  if p.search(txt):
+                      print(f'FAIL: {f} matched {p.pattern}')
+                      bad = True
+          sys.exit(1 if bad else 0)
+          "
+      - name: No secrets or API keys
+        run: |
+          python -c "
+          import re, sys
+          patterns = [
+              re.compile(r'api[_-]?key\s*=\s*[\"\\']', re.IGNORECASE),
+              re.compile(r'secret[_-]?key\s*=\s*[\"\\']', re.IGNORECASE),
+              re.compile(r'password\s*=\s*[\"\\']', re.IGNORECASE),
+              re.compile(r'token\s*=\s*[\"\\']', re.IGNORECASE),
+          ]
+          bad = False
+          for f in __import__('pathlib').Path('chipgate').glob('**/*.py'):
+              txt = f.read_text(encoding='utf-8', errors='replace')
+              for p in patterns:
+                  if p.search(txt):
+                      print(f'FAIL: {f} matched {p.pattern}')
+                      bad = True
+          sys.exit(1 if bad else 0)
+          "
+      - name: No shell=True in subprocess calls
+        run: |
+          python -c "
+          import sys
+          bad = False
+          for f in __import__('pathlib').Path('chipgate').glob('**/*.py'):
+              txt = f.read_text(encoding='utf-8', errors='replace')
+              lines = txt.split('\n')
+              for i, line in enumerate(lines, 1):
+                  s = line.strip()
+                  if s.startswith('#') or s.startswith('\"\"\"'):
+                      continue
+                  if 'shell=' + 'True' in s:
+                      print(f'FAIL: {f}:{i} has shell=True')
+                      bad = True
+          sys.exit(1 if bad else 0)
+          "
+      - name: English-only source (no CJK or emoji)
+        run: |
+          python -c "
+          import sys
+          bad = False
+          for f in __import__('pathlib').Path('chipgate').glob('**/*.py'):
+              txt = f.read_text(encoding='utf-8', errors='replace')
+              for i, ch in enumerate(txt):
+                  cp = ord(ch)
+                  if cp > 127 and ch not in '\n\r\t':
+                      if (0x4E00 <= cp <= 0x9FFF or 0x3040 <= cp <= 0x30FF
+                          or 0xAC00 <= cp <= 0xD7AF or 0x1F600 <= cp <= 0x1F64F):
+                          print(f'FAIL: {f} has non-ASCII char U+{cp:04X} at pos {i}')
+                          bad = True
+                          break
+          sys.exit(1 if bad else 0)
+          "
+      - name: No forbidden overclaim phrases
+        run: |
+          python -c "
+          import re, sys
+          patterns = [
+              re.compile(r'proves?\s+silicon\s+correctness', re.IGNORECASE),
+              re.compile(r'fabrication\s+ready', re.IGNORECASE),
+              re.compile(r'timing\s+closure', re.IGNORECASE),
+              re.compile(r'real\s+power\s+(characterised|measured|verified)', re.IGNORECASE),
+              re.compile(r'real\s+area\s+(characterised|measured|verified)', re.IGNORECASE),
+              re.compile(r'physically\s+safe(ty)?', re.IGNORECASE),
+              re.compile(r'regulatory\s+compliance', re.IGNORECASE),
+              re.compile(r'NVIDIA', re.IGNORECASE),
+          ]
+          bad = False
+          for f in __import__('pathlib').Path('chipgate').glob('**/*.py'):
+              txt = f.read_text(encoding='utf-8', errors='replace')
+              for p in patterns:
+                  if p.search(txt):
+                      print(f'FAIL: {f} matched {p.pattern}')
+                      bad = True
+          sys.exit(1 if bad else 0)
+          "
+      - name: CI JSON output includes disclaimer
+        run: |
+          python -m chipgate ci --quick --json 2>/dev/null | python -c "
+          import sys, json
+          data = json.load(sys.stdin)
+          assert 'public_wording' in data, 'Missing public_wording'
+          assert 'limitation' in data, 'Missing limitation'
+          assert 'toolchain' in data.get('public_wording', '').lower(), 'Public wording must mention toolchain'
+          print('OK: JSON output includes disclaimer fields')
+          "
+
+  lint-python:
+    name: Python lint (flake8)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install flake8
+        run: pip install flake8
+      - name: Lint chipgate package
+        run: flake8 chipgate/ --count --select=E9,F63,F7,F82 --show-source --statistics
+      - name: Lint tests
+        run: flake8 tests/ --count --select=E9,F63,F7,F82 --show-source --statistics

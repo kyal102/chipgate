@@ -1,0 +1,114 @@
+name: ChipGate CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run tests
+        run: |
+          python -m pytest tests/ -v --tb=short
+
+      - name: Run demo
+        run: |
+          python -m chipgate --demo
+
+      - name: Scan unsafe example
+        run: |
+          python -m chipgate scan examples/unsafe_actuator.v
+          test $? -eq 2  # Expected non-zero (fail)
+
+      - name: Scan safe example
+        run: |
+          python -m chipgate scan examples/safe_dtl_gate.v
+          test $? -eq 0  # Expected zero (pass)
+
+      - name: JSON output
+        run: |
+          python -m chipgate scan examples/safe_dtl_gate.v --json
+
+      - name: Evidence pack
+        run: |
+          python -m chipgate scan examples/safe_dtl_gate.v --evidence --json
+
+      - name: Safety analysis
+        run: |
+          python -m chipgate scan examples/dtl_gate_fsm.v --safety --json
+
+      - name: List rules
+        run: |
+          python -m chipgate --list-rules
+
+      - name: Check no private imports
+        run: |
+          grep -r "jarvi3" chipgate/ && exit 1 || echo "OK: No private imports"
+
+      - name: Check no secrets
+        run: |
+          grep -rn "API_KEY\|SECRET_KEY\|PRIVATE_TOKEN\|password=" chipgate/ --include="*.py" && exit 1 || echo "OK: No secrets found"
+
+  lint-python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install flake8
+
+      - name: Lint with flake8
+        run: |
+          flake8 chipgate/ --max-line-length=100 --ignore=E501,W503 --statistics
+
+  optional-verilator:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Verilator
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y verilator
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run with Verilator lint
+        run: |
+          python -m chipgate lint examples/safe_dtl_gate.v

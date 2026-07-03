@@ -1,0 +1,38 @@
+{
+  "cocotb": {
+    "found": false,
+    "note": "skipped (not found on PATH)",
+    "path": null,
+    "version": null
+  },
+  "icestorm": {
+    "found": false,
+    "note": "skipped (not found on PATH)",
+    "path": null,
+    "version": null
+  },
+  "nextpnr": {
+    "found": false,
+    "note": "skipped (not found on PATH)",
+    "path": null,
+    "version": null
+  },
+  "openFPGALoader": {
+    "found": false,
+    "note": "skipped (not found on PATH)",
+    "path": null,
+    "version": null
+  },
+  "verilator": {
+    "found": false,
+    "note": "skipped (not found on PATH)",
+    "path": null,
+    "version": null
+  },
+  "yosys": {
+    "found": false,
+    "note": "skipped (not found on PATH)",
+    "path": null,
+    "version": null
+  }
+}

@@ -1,0 +1,10 @@
+# Physics Equations for Sensor Model
+
+Force calculation:
+  F = m * a
+
+Pressure:
+  P = F / A
+
+Kinetic energy:
+  KE = 0.5 * m * v^2

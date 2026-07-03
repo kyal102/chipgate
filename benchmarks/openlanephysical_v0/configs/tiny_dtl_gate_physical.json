@@ -1,0 +1,11 @@
+{
+    "DESIGN_NAME": "tiny_dtl_gate_physical",
+    "VERILOG_FILES": ["dir/src/tiny_dtl_gate_physical.v"],
+    "CLOCK_PERIOD": 10.0,
+    "CLOCK_PORT": "clk",
+    "FP_PDN_VPITCH": 153.6,
+    "FP_PDN_HPITCH": 153.6,
+    "VDD_NETS": ["vdd"],
+    "GND_NETS": ["gnd"],
+    "RUN_CTS": false
+}

@@ -1,0 +1,106 @@
+# ChipGate Nightly Toolchain CI
+#
+# Scheduled nightly run with best-effort EDA tool installation.
+# Runs the full CI pipeline, silicon bench, FPGA bench, and physical bench.
+# Missing tools cause stages to be SKIPPED, not FAIL.
+#
+# Passing this workflow does not guarantee silicon correctness, fabrication
+# readiness, physical safety, timing signoff, real power or real area.
+
+name: nightly-toolchain
+
+on:
+  schedule:
+    - cron: "0 3 * * *"  # 03:00 UTC daily
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "CI mode"
+        required: false
+        default: "full"
+        type: choice
+        options:
+          - quick
+          - full
+
+jobs:
+  nightly-ci:
+    name: Nightly full CI pipeline
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install ChipGate dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Install Verilator (best-effort)
+        continue-on-error: true
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq verilator 2>/dev/null || echo "Verilator not available"
+      - name: Install Yosys (best-effort)
+        continue-on-error: true
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq yosys 2>/dev/null || echo "Yosys not available"
+      - name: Install SymbiYosys (best-effort)
+        continue-on-error: true
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq symbiyosys 2>/dev/null || echo "SymbiYosys not available"
+      - name: Show toolchain status
+        run: python -m chipgate ci --toolchain-status
+      - name: Run CI full pipeline
+        run: |
+          MODE="${{ github.event.inputs.mode || 'full' }}"
+          python -m chipgate ci --${MODE} --json > nightly_ci_result.json
+          python -m chipgate ci --${MODE} --html nightly_ci_report.html
+      - name: Run silicon bench demo
+        run: python -m chipgate silicon --demo --json > nightly_silicon.json
+      - name: Run FPGA bench demo
+        run: python -m chipgate fpga --demo --json > nightly_fpga.json
+      - name: Run physical bench demo
+        run: python -m chipgate physical --demo --json > nightly_physical.json
+      - name: Run synth bench demo
+        run: python -m chipgate synth --demo --json > nightly_synth.json
+      - name: Run formal gate demo
+        run: python -m chipgate formal --demo --json > nightly_formal.json
+      - name: Upload CI JSON
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nightly-ci-json
+          path: nightly_ci_result.json
+          retention-days: 90
+      - name: Upload CI HTML
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nightly-ci-html
+          path: nightly_ci_report.html
+          retention-days: 90
+      - name: Upload all bench reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nightly-bench-reports
+          path: |
+            nightly_silicon.json
+            nightly_fpga.json
+            nightly_physical.json
+            nightly_synth.json
+            nightly_formal.json
+          retention-days: 90
+      - name: Upload evidence packs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nightly-evidence-packs
+          path: download/results/evidence_packs/
+          retention-days: 90
+          if-no-files-found: warn

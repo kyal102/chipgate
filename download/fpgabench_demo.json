@@ -1,0 +1,441 @@
+{
+  "artifact_hash_count": 9,
+  "benchmark_name": "fpgabench_v0",
+  "benchmark_version": "0.3.0",
+  "bitstream_ready_rate": 0.0,
+  "board_evidence_attached_count": 0,
+  "board_profile": "generic_fpga",
+  "board_profile_info": {
+    "clock_pin_placeholder": "clk",
+    "description": "Generic FPGA with no specific board constraints. Suitable for initial bring-up testing.",
+    "forbidden_direct_actuator_pins": [
+      "motor_out",
+      "relay_out",
+      "valve_out"
+    ],
+    "fpga_device": "lp384",
+    "fpga_family": "ice40",
+    "maximum_io_count": 16,
+    "name": "generic_fpga",
+    "package": "qn32",
+    "reset_pin_placeholder": "rst_n",
+    "safe_output_pins": [
+      "led_out",
+      "safe_out",
+      "gate_out"
+    ],
+    "supported_constraints_format": "simple_json"
+  },
+  "design_results": [
+    {
+      "bitstream_status": "BITSTREAM_SKIPPED_TOOL_MISSING",
+      "board_evidence": {},
+      "board_evidence_status": "BOARD_EVIDENCE_MISSING",
+      "board_profile_status": "BOARD_PROFILE_VALID",
+      "design_id": "bad_pin_constraints",
+      "evidence_record": {
+        "artifact_hashes": [
+          {
+            "label": "rtl_input",
+            "sha256": "f5efe873373b474a881afea01e681afc007e71623f4750c65fc5323af95dbe2b"
+          },
+          {
+            "label": "constraints",
+            "sha256": "85c891e8047f21a37ee228a690f617ad85cb53f523ee580d636bf42e67bcaa19"
+          },
+          {
+            "label": "stage_results",
+            "sha256": "0493c6281271cd7637c5e83a06190382053eb0bece5a24bc608bf74e128eb139"
+          }
+        ],
+        "benchmark_name": "fpgabench_v0",
+        "benchmark_version": "0.3.0",
+        "bitstream_readiness_result": "BITSTREAM_SKIPPED_TOOL_MISSING",
+        "board_evidence_result": "BOARD_EVIDENCE_MISSING",
+        "board_profile": "generic_fpga",
+        "certificate_hash": "b7443d66b249f814ae6978a5fe91a26a84b83b5ee334d55fa731738ca042d40e",
+        "chipgate_safety_result": "RTL_SCAN_PASS",
+        "constraints_hash": "85c891e8047f21a37ee228a690f617ad85cb53f523ee580d636bf42e67bcaa19",
+        "design_id": "bad_pin_constraints",
+        "fpga_synth_result": "FPGA_SYNTH_SKIPPED_TOOL_MISSING",
+        "pin_constraint_result": "PIN_CONSTRAINT_FAIL",
+        "place_route_result": "PLACE_ROUTE_SKIPPED_TOOL_MISSING",
+        "public_wording": "FPGABoardBench checks whether safe RTL can move from verification into FPGA-style hardware testing. It does not prove ASIC silicon correctness, physical durability, regulatory compliance, medical safety, defence validation or fabrication readiness. It checks whether safe RTL can pass FPGA-oriented preparation, pin mapping, simulation, bitstream-readiness checks and optional board-test evidence.",
+        "replay_command": "python -m chipgate fpga /home/z/my-project/chipgate/benchmarks/fpgabench_v0/designs --board-profile generic_fpga",
+        "rtl_hash": "f5efe873373b474a881afea01e681afc007e71623f4750c65fc5323af95dbe2b",
+        "timestamp_utc": "2026-06-21T20:30:48.882838+00:00",
+        "tool_versions": {
+          "cocotb": null,
+          "icestorm": null,
+          "nextpnr": null,
+          "openFPGALoader": null,
+          "verilator": null,
+          "yosys": null
+        }
+      },
+      "fpga_synth_cell_count": 0,
+      "fpga_synth_status": "FPGA_SYNTH_SKIPPED_TOOL_MISSING",
+      "fpga_synth_wire_count": 0,
+      "overall_status": "FPGA_BENCH_FAIL",
+      "pin_constraint_checks": [
+        {
+          "check": "clock",
+          "message": "Clock signal found: clk",
+          "status": "PASS"
+        },
+        {
+          "check": "reset",
+          "message": "Reset signal found: rst_n",
+          "status": "PASS"
+        },
+        {
+          "check": "kill_switch",
+          "message": "Kill switch found: kill_switch",
+          "status": "PASS"
+        },
+        {
+          "check": "actuator_gating",
+          "message": "Actuator signals properly gated",
+          "status": "PASS"
+        },
+        {
+          "check": "duplicate_pins",
+          "message": "Duplicate pin assignment: 'PIN_10' is assigned to both 'actuator_enable' and 'safe_out'",
+          "status": "FAIL"
+        },
+        {
+          "check": "unassigned_safety_outputs",
+          "message": "All safety-critical outputs have pin assignments",
+          "status": "PASS"
+        },
+        {
+          "check": "safe_defaults",
+          "message": "All safety-critical outputs have explicit safe defaults",
+          "status": "PASS"
+        },
+        {
+          "check": "io_count",
+          "message": "Design has 9 IO ports, within board maximum 16",
+          "status": "PASS"
+        }
+      ],
+      "pin_constraint_status": "PIN_CONSTRAINT_FAIL",
+      "place_route_status": "PLACE_ROUTE_SKIPPED_TOOL_MISSING",
+      "rtl_path": "/home/z/my-project/chipgate/benchmarks/fpgabench_v0/designs/bad_pin_constraints.v",
+      "safety_precheck_status": "RTL_SCAN_PASS",
+      "safety_precheck_statuses": [
+        "RTL_SCAN_PASS",
+        "SAFETY_GATE_PRESENT",
+        "ASSERTION_MISSING",
+        "FORMAL_NOT_READY",
+        "NEEDS_HUMAN_REVIEW"
+      ]
+    },
+    {
+      "bitstream_status": "BITSTREAM_SKIPPED_TOOL_MISSING",
+      "board_evidence": {},
+      "board_evidence_status": "BOARD_EVIDENCE_MISSING",
+      "board_profile_status": "BOARD_PROFILE_VALID",
+      "design_id": "missing_kill_switch_fpga",
+      "evidence_record": {
+        "artifact_hashes": [
+          {
+            "label": "rtl_input",
+            "sha256": "098a88159dbb6d6bd48f19ae21fa1d7bd5fdd11c8581786c6975ad23e6cdf8a3"
+          },
+          {
+            "label": "stage_results",
+            "sha256": "0493c6281271cd7637c5e83a06190382053eb0bece5a24bc608bf74e128eb139"
+          }
+        ],
+        "benchmark_name": "fpgabench_v0",
+        "benchmark_version": "0.3.0",
+        "bitstream_readiness_result": "BITSTREAM_SKIPPED_TOOL_MISSING",
+        "board_evidence_result": "BOARD_EVIDENCE_MISSING",
+        "board_profile": "generic_fpga",
+        "certificate_hash": "5b824af2ea21a7c726433cafaafa7c5fa4cde184cf8aea84a7dbc14b9455d272",
+        "chipgate_safety_result": "RTL_SCAN_PASS",
+        "constraints_hash": "",
+        "design_id": "missing_kill_switch_fpga",
+        "fpga_synth_result": "FPGA_SYNTH_SKIPPED_TOOL_MISSING",
+        "pin_constraint_result": "PIN_CONSTRAINT_FAIL",
+        "place_route_result": "PLACE_ROUTE_SKIPPED_TOOL_MISSING",
+        "public_wording": "FPGABoardBench checks whether safe RTL can move from verification into FPGA-style hardware testing. It does not prove ASIC silicon correctness, physical durability, regulatory compliance, medical safety, defence validation or fabrication readiness. It checks whether safe RTL can pass FPGA-oriented preparation, pin mapping, simulation, bitstream-readiness checks and optional board-test evidence.",
+        "replay_command": "python -m chipgate fpga /home/z/my-project/chipgate/benchmarks/fpgabench_v0/designs --board-profile generic_fpga",
+        "rtl_hash": "098a88159dbb6d6bd48f19ae21fa1d7bd5fdd11c8581786c6975ad23e6cdf8a3",
+        "timestamp_utc": "2026-06-21T20:30:48.883644+00:00",
+        "tool_versions": {
+          "cocotb": null,
+          "icestorm": null,
+          "nextpnr": null,
+          "openFPGALoader": null,
+          "verilator": null,
+          "yosys": null
+        }
+      },
+      "fpga_synth_cell_count": 0,
+      "fpga_synth_status": "FPGA_SYNTH_SKIPPED_TOOL_MISSING",
+      "fpga_synth_wire_count": 0,
+      "overall_status": "FPGA_BENCH_FAIL",
+      "pin_constraint_checks": [
+        {
+          "check": "clock",
+          "message": "Clock signal found: clk",
+          "status": "PASS"
+        },
+        {
+          "check": "reset",
+          "message": "Reset signal found: rst_n",
+          "status": "PASS"
+        },
+        {
+          "check": "kill_switch",
+          "message": "Kill switch input not found",
+          "status": "FAIL"
+        },
+        {
+          "check": "safe_defaults",
+          "message": "All safety-critical outputs have explicit safe defaults",
+          "status": "PASS"
+        },
+        {
+          "check": "io_count",
+          "message": "Design has 6 IO ports, within board maximum 16",
+          "status": "PASS"
+        }
+      ],
+      "pin_constraint_status": "PIN_CONSTRAINT_FAIL",
+      "place_route_status": "PLACE_ROUTE_SKIPPED_TOOL_MISSING",
+      "rtl_path": "/home/z/my-project/chipgate/benchmarks/fpgabench_v0/designs/missing_kill_switch_fpga.v",
+      "safety_precheck_status": "RTL_SCAN_PASS",
+      "safety_precheck_statuses": [
+        "RTL_SCAN_FAIL",
+        "SAFETY_GATE_PRESENT",
+        "ASSERTION_MISSING",
+        "FORMAL_NOT_READY",
+        "NEEDS_HUMAN_REVIEW"
+      ]
+    },
+    {
+      "bitstream_status": "BITSTREAM_SKIPPED_TOOL_MISSING",
+      "board_evidence": {},
+      "board_evidence_status": "BOARD_EVIDENCE_MISSING",
+      "board_profile_status": "BOARD_PROFILE_VALID",
+      "design_id": "safe_dtl_gate_fpga",
+      "evidence_record": {
+        "artifact_hashes": [
+          {
+            "label": "rtl_input",
+            "sha256": "18d1744b657777427d00bdf292e648878d59b4124d4de73dca70994be2e01276"
+          },
+          {
+            "label": "stage_results",
+            "sha256": "9b67801e2cf5d0cd96155057c5f3adbfd972b1ca4aadbdebc3ef93830018ce60"
+          }
+        ],
+        "benchmark_name": "fpgabench_v0",
+        "benchmark_version": "0.3.0",
+        "bitstream_readiness_result": "BITSTREAM_SKIPPED_TOOL_MISSING",
+        "board_evidence_result": "BOARD_EVIDENCE_MISSING",
+        "board_profile": "generic_fpga",
+        "certificate_hash": "a6f233976901bb938ad4a1f81b18800c876787437ef2d7e437d64102c56076f7",
+        "chipgate_safety_result": "RTL_SCAN_PASS",
+        "constraints_hash": "",
+        "design_id": "safe_dtl_gate_fpga",
+        "fpga_synth_result": "FPGA_SYNTH_SKIPPED_TOOL_MISSING",
+        "pin_constraint_result": "PIN_CONSTRAINT_PASS",
+        "place_route_result": "PLACE_ROUTE_SKIPPED_TOOL_MISSING",
+        "public_wording": "FPGABoardBench checks whether safe RTL can move from verification into FPGA-style hardware testing. It does not prove ASIC silicon correctness, physical durability, regulatory compliance, medical safety, defence validation or fabrication readiness. It checks whether safe RTL can pass FPGA-oriented preparation, pin mapping, simulation, bitstream-readiness checks and optional board-test evidence.",
+        "replay_command": "python -m chipgate fpga /home/z/my-project/chipgate/benchmarks/fpgabench_v0/designs --board-profile generic_fpga",
+        "rtl_hash": "18d1744b657777427d00bdf292e648878d59b4124d4de73dca70994be2e01276",
+        "timestamp_utc": "2026-06-21T20:30:48.884592+00:00",
+        "tool_versions": {
+          "cocotb": null,
+          "icestorm": null,
+          "nextpnr": null,
+          "openFPGALoader": null,
+          "verilator": null,
+          "yosys": null
+        }
+      },
+      "fpga_synth_cell_count": 0,
+      "fpga_synth_status": "FPGA_SYNTH_SKIPPED_TOOL_MISSING",
+      "fpga_synth_wire_count": 0,
+      "overall_status": "FPGA_BENCH_PASS",
+      "pin_constraint_checks": [
+        {
+          "check": "clock",
+          "message": "Clock signal found: clk",
+          "status": "PASS"
+        },
+        {
+          "check": "reset",
+          "message": "Reset signal found: rst_n",
+          "status": "PASS"
+        },
+        {
+          "check": "kill_switch",
+          "message": "Kill switch found: kill_switch",
+          "status": "PASS"
+        },
+        {
+          "check": "safe_defaults",
+          "message": "All safety-critical outputs have explicit safe defaults",
+          "status": "PASS"
+        },
+        {
+          "check": "io_count",
+          "message": "Design has 8 IO ports, within board maximum 16",
+          "status": "PASS"
+        }
+      ],
+      "pin_constraint_status": "PIN_CONSTRAINT_PASS",
+      "place_route_status": "PLACE_ROUTE_SKIPPED_TOOL_MISSING",
+      "rtl_path": "/home/z/my-project/chipgate/benchmarks/fpgabench_v0/designs/safe_dtl_gate_fpga.v",
+      "safety_precheck_status": "RTL_SCAN_PASS",
+      "safety_precheck_statuses": [
+        "RTL_SCAN_PASS",
+        "SAFETY_GATE_PRESENT",
+        "FORMAL_READY",
+        "NEEDS_HUMAN_REVIEW"
+      ]
+    },
+    {
+      "bitstream_status": "BITSTREAM_SKIPPED_TOOL_MISSING",
+      "board_evidence": {},
+      "board_evidence_status": "BOARD_EVIDENCE_MISSING",
+      "board_profile_status": "BOARD_PROFILE_VALID",
+      "design_id": "unsafe_direct_output_fpga",
+      "evidence_record": {
+        "artifact_hashes": [
+          {
+            "label": "rtl_input",
+            "sha256": "cde269a3f27bf3032a0c9124622af87c748713737f2b8d2012d1572aee8a846e"
+          },
+          {
+            "label": "stage_results",
+            "sha256": "5f0e1d6bb8410100f770e61c6fab8098523c9415f5267d2205fbc7b6bd1cd57c"
+          }
+        ],
+        "benchmark_name": "fpgabench_v0",
+        "benchmark_version": "0.3.0",
+        "bitstream_readiness_result": "BITSTREAM_SKIPPED_TOOL_MISSING",
+        "board_evidence_result": "BOARD_EVIDENCE_MISSING",
+        "board_profile": "generic_fpga",
+        "certificate_hash": "b1f7bd4d8291d9ae68d9fb9081d726b3196fc2bc768d1a8a4bfb085cf5a29ec8",
+        "chipgate_safety_result": "RTL_SCAN_FAIL",
+        "constraints_hash": "",
+        "design_id": "unsafe_direct_output_fpga",
+        "fpga_synth_result": "FPGA_SYNTH_SKIPPED_TOOL_MISSING",
+        "pin_constraint_result": "PIN_CONSTRAINT_FAIL",
+        "place_route_result": "PLACE_ROUTE_SKIPPED_TOOL_MISSING",
+        "public_wording": "FPGABoardBench checks whether safe RTL can move from verification into FPGA-style hardware testing. It does not prove ASIC silicon correctness, physical durability, regulatory compliance, medical safety, defence validation or fabrication readiness. It checks whether safe RTL can pass FPGA-oriented preparation, pin mapping, simulation, bitstream-readiness checks and optional board-test evidence.",
+        "replay_command": "python -m chipgate fpga /home/z/my-project/chipgate/benchmarks/fpgabench_v0/designs --board-profile generic_fpga",
+        "rtl_hash": "cde269a3f27bf3032a0c9124622af87c748713737f2b8d2012d1572aee8a846e",
+        "timestamp_utc": "2026-06-21T20:30:48.885362+00:00",
+        "tool_versions": {
+          "cocotb": null,
+          "icestorm": null,
+          "nextpnr": null,
+          "openFPGALoader": null,
+          "verilator": null,
+          "yosys": null
+        }
+      },
+      "fpga_synth_cell_count": 0,
+      "fpga_synth_status": "FPGA_SYNTH_SKIPPED_TOOL_MISSING",
+      "fpga_synth_wire_count": 0,
+      "overall_status": "FPGA_BENCH_FAIL",
+      "pin_constraint_checks": [
+        {
+          "check": "clock",
+          "message": "Clock signal found: clk",
+          "status": "PASS"
+        },
+        {
+          "check": "reset",
+          "message": "Reset signal found: rst_n",
+          "status": "PASS"
+        },
+        {
+          "check": "kill_switch",
+          "message": "Kill switch input not found",
+          "status": "FAIL"
+        },
+        {
+          "check": "safe_defaults",
+          "message": "All safety-critical outputs have explicit safe defaults",
+          "status": "PASS"
+        },
+        {
+          "check": "io_count",
+          "message": "Design has 4 IO ports, within board maximum 16",
+          "status": "PASS"
+        }
+      ],
+      "pin_constraint_status": "PIN_CONSTRAINT_FAIL",
+      "place_route_status": "PLACE_ROUTE_SKIPPED_TOOL_MISSING",
+      "rtl_path": "/home/z/my-project/chipgate/benchmarks/fpgabench_v0/designs/unsafe_direct_output_fpga.v",
+      "safety_precheck_status": "RTL_SCAN_FAIL",
+      "safety_precheck_statuses": [
+        "RTL_SCAN_FAIL",
+        "UNGATED_OUTPUT",
+        "ASSERTION_MISSING",
+        "FORMAL_NOT_READY",
+        "NEEDS_HUMAN_REVIEW"
+      ]
+    }
+  ],
+  "designs_tested": 4,
+  "evidence_packs_created": 4,
+  "fpga_synth_pass_rate": 0.0,
+  "kill_switch_bypass_total": 0,
+  "limitation": "These results are FPGA-style preparation checks, not ASIC results and not hardware deployment results. They do not prove ASIC silicon correctness, physical durability, regulatory compliance, medical safety, defence validation, or fabrication readiness. Passing FPGA preparation stages means the RTL was accepted by the tool chain in this specific configuration and version. Actual deployment requires physical board testing, electrical verification, and system-level validation beyond the scope of this tool.",
+  "overall_status": "FPGA_BENCH_PASS",
+  "pin_constraint_pass_rate": 0.25,
+  "place_route_pass_rate": 0.0,
+  "public_wording": "FPGABoardBench checks whether safe RTL can move from verification into FPGA-style hardware testing. It does not prove ASIC silicon correctness, physical durability, regulatory compliance, medical safety, defence validation or fabrication readiness. It checks whether safe RTL can pass FPGA-oriented preparation, pin mapping, simulation, bitstream-readiness checks and optional board-test evidence.",
+  "safety_precheck_pass_rate": 0.75,
+  "safety_precheck_passed": 3,
+  "timestamp_utc": "2026-06-21T20:30:48.885399+00:00",
+  "toolchain_coverage": 0.0,
+  "toolchain_report": {
+    "cocotb": {
+      "found": false,
+      "note": "skipped (not found on PATH)",
+      "path": null,
+      "version": null
+    },
+    "icestorm": {
+      "found": false,
+      "note": "skipped (not found on PATH)",
+      "path": null,
+      "version": null
+    },
+    "nextpnr": {
+      "found": false,
+      "note": "skipped (not found on PATH)",
+      "path": null,
+      "version": null
+    },
+    "openFPGALoader": {
+      "found": false,
+      "note": "skipped (not found on PATH)",
+      "path": null,
+      "version": null
+    },
+    "verilator": {
+      "found": false,
+      "note": "skipped (not found on PATH)",
+      "path": null,
+      "version": null
+    },
+    "yosys": {
+      "found": false,
+      "note": "skipped (not found on PATH)",
+      "path": null,
+      "version": null
+    }
+  },
+  "unsafe_enable_events_total": 0
+}

@@ -1,0 +1,95 @@
+{
+  "candidates": [
+    {
+      "candidate_id": "candidate_baseline_safe",
+      "description": "Baseline safe DTL gate with full verification chain",
+      "expected_improvement_type": "baseline",
+      "expected_longevity_status": "PASS",
+      "expected_regression_status": "NO_REGRESSION",
+      "expected_safety_status": "PASS",
+      "rtl_file": "candidates/candidate_baseline_safe.v"
+    },
+    {
+      "candidate_id": "candidate_fast_unsafe",
+      "description": "Fast but unsafe gate \u2014 no verification chain at all",
+      "expected_improvement_type": "unsafe_fast",
+      "expected_longevity_status": "FAIL",
+      "expected_regression_status": "REGRESSION",
+      "expected_safety_status": "FAIL",
+      "rtl_file": "candidates/candidate_fast_unsafe.v"
+    },
+    {
+      "candidate_id": "candidate_safe_larger",
+      "description": "Safe but larger gate with FSM and extra safety inputs",
+      "expected_improvement_type": "safe_larger",
+      "expected_longevity_status": "PASS",
+      "expected_regression_status": "NO_REGRESSION",
+      "expected_safety_status": "PASS",
+      "rtl_file": "candidates/candidate_safe_larger.v"
+    },
+    {
+      "candidate_id": "candidate_safe_smaller",
+      "description": "Safe and smaller gate \u2014 optimised combinational pre-gate",
+      "expected_improvement_type": "safe_smaller",
+      "expected_longevity_status": "PASS",
+      "expected_regression_status": "NO_REGRESSION",
+      "expected_safety_status": "PASS",
+      "rtl_file": "candidates/candidate_safe_smaller.v"
+    },
+    {
+      "candidate_id": "candidate_safe_low_toggle",
+      "description": "Safe low-toggle gate with registered gate-valid signal",
+      "expected_improvement_type": "safe_low_toggle",
+      "expected_longevity_status": "PASS",
+      "expected_regression_status": "NO_REGRESSION",
+      "expected_safety_status": "PASS",
+      "rtl_file": "candidates/candidate_safe_low_toggle.v"
+    },
+    {
+      "candidate_id": "candidate_unsafe_bypass",
+      "description": "Unsafe bypass regression \u2014 missing policy_ok gate",
+      "expected_improvement_type": "unsafe_bypass",
+      "expected_longevity_status": "FAIL",
+      "expected_regression_status": "REGRESSION",
+      "expected_safety_status": "FAIL",
+      "rtl_file": "candidates/candidate_unsafe_bypass.v"
+    },
+    {
+      "candidate_id": "candidate_missing_kill_switch",
+      "description": "Missing kill-switch regression \u2014 no emergency stop",
+      "expected_improvement_type": "missing_kill_switch",
+      "expected_longevity_status": "FAIL",
+      "expected_regression_status": "REGRESSION",
+      "expected_safety_status": "FAIL",
+      "rtl_file": "candidates/candidate_missing_kill_switch.v"
+    },
+    {
+      "candidate_id": "candidate_missing_verifier",
+      "description": "Missing verifier regression \u2014 no independent check",
+      "expected_improvement_type": "missing_verifier",
+      "expected_longevity_status": "FAIL",
+      "expected_regression_status": "REGRESSION",
+      "expected_safety_status": "FAIL",
+      "rtl_file": "candidates/candidate_missing_verifier.v"
+    },
+    {
+      "candidate_id": "candidate_safe_fsm",
+      "description": "Safe FSM candidate with state machine verification flow",
+      "expected_improvement_type": "safe_fsm",
+      "expected_longevity_status": "PASS",
+      "expected_regression_status": "NO_REGRESSION",
+      "expected_safety_status": "PASS",
+      "rtl_file": "candidates/candidate_safe_fsm.v"
+    },
+    {
+      "candidate_id": "candidate_best_tradeoff",
+      "description": "Best tradeoff candidate \u2014 safe, compact, clean gate",
+      "expected_improvement_type": "best_tradeoff",
+      "expected_longevity_status": "PASS",
+      "expected_regression_status": "NO_REGRESSION",
+      "expected_safety_status": "PASS",
+      "rtl_file": "candidates/candidate_best_tradeoff.v"
+    }
+  ],
+  "version": "1.0.0"
+}

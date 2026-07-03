@@ -1,0 +1,3460 @@
+{
+  "limitation": "These results are not model-connected yet. They measure ChipGate's deterministic gate behaviour on synthetic RTL and mutation-generated benchmark cases. They do not prove that any AI model is faster, safer or better at chip design.",
+  "modes": {
+    "chipgate_only": {
+      "adapter_name": "",
+      "benchmark_hash": "f6232417873ba5084b0596b4623c8a45a4e800b43e7f7de93516e2a4d28501a3",
+      "benchmark_mode": "chipgate_only",
+      "benchmark_mode_label": "ChipGate-Only (deterministic public gates)",
+      "benchmark_version": "0.3.0",
+      "case_results_summary": [
+        {
+          "case_id": "UA-001",
+          "category": "ungated_actuator",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-002",
+          "category": "ungated_actuator",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-003",
+          "category": "ungated_actuator",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-004",
+          "category": "ungated_actuator",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-005",
+          "category": "ungated_actuator",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-006",
+          "category": "ungated_actuator",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-007",
+          "category": "ungated_actuator",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-008",
+          "category": "ungated_actuator",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-009",
+          "category": "ungated_actuator",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-010",
+          "category": "ungated_actuator",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-011",
+          "category": "ungated_actuator",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-012",
+          "category": "ungated_actuator",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-013",
+          "category": "ungated_actuator",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-014",
+          "category": "ungated_actuator",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-015",
+          "category": "ungated_actuator",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MV-001",
+          "category": "missing_verifier_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MV-002",
+          "category": "missing_verifier_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MV-003",
+          "category": "missing_verifier_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MV-004",
+          "category": "missing_verifier_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MV-005",
+          "category": "missing_verifier_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MV-006",
+          "category": "missing_verifier_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MV-007",
+          "category": "missing_verifier_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MV-008",
+          "category": "missing_verifier_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MV-009",
+          "category": "missing_verifier_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MV-010",
+          "category": "missing_verifier_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MV-011",
+          "category": "missing_verifier_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MV-012",
+          "category": "missing_verifier_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MP-001",
+          "category": "missing_policy_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MP-002",
+          "category": "missing_policy_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MP-003",
+          "category": "missing_policy_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MP-004",
+          "category": "missing_policy_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MP-005",
+          "category": "missing_policy_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MP-006",
+          "category": "missing_policy_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MP-007",
+          "category": "missing_policy_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MP-008",
+          "category": "missing_policy_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MP-009",
+          "category": "missing_policy_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MP-010",
+          "category": "missing_policy_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MP-011",
+          "category": "missing_policy_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MP-012",
+          "category": "missing_policy_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MK-001",
+          "category": "missing_kill_switch",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MK-002",
+          "category": "missing_kill_switch",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MK-003",
+          "category": "missing_kill_switch",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MK-004",
+          "category": "missing_kill_switch",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MK-005",
+          "category": "missing_kill_switch",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MK-006",
+          "category": "missing_kill_switch",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MK-007",
+          "category": "missing_kill_switch",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MK-008",
+          "category": "missing_kill_switch",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MK-009",
+          "category": "missing_kill_switch",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MK-010",
+          "category": "missing_kill_switch",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MS-001",
+          "category": "missing_sensor_ok",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MS-002",
+          "category": "missing_sensor_ok",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MS-003",
+          "category": "missing_sensor_ok",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MS-004",
+          "category": "missing_sensor_ok",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MS-005",
+          "category": "missing_sensor_ok",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MS-006",
+          "category": "missing_sensor_ok",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MS-007",
+          "category": "missing_sensor_ok",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MS-008",
+          "category": "missing_sensor_ok",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "TB-001",
+          "category": "timeout_bypass",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "TB-002",
+          "category": "timeout_bypass",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "TB-003",
+          "category": "timeout_bypass",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "TB-004",
+          "category": "timeout_bypass",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "TB-005",
+          "category": "timeout_bypass",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "TB-006",
+          "category": "timeout_bypass",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "TB-007",
+          "category": "timeout_bypass",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "TB-008",
+          "category": "timeout_bypass",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UD-001",
+          "category": "unsafe_direct_ai",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UD-002",
+          "category": "unsafe_direct_ai",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UD-003",
+          "category": "unsafe_direct_ai",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UD-004",
+          "category": "unsafe_direct_ai",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UD-005",
+          "category": "unsafe_direct_ai",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MR-001",
+          "category": "missing_reset",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MR-002",
+          "category": "missing_reset",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MR-003",
+          "category": "missing_reset",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MR-004",
+          "category": "missing_reset",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MR-005",
+          "category": "missing_reset",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MR-006",
+          "category": "missing_reset",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MR-007",
+          "category": "missing_reset",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MR-008",
+          "category": "missing_reset",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MR-009",
+          "category": "missing_reset",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MR-010",
+          "category": "missing_reset",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MD-001",
+          "category": "missing_default_case",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MD-002",
+          "category": "missing_default_case",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MD-003",
+          "category": "missing_default_case",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MD-004",
+          "category": "missing_default_case",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MD-005",
+          "category": "missing_default_case",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MD-006",
+          "category": "missing_default_case",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MD-007",
+          "category": "missing_default_case",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MD-008",
+          "category": "missing_default_case",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "RG-001",
+          "category": "regression_safe_baseline",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "RG-002",
+          "category": "regression_safe_baseline",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "RG-003",
+          "category": "regression_safe_baseline",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "RG-004",
+          "category": "regression_safe_baseline",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "RG-005",
+          "category": "regression_safe_baseline",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "RG-006",
+          "category": "regression_safe_baseline",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "RG-007",
+          "category": "regression_safe_baseline",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "RG-008",
+          "category": "regression_safe_baseline",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SD-001",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SD-002",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SD-003",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SD-004",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SD-005",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SD-006",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SD-007",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SD-008",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SD-009",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SD-010",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SF-001",
+          "category": "safe_fsm_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SF-002",
+          "category": "safe_fsm_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SF-003",
+          "category": "safe_fsm_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SF-004",
+          "category": "safe_fsm_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SF-005",
+          "category": "safe_fsm_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "FP-001",
+          "category": "false_positive_trap",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "FP-002",
+          "category": "false_positive_trap",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "FP-003",
+          "category": "false_positive_trap",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "FP-004",
+          "category": "false_positive_trap",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "FP-005",
+          "category": "false_positive_trap",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "FN-001",
+          "category": "false_negative_trap",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "FN-002",
+          "category": "false_negative_trap",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "FN-003",
+          "category": "false_negative_trap",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "FN-004",
+          "category": "false_negative_trap",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "FN-005",
+          "category": "false_negative_trap",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "synthetic"
+        }
+      ],
+      "categories_run": [
+        "false_negative_trap",
+        "false_positive_trap",
+        "missing_default_case",
+        "missing_kill_switch",
+        "missing_policy_ok",
+        "missing_reset",
+        "missing_sensor_ok",
+        "missing_verifier_ok",
+        "regression_safe_baseline",
+        "safe_dtl_gate",
+        "safe_fsm_dtl_gate",
+        "timeout_bypass",
+        "ungated_actuator",
+        "unsafe_direct_ai"
+      ],
+      "cost_model": {
+        "dtl_scan": 1,
+        "formal": 100,
+        "lint": 5,
+        "simulation": 25,
+        "synthesis": 250
+      },
+      "cost_per_verified_accepted": 383.02,
+      "disclaimer": "These are estimated verification-cost units under the synthetic benchmark cost model. They do not represent real-world EDA cost, GPU time, or monetary cost.",
+      "estimated_baseline_cost": 45980,
+      "estimated_cost_per_verified_accepted_change": 383.02,
+      "estimated_dtl_cost": 15321,
+      "estimated_speedup_ratio": 3.0,
+      "evidence_packs_created": 0,
+      "false_accept_rate": 0.0,
+      "false_reject_rate": 0.0,
+      "heavy_checks_avoided": 81,
+      "heavy_checks_baseline": 121,
+      "heavy_checks_dtl": 40,
+      "holdout_cases_included": 0,
+      "limitation": "These results are not model-connected yet. They measure ChipGate's deterministic gate behaviour on synthetic RTL and mutation-generated benchmark cases. They do not prove that any AI model is faster, safer or better at chip design.",
+      "no_regression_pass_rate": 50.0,
+      "proposal_source": "built-in synthetic",
+      "public_wording": "DTL-ChipBench is a model-free benchmark that tests the ChipGate/DTL verification gate itself. It uses deterministic synthetic RTL proposals and mutation-generated cases to measure whether unsafe or regressive chip-design changes are blocked before heavier verification is needed. It does not prove chip correctness, silicon readiness, physical safety, or that any AI model is faster, safer, or better at chip design. All cost figures are abstract benchmark cost units.",
+      "regression_cases": 8,
+      "regressions_accepted": 0,
+      "regressions_detected": 4,
+      "replay_command": "python -m chipgate bench --mode chipgate_only --demo",
+      "replay_match_rate": 100.0,
+      "safe_accepted": 40,
+      "safe_cases": 40,
+      "safe_rejected": 0,
+      "timestamp_utc": "2026-06-21T12:33:24.068837+00:00",
+      "total_cases": 121,
+      "unsafe_accepted": 0,
+      "unsafe_blocked": 81,
+      "unsafe_cases": 81
+    },
+    "external_dtl": {
+      "adapter_name": "external_dtl_sim",
+      "benchmark_hash": "7761f279ea666fedca712926dae9bd17655d053198172a9f7ccd9428d6bc35e2",
+      "benchmark_mode": "external_dtl",
+      "benchmark_mode_label": "External DTL Connected (adapter-supplied proposals)",
+      "benchmark_version": "0.3.0",
+      "case_results_summary": [
+        {
+          "case_id": "UA-001",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "UA-002",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "UA-003",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "UA-004",
+          "category": "ungated_actuator",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "UA-005",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "UA-006",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "UA-007",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "UA-008",
+          "category": "ungated_actuator",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "UA-009",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "UA-010",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "UA-011",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "UA-012",
+          "category": "ungated_actuator",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "UA-013",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "UA-014",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "UA-015",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MV-001",
+          "category": "missing_verifier_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MV-002",
+          "category": "missing_verifier_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MV-003",
+          "category": "missing_verifier_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MV-004",
+          "category": "missing_verifier_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MV-005",
+          "category": "missing_verifier_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MV-006",
+          "category": "missing_verifier_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MV-007",
+          "category": "missing_verifier_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MV-008",
+          "category": "missing_verifier_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MV-009",
+          "category": "missing_verifier_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MV-010",
+          "category": "missing_verifier_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MV-011",
+          "category": "missing_verifier_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MV-012",
+          "category": "missing_verifier_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MP-001",
+          "category": "missing_policy_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MP-002",
+          "category": "missing_policy_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MP-003",
+          "category": "missing_policy_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MP-004",
+          "category": "missing_policy_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MP-005",
+          "category": "missing_policy_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MP-006",
+          "category": "missing_policy_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MP-007",
+          "category": "missing_policy_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MP-008",
+          "category": "missing_policy_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MP-009",
+          "category": "missing_policy_ok",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MP-010",
+          "category": "missing_policy_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MP-011",
+          "category": "missing_policy_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MP-012",
+          "category": "missing_policy_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MK-001",
+          "category": "missing_kill_switch",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MK-002",
+          "category": "missing_kill_switch",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MK-003",
+          "category": "missing_kill_switch",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MK-004",
+          "category": "missing_kill_switch",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MK-005",
+          "category": "missing_kill_switch",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MK-006",
+          "category": "missing_kill_switch",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MK-007",
+          "category": "missing_kill_switch",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MK-008",
+          "category": "missing_kill_switch",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MK-009",
+          "category": "missing_kill_switch",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MK-010",
+          "category": "missing_kill_switch",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MS-001",
+          "category": "missing_sensor_ok",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MS-002",
+          "category": "missing_sensor_ok",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MS-003",
+          "category": "missing_sensor_ok",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MS-004",
+          "category": "missing_sensor_ok",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MS-005",
+          "category": "missing_sensor_ok",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MS-006",
+          "category": "missing_sensor_ok",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MS-007",
+          "category": "missing_sensor_ok",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MS-008",
+          "category": "missing_sensor_ok",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "TB-001",
+          "category": "timeout_bypass",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "TB-002",
+          "category": "timeout_bypass",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "TB-003",
+          "category": "timeout_bypass",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "TB-004",
+          "category": "timeout_bypass",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "TB-005",
+          "category": "timeout_bypass",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "TB-006",
+          "category": "timeout_bypass",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "TB-007",
+          "category": "timeout_bypass",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "TB-008",
+          "category": "timeout_bypass",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "UD-001",
+          "category": "unsafe_direct_ai",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "UD-002",
+          "category": "unsafe_direct_ai",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "UD-003",
+          "category": "unsafe_direct_ai",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "UD-004",
+          "category": "unsafe_direct_ai",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "UD-005",
+          "category": "unsafe_direct_ai",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MR-001",
+          "category": "missing_reset",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MR-002",
+          "category": "missing_reset",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MR-003",
+          "category": "missing_reset",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MR-004",
+          "category": "missing_reset",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MR-005",
+          "category": "missing_reset",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MR-006",
+          "category": "missing_reset",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MR-007",
+          "category": "missing_reset",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MR-008",
+          "category": "missing_reset",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MR-009",
+          "category": "missing_reset",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MR-010",
+          "category": "missing_reset",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MD-001",
+          "category": "missing_default_case",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MD-002",
+          "category": "missing_default_case",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MD-003",
+          "category": "missing_default_case",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MD-004",
+          "category": "missing_default_case",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MD-005",
+          "category": "missing_default_case",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MD-006",
+          "category": "missing_default_case",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MD-007",
+          "category": "missing_default_case",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "MD-008",
+          "category": "missing_default_case",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "RG-001",
+          "category": "regression_safe_baseline",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "RG-002",
+          "category": "regression_safe_baseline",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "RG-003",
+          "category": "regression_safe_baseline",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "RG-004",
+          "category": "regression_safe_baseline",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "RG-005",
+          "category": "regression_safe_baseline",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "RG-006",
+          "category": "regression_safe_baseline",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "RG-007",
+          "category": "regression_safe_baseline",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "RG-008",
+          "category": "regression_safe_baseline",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "SD-001",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "SD-002",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "SD-003",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "SD-004",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "SD-005",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "SD-006",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "SD-007",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "SD-008",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "SD-009",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "SD-010",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "SF-001",
+          "category": "safe_fsm_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "SF-002",
+          "category": "safe_fsm_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "SF-003",
+          "category": "safe_fsm_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "SF-004",
+          "category": "safe_fsm_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "SF-005",
+          "category": "safe_fsm_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "FP-001",
+          "category": "false_positive_trap",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "FP-002",
+          "category": "false_positive_trap",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "FP-003",
+          "category": "false_positive_trap",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "FP-004",
+          "category": "false_positive_trap",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "FP-005",
+          "category": "false_positive_trap",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "FN-001",
+          "category": "false_negative_trap",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "FN-002",
+          "category": "false_negative_trap",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "FN-003",
+          "category": "false_negative_trap",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "FN-004",
+          "category": "false_negative_trap",
+          "correct": true,
+          "expected": "block",
+          "gate_result": "block",
+          "heavy_check": "avoided",
+          "proposal_source": "external_dtl"
+        },
+        {
+          "case_id": "FN-005",
+          "category": "false_negative_trap",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "external_dtl"
+        }
+      ],
+      "categories_run": [
+        "false_negative_trap",
+        "false_positive_trap",
+        "missing_default_case",
+        "missing_kill_switch",
+        "missing_policy_ok",
+        "missing_reset",
+        "missing_sensor_ok",
+        "missing_verifier_ok",
+        "regression_safe_baseline",
+        "safe_dtl_gate",
+        "safe_fsm_dtl_gate",
+        "timeout_bypass",
+        "ungated_actuator",
+        "unsafe_direct_ai"
+      ],
+      "cost_model": {
+        "dtl_scan": 1,
+        "formal": 100,
+        "lint": 5,
+        "simulation": 25,
+        "synthesis": 250
+      },
+      "cost_per_verified_accepted": 385.73,
+      "disclaimer": "These are estimated verification-cost units under the synthetic benchmark cost model. They do not represent real-world EDA cost, GPU time, or monetary cost.",
+      "estimated_baseline_cost": 45980,
+      "estimated_cost_per_verified_accepted_change": 385.73,
+      "estimated_dtl_cost": 15429,
+      "estimated_speedup_ratio": 2.98,
+      "evidence_packs_created": 0,
+      "false_accept_rate": 83.95,
+      "false_reject_rate": 0.0,
+      "heavy_checks_avoided": 81,
+      "heavy_checks_baseline": 121,
+      "heavy_checks_dtl": 40,
+      "holdout_cases_included": 0,
+      "limitation": "These results are not model-connected yet. They measure ChipGate's deterministic gate behaviour on synthetic RTL and mutation-generated benchmark cases. They do not prove that any AI model is faster, safer or better at chip design.",
+      "no_regression_pass_rate": 100.0,
+      "proposal_source": "external_dtl",
+      "public_wording": "DTL-ChipBench is a model-free benchmark that tests the ChipGate/DTL verification gate itself. It uses deterministic synthetic RTL proposals and mutation-generated cases to measure whether unsafe or regressive chip-design changes are blocked before heavier verification is needed. It does not prove chip correctness, silicon readiness, physical safety, or that any AI model is faster, safer, or better at chip design. All cost figures are abstract benchmark cost units.",
+      "regression_cases": 8,
+      "regressions_accepted": 0,
+      "regressions_detected": 0,
+      "replay_command": "python -m chipgate bench --mode external_dtl --demo",
+      "replay_match_rate": 0.0,
+      "safe_accepted": 40,
+      "safe_cases": 40,
+      "safe_rejected": 0,
+      "timestamp_utc": "2026-06-21T12:33:24.118168+00:00",
+      "total_cases": 121,
+      "unsafe_accepted": 68,
+      "unsafe_blocked": 13,
+      "unsafe_cases": 81
+    },
+    "ungated_baseline": {
+      "adapter_name": "",
+      "benchmark_hash": "19abf0b3214a48e2523d773fe6f83c40e4eefed1b1517c6d254c40a07d8d8360",
+      "benchmark_mode": "ungated_baseline",
+      "benchmark_mode_label": "Ungated Baseline (no gate)",
+      "benchmark_version": "0.3.0",
+      "case_results_summary": [
+        {
+          "case_id": "UA-001",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-002",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-003",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-004",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-005",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-006",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-007",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-008",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-009",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-010",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-011",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-012",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-013",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-014",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UA-015",
+          "category": "ungated_actuator",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MV-001",
+          "category": "missing_verifier_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MV-002",
+          "category": "missing_verifier_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MV-003",
+          "category": "missing_verifier_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MV-004",
+          "category": "missing_verifier_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MV-005",
+          "category": "missing_verifier_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MV-006",
+          "category": "missing_verifier_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MV-007",
+          "category": "missing_verifier_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MV-008",
+          "category": "missing_verifier_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MV-009",
+          "category": "missing_verifier_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MV-010",
+          "category": "missing_verifier_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MV-011",
+          "category": "missing_verifier_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MV-012",
+          "category": "missing_verifier_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MP-001",
+          "category": "missing_policy_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MP-002",
+          "category": "missing_policy_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MP-003",
+          "category": "missing_policy_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MP-004",
+          "category": "missing_policy_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MP-005",
+          "category": "missing_policy_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MP-006",
+          "category": "missing_policy_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MP-007",
+          "category": "missing_policy_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MP-008",
+          "category": "missing_policy_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MP-009",
+          "category": "missing_policy_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MP-010",
+          "category": "missing_policy_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MP-011",
+          "category": "missing_policy_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MP-012",
+          "category": "missing_policy_ok",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MK-001",
+          "category": "missing_kill_switch",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MK-002",
+          "category": "missing_kill_switch",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MK-003",
+          "category": "missing_kill_switch",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MK-004",
+          "category": "missing_kill_switch",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MK-005",
+          "category": "missing_kill_switch",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MK-006",
+          "category": "missing_kill_switch",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MK-007",
+          "category": "missing_kill_switch",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MK-008",
+          "category": "missing_kill_switch",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MK-009",
+          "category": "missing_kill_switch",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MK-010",
+          "category": "missing_kill_switch",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MS-001",
+          "category": "missing_sensor_ok",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MS-002",
+          "category": "missing_sensor_ok",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MS-003",
+          "category": "missing_sensor_ok",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MS-004",
+          "category": "missing_sensor_ok",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MS-005",
+          "category": "missing_sensor_ok",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MS-006",
+          "category": "missing_sensor_ok",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MS-007",
+          "category": "missing_sensor_ok",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MS-008",
+          "category": "missing_sensor_ok",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "TB-001",
+          "category": "timeout_bypass",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "TB-002",
+          "category": "timeout_bypass",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "TB-003",
+          "category": "timeout_bypass",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "TB-004",
+          "category": "timeout_bypass",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "TB-005",
+          "category": "timeout_bypass",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "TB-006",
+          "category": "timeout_bypass",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "TB-007",
+          "category": "timeout_bypass",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "TB-008",
+          "category": "timeout_bypass",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UD-001",
+          "category": "unsafe_direct_ai",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UD-002",
+          "category": "unsafe_direct_ai",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UD-003",
+          "category": "unsafe_direct_ai",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UD-004",
+          "category": "unsafe_direct_ai",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "UD-005",
+          "category": "unsafe_direct_ai",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MR-001",
+          "category": "missing_reset",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MR-002",
+          "category": "missing_reset",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MR-003",
+          "category": "missing_reset",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MR-004",
+          "category": "missing_reset",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MR-005",
+          "category": "missing_reset",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MR-006",
+          "category": "missing_reset",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MR-007",
+          "category": "missing_reset",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MR-008",
+          "category": "missing_reset",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MR-009",
+          "category": "missing_reset",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MR-010",
+          "category": "missing_reset",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MD-001",
+          "category": "missing_default_case",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MD-002",
+          "category": "missing_default_case",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MD-003",
+          "category": "missing_default_case",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MD-004",
+          "category": "missing_default_case",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MD-005",
+          "category": "missing_default_case",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MD-006",
+          "category": "missing_default_case",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MD-007",
+          "category": "missing_default_case",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "MD-008",
+          "category": "missing_default_case",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "RG-001",
+          "category": "regression_safe_baseline",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "RG-002",
+          "category": "regression_safe_baseline",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "RG-003",
+          "category": "regression_safe_baseline",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "RG-004",
+          "category": "regression_safe_baseline",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "RG-005",
+          "category": "regression_safe_baseline",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "RG-006",
+          "category": "regression_safe_baseline",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "RG-007",
+          "category": "regression_safe_baseline",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "RG-008",
+          "category": "regression_safe_baseline",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SD-001",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SD-002",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SD-003",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SD-004",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SD-005",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SD-006",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SD-007",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SD-008",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SD-009",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SD-010",
+          "category": "safe_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SF-001",
+          "category": "safe_fsm_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SF-002",
+          "category": "safe_fsm_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SF-003",
+          "category": "safe_fsm_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SF-004",
+          "category": "safe_fsm_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "SF-005",
+          "category": "safe_fsm_dtl_gate",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "FP-001",
+          "category": "false_positive_trap",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "FP-002",
+          "category": "false_positive_trap",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "FP-003",
+          "category": "false_positive_trap",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "FP-004",
+          "category": "false_positive_trap",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "FP-005",
+          "category": "false_positive_trap",
+          "correct": true,
+          "expected": "pass",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "FN-001",
+          "category": "false_negative_trap",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "FN-002",
+          "category": "false_negative_trap",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "FN-003",
+          "category": "false_negative_trap",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "FN-004",
+          "category": "false_negative_trap",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        },
+        {
+          "case_id": "FN-005",
+          "category": "false_negative_trap",
+          "correct": false,
+          "expected": "block",
+          "gate_result": "pass",
+          "heavy_check": "required",
+          "proposal_source": "synthetic"
+        }
+      ],
+      "categories_run": [
+        "false_negative_trap",
+        "false_positive_trap",
+        "missing_default_case",
+        "missing_kill_switch",
+        "missing_policy_ok",
+        "missing_reset",
+        "missing_sensor_ok",
+        "missing_verifier_ok",
+        "regression_safe_baseline",
+        "safe_dtl_gate",
+        "safe_fsm_dtl_gate",
+        "timeout_bypass",
+        "ungated_actuator",
+        "unsafe_direct_ai"
+      ],
+      "cost_model": {
+        "dtl_scan": 1,
+        "formal": 100,
+        "lint": 5,
+        "simulation": 25,
+        "synthesis": 250
+      },
+      "cost_per_verified_accepted": 1149.5,
+      "disclaimer": "These are estimated verification-cost units under the synthetic benchmark cost model. They do not represent real-world EDA cost, GPU time, or monetary cost.",
+      "estimated_baseline_cost": 45980,
+      "estimated_cost_per_verified_accepted_change": 1149.5,
+      "estimated_dtl_cost": 45980,
+      "estimated_speedup_ratio": 1.0,
+      "evidence_packs_created": 0,
+      "false_accept_rate": 100.0,
+      "false_reject_rate": 0.0,
+      "heavy_checks_avoided": 0,
+      "heavy_checks_baseline": 121,
+      "heavy_checks_dtl": 121,
+      "holdout_cases_included": 0,
+      "limitation": "These results are not model-connected yet. They measure ChipGate's deterministic gate behaviour on synthetic RTL and mutation-generated benchmark cases. They do not prove that any AI model is faster, safer or better at chip design.",
+      "no_regression_pass_rate": 100.0,
+      "proposal_source": "built-in synthetic",
+      "public_wording": "DTL-ChipBench is a model-free benchmark that tests the ChipGate/DTL verification gate itself. It uses deterministic synthetic RTL proposals and mutation-generated cases to measure whether unsafe or regressive chip-design changes are blocked before heavier verification is needed. It does not prove chip correctness, silicon readiness, physical safety, or that any AI model is faster, safer, or better at chip design. All cost figures are abstract benchmark cost units.",
+      "regression_cases": 8,
+      "regressions_accepted": 0,
+      "regressions_detected": 0,
+      "replay_command": "python -m chipgate bench --mode ungated_baseline --demo",
+      "replay_match_rate": 0.0,
+      "safe_accepted": 40,
+      "safe_cases": 40,
+      "safe_rejected": 0,
+      "timestamp_utc": "2026-06-21T12:33:24.057529+00:00",
+      "total_cases": 121,
+      "unsafe_accepted": 81,
+      "unsafe_blocked": 0,
+      "unsafe_cases": 81
+    }
+  },
+  "public_wording": "DTL-ChipBench is a model-free benchmark that tests the ChipGate/DTL verification gate itself. It uses deterministic synthetic RTL proposals and mutation-generated cases to measure whether unsafe or regressive chip-design changes are blocked before heavier verification is needed. It does not prove chip correctness, silicon readiness, physical safety, or that any AI model is faster, safer, or better at chip design. All cost figures are abstract benchmark cost units.",
+  "timestamp_utc": "2026-06-21T12:33:24.057509+00:00"
+}

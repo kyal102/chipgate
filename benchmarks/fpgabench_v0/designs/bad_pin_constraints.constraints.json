@@ -1,0 +1,12 @@
+{
+    "_comment": "Deliberately bad constraints: duplicate pin assignment for testing",
+    "clk": "PIN_1",
+    "rst_n": "PIN_2",
+    "kill_switch": "PIN_3",
+    "verifier_ok": "PIN_4",
+    "policy_ok": "PIN_5",
+    "ai_output": "PIN_6",
+    "actuator_enable": "PIN_10",
+    "safe_out": "PIN_10",
+    "led_out": "PIN_11"
+}
