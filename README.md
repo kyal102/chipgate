@@ -2,7 +2,7 @@
 
 # ChipGate
 
-![python](https://img.shields.io/badge/python-3.9%2B-blue) [![chipgate-ci](https://github.com/kyal102/chipgate/actions/workflows/chipgate-ci.yml/badge.svg)](https://github.com/kyal102/chipgate/actions/workflows/chipgate-ci.yml) ![license](https://img.shields.io/badge/license-MIT-green)
+![python](https://img.shields.io/badge/python-3.10%2B-blue) [![chipgate-ci](https://github.com/kyal102/chipgate/actions/workflows/chipgate-ci.yml/badge.svg)](https://github.com/kyal102/chipgate/actions/workflows/chipgate-ci.yml) ![license](https://img.shields.io/badge/license-MIT-green)
 
 **ChipGate catches unsafe RTL before it becomes silicon.**
 

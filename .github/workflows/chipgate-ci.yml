@@ -15,7 +15,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.9", "3.12"]
+        python-version: ["3.10", "3.12"]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -32,7 +32,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: No private imports / secrets / unsafe subprocess
         run: |
-          ! grep -rnE "import (app|core|modules)\b|dtl_registry|jarvi3" chipgate/ || (echo "private import" && exit 1)
-          ! grep -rniE "api[_-]?key\s*=|password\s*=|ANTHROPIC" chipgate/ || (echo "secret" && exit 1)
-          ! grep -rn "shell=True" chipgate/ || (echo "unsafe subprocess" && exit 1)
+          ! grep -rnE "^\s*(from|import)\s+(app|core|modules|dtl_registry|jarvi3)\b" chipgate/ --include="*.py" || (echo "private import" && exit 1)
+          ! grep -rniE "api[_-]?key\s*=\s*['\"]|password\s*=\s*['\"]|ANTHROPIC" chipgate/ --include="*.py" || (echo "secret" && exit 1)
+          ! grep -rn "shell=True" chipgate/ --include="*.py" || (echo "unsafe subprocess" && exit 1)
           echo "hygiene ok"

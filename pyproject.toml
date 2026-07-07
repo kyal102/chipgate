@@ -7,7 +7,7 @@ name = "chipgate-lite"
 version = "0.8.0"
 description = "ChipGate catches unsafe RTL before it becomes silicon: safety scanning, lint/formal readiness, mutation stress-testing, and verified design passports for Verilog/SystemVerilog."
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 license = { file = "LICENSE" }
 authors = [{ name = "Kyal McAuliffe / EcoKure" }]
 keywords = ["verilog", "rtl", "lint", "eda", "hardware-verification", "safety", "formal", "mutation-testing"]
