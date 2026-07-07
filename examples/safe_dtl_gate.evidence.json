@@ -1,8 +1,8 @@
 {
   "certificate_hash": "99099f1b19d409803467d8072c736107b9795dfdebdd97f6704b5b92766bc67a",
   "chipgate_version": "0.8.0",
-  "evidence_pack_hash": "9d62984bee15bfa0e41c8b652cb371a224b5f1ec088dc29345f57454f945a652",
-  "file": "S:\\AI\\Temp\\UserTemp\\claude\\c--Users-kyal1-llama-cpp-build-bin-Release-JARVIS\\dcc9183e-15ff-4ff5-990c-6462fa6e0c40\\scratchpad\\repos\\chipgate\\examples\\safe_dtl_gate.v",
+  "evidence_pack_hash": "637b11cd1d394564f4369d06afadf35ea1dfc7cba4c3fdc854ef9249279e709a",
+  "file": "S:\\AI\\Temp\\UserTemp\\claude\\c--Users-kyal1-llama-cpp-build-bin-Release-JARVIS\\6d0c7a23-b5cb-4fb8-b7c4-094d11c06e0e\\scratchpad\\chipgate\\examples\\safe_dtl_gate.v",
   "findings": [
     {
       "description": "No assertions found in the design",
@@ -13,7 +13,7 @@
       "signal_name": ""
     },
     {
-      "description": "Safety gate present \u2014 'actuator_enable' gated by [verifier_ok, kill_switch, policy_ok]",
+      "description": "Safety gate present \u2014 'actuator_enable' gated by [kill_switch, policy_ok, verifier_ok]",
       "detail": "The output is gated by verification signals.",
       "line_number": 26,
       "rule_id": "CG014",
@@ -31,13 +31,13 @@
   ],
   "module_name": "safe_dtl_gate",
   "public_wording": "ChipGate is a model-free benchmark that checks RTL structure and verification-gated safety patterns. It does not guarantee hardware correctness, silicon readiness, physical safety, regulatory conformance or experimental validity.",
-  "replay_command": "python -m chipgate scan S:\\AI\\Temp\\UserTemp\\claude\\c--Users-kyal1-llama-cpp-build-bin-Release-JARVIS\\dcc9183e-15ff-4ff5-990c-6462fa6e0c40\\scratchpad\\repos\\chipgate\\examples\\safe_dtl_gate.v --json",
+  "replay_command": "python -m chipgate scan S:\\AI\\Temp\\UserTemp\\claude\\c--Users-kyal1-llama-cpp-build-bin-Release-JARVIS\\6d0c7a23-b5cb-4fb8-b7c4-094d11c06e0e\\scratchpad\\chipgate\\examples\\safe_dtl_gate.v --json",
   "required_gates": [
-    "verifier_ok",
     "kill_switch",
     "policy_ok",
     "sensor_ok",
-    "timeout"
+    "timeout",
+    "verifier_ok"
   ],
   "risky_signals": [
     "actuator_enable"
@@ -64,5 +64,5 @@
     "FORMAL_NOT_READY",
     "NEEDS_HUMAN_REVIEW"
   ],
-  "timestamp_utc": "2026-07-03T10:07:37.766241+00:00"
+  "timestamp_utc": "2026-07-07T07:47:57.440492+00:00"
 }
