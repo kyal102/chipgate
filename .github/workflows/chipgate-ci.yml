@@ -11,9 +11,9 @@ name: chipgate-ci
 
 on:
   push:
-    branches: [main, develop]
+    branches: [master, main, develop]
   pull_request:
-    branches: [main]
+    branches: [master, main]
 
 concurrency:
   group: ci-${{ github.ref }}
