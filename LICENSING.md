@@ -2,7 +2,7 @@
 
 **This repository (the lite tool) is MIT-licensed** — see [LICENSE](LICENSE). Use it freely, including commercially.
 
-**The full engine is not in this repository and is licensed separately.** The hosted Labs, API endpoints, advanced mechanics, and the full verification corpus are proprietary to EcoKure (Kyal John McAuliffe trading as EcoKure, ABN 45 781 794 521, Queensland, Australia).
+**The full engine is not in this repository and is licensed separately.** The hosted Labs, API endpoints, advanced mechanics, and the full verification corpus are proprietary to EcoKure Pty Ltd (ACN 699 693 779, ABN 98 699 693 779, Queensland, Australia).
 
 Commercial options for the full engine:
 
